@@ -50,7 +50,7 @@ export default function Products() {
   return (
     <section id="producto" className="py-36 bg-white">
       <div className="max-w-container mx-auto px-7">
-        <div className="section-head mb-16 max-w-2xl">
+        <div className="section-head mb-24 max-w-2xl">
           <div className="eyebrow mb-4 reveal">Producto</div>
           <h2 className="h-2 reveal reveal-d1" style={{ color: '#0E1430' }}>
             Una solución integral para cada etapa de tu práctica.
@@ -80,7 +80,7 @@ export default function Products() {
         </div>
 
         {/* Stage */}
-        <div key={current.id} className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center animate-fade-up reveal">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center transition-opacity duration-300">
           {/* Copy */}
           <div>
             <div
