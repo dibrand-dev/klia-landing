@@ -65,7 +65,7 @@ export default function RegistroPage() {
         {/* Mobile logo */}
         <div className="lg:hidden mb-8">
           <Link href="/">
-            <Image src="/klia-logo.png" alt="Klia" width={120} height={36} className="h-8 w-auto" />
+            <Image src="/klia-logo.png" alt="Klia" width={160} height={48} className="h-11 w-auto" />
           </Link>
         </div>
 

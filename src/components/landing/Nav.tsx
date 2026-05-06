@@ -41,9 +41,9 @@ export default function Nav() {
           <Image
             src="/klia-logo.png"
             alt="Klia"
-            width={120}
-            height={36}
-            className="h-8 w-auto"
+            width={160}
+            height={48}
+            className="h-11 w-auto"
             priority
           />
         </Link>
