@@ -32,9 +32,9 @@ export default function Footer() {
             <Image
               src="/klia-logo.png"
               alt="Klia"
-              width={160}
-              height={48}
-              className="h-11 w-auto"
+              width={235}
+              height={80}
+              className="h-20 w-auto"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
             <p className="text-sm mt-5 leading-relaxed max-w-[34ch]" style={{ color: 'rgba(255,255,255,.55)' }}>
