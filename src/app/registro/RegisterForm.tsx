@@ -109,7 +109,7 @@ export default function RegisterForm() {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="text-xl font-semibold mb-3" style={{ fontFamily: 'Geist, system-ui', color: '#0E1430', letterSpacing: '-0.015em' }}>
+        <h2 className="text-xl font-semibold mb-3" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', color: '#0E1430', letterSpacing: '-0.015em' }}>
           ¡Cuenta creada!
         </h2>
         <p className="text-sm mb-1" style={{ color: '#5A607A' }}>

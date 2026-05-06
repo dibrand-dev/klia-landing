@@ -42,7 +42,7 @@ export default function RegistroPage() {
           <blockquote className="mb-8">
             <p
               className="text-xl leading-snug mb-5"
-              style={{ color: 'rgba(255,255,255,.92)', fontFamily: 'Geist, system-ui', fontWeight: 500, letterSpacing: '-0.015em' }}
+              style={{ color: 'rgba(255,255,255,.92)', fontFamily: 'var(--font-geist), system-ui, sans-serif', fontWeight: 500, letterSpacing: '-0.015em' }}
             >
               &ldquo;Pasé de dedicar dos tardes por mes a la administración a cero. Klia me devolvió tiempo para mis pacientes.&rdquo;
             </p>
@@ -73,7 +73,7 @@ export default function RegistroPage() {
           <div className="mb-8">
             <h1
               className="text-2xl font-semibold mb-2"
-              style={{ fontFamily: 'Geist, system-ui', letterSpacing: '-0.02em', color: '#0E1430' }}
+              style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', letterSpacing: '-0.02em', color: '#0E1430' }}
             >
               Creá tu cuenta gratis
             </h1>

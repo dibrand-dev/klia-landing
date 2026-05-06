@@ -102,7 +102,7 @@ export default function Testimonials() {
             <div style={{ color: '#3F519E', opacity: .85 }}><Quote size={26} /></div>
             <p
               className="mt-4 mb-7 flex-1"
-              style={{ fontFamily: 'Geist, system-ui', fontSize: 22, fontWeight: 500, lineHeight: 1.35, letterSpacing: '-0.015em', color: '#0E1430' }}
+              style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: 22, fontWeight: 500, lineHeight: 1.35, letterSpacing: '-0.015em', color: '#0E1430' }}
             >
               {it.quote}
             </p>

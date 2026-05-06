@@ -89,7 +89,7 @@ export default function Products() {
             >
               <Icon size={28} />
             </div>
-            <h3 className="mb-5" style={{ fontFamily: 'Geist, system-ui', fontSize: 'clamp(22px, 2.2vw, 30px)', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: '14ch', color: '#0E1430' }}>
+            <h3 className="mb-5" style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: 'clamp(22px, 2.2vw, 30px)', fontWeight: 600, letterSpacing: '-0.02em', lineHeight: 1.2, maxWidth: '14ch', color: '#0E1430' }}>
               {current.title}
             </h3>
             <p className="lead mb-7">{current.body}</p>

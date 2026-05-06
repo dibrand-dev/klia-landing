@@ -92,7 +92,7 @@ export default async function Pricing() {
                   <div className="flex items-end gap-1">
                     <span
                       className="font-bold leading-none"
-                      style={{ fontFamily: 'Geist, system-ui', fontSize: 42, letterSpacing: '-0.03em', color: featured ? '#fff' : '#0E1430' }}
+                      style={{ fontFamily: 'var(--font-geist), system-ui, sans-serif', fontSize: 42, letterSpacing: '-0.03em', color: featured ? '#fff' : '#0E1430' }}
                     >
                       {formatPrecio(plan.precio_mensual)}
                     </span>

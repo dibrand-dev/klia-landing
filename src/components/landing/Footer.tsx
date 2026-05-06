@@ -75,7 +75,7 @@ export default function Footer() {
               <div key={col.title}>
                 <div
                   className="text-sm font-semibold mb-4"
-                  style={{ color: '#fff', fontFamily: 'Geist, system-ui', letterSpacing: '-0.005em' }}
+                  style={{ color: '#fff', fontFamily: 'var(--font-geist), system-ui, sans-serif', letterSpacing: '-0.005em' }}
                 >
                   {col.title}
                 </div>
@@ -114,7 +114,7 @@ export default function Footer() {
         <div
           className="text-center pointer-events-none select-none mt-8"
           style={{
-            fontFamily: 'Geist, system-ui',
+            fontFamily: 'var(--font-geist), system-ui, sans-serif',
             fontSize: 'clamp(120px, 22vw, 280px)',
             fontWeight: 600,
             color: 'rgba(255,255,255,.04)',

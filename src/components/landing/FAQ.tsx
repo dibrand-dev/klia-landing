@@ -76,7 +76,7 @@ export default function FAQ() {
                   >
                     <span
                       style={{
-                        fontFamily: 'Geist, system-ui',
+                        fontFamily: 'var(--font-geist), system-ui, sans-serif',
                         fontSize: 'clamp(18px, 1.4vw, 22px)',
                         fontWeight: 500,
                         letterSpacing: '-0.015em',
