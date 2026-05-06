@@ -61,7 +61,7 @@ export default function Testimonials() {
     <section className="py-32 bg-bg-alt border-y border-line">
       {/* Header in container */}
       <div className="max-w-container mx-auto px-7">
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex justify-between items-end mb-16">
           <div>
             <div className="eyebrow mb-4 reveal">Testimonios</div>
             <h2 className="h-2 reveal reveal-d1" style={{ color: '#0E1430', maxWidth: '18ch' }}>

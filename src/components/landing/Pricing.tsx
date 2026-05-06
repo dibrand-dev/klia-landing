@@ -42,7 +42,7 @@ export default async function Pricing() {
   return (
     <section id="precios" className="py-32 bg-white">
       <div className="max-w-container mx-auto px-7">
-        <div className="mb-16 text-center">
+        <div className="mb-20 text-center">
           <div className="eyebrow mb-4 reveal" style={{ justifyContent: 'center' }}>Precios</div>
           <h2 className="h-2 reveal reveal-d1 mx-auto" style={{ color: '#0E1430', maxWidth: '20ch' }}>
             Sin permanencia. Sin sorpresas.{' '}

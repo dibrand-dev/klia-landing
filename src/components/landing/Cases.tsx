@@ -39,7 +39,7 @@ export default function Cases() {
   return (
     <section id="casos" className="py-32" style={{ background: '#FBFAF7' }}>
       <div className="max-w-container mx-auto px-7">
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-20 max-w-2xl">
           <div className="eyebrow mb-4 reveal">Casos de uso</div>
           <h2 className="h-2 reveal reveal-d1" style={{ color: '#0E1430', maxWidth: '20ch' }}>
             Una herramienta para cada especialidad.

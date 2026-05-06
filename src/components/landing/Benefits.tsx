@@ -19,7 +19,7 @@ export default function Benefits() {
   return (
     <section id="beneficios" className="py-32 bg-white">
       <div className="max-w-container mx-auto px-7">
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-20 max-w-2xl">
           <div className="eyebrow mb-4 reveal">Beneficios</div>
           <h2 className="h-2 reveal reveal-d1" style={{ color: '#0E1430', maxWidth: '18ch' }}>
             Construido para devolverte{' '}
