@@ -13,8 +13,6 @@ const links = [
   { href: '#faq',        label: 'FAQ' },
 ]
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
-
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
@@ -64,12 +62,12 @@ export default function Nav() {
 
         {/* Actions */}
         <div className="flex items-center gap-3.5">
-          <a
-            href={`${APP_URL}/login`}
+          <Link
+            href="/login"
             className="hidden md:block text-sm font-medium text-ink-2 hover:text-klia transition-colors"
           >
             Ingresar
-          </a>
+          </Link>
           <Link
             href="/registro"
             className="btn btn-accent btn-sm"
@@ -102,12 +100,13 @@ export default function Nav() {
             </a>
           ))}
           <div className="flex flex-col gap-3 mt-4">
-            <a
-              href={`${APP_URL}/login`}
+            <Link
+              href="/login"
               className="btn btn-ghost text-center justify-center"
+              onClick={() => setOpen(false)}
             >
               Ingresar
-            </a>
+            </Link>
             <Link
               href="/registro"
               className="btn btn-accent text-center justify-center"
