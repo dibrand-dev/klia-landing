@@ -3,10 +3,10 @@ import AuthSplit from '@/components/auth/AuthSplit'
 import '@/app/auth.css'
 
 export const metadata: Metadata = {
-  title: 'Crear cuenta — Klia',
-  description: 'Empezá tu período de prueba de 21 días. Sin tarjeta, sin permanencia.',
+  title: 'Ingresar — Klia',
+  description: 'Accedé a tu consultorio en Klia',
 }
 
-export default function RegistroPage() {
+export default function LoginPage() {
   return <AuthSplit />
 }
