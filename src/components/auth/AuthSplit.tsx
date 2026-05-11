@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
@@ -327,6 +327,22 @@ export default function AuthSplit() {
     matricula: '',
     acceptTerms: false,
   })
+
+  useEffect(() => {
+    // Limpiar cualquier sesión/token inválido al cargar el login
+    const clearInvalidSession = async () => {
+      const supabase = createClient()
+      try {
+        const { error } = await supabase.auth.getSession()
+        if (error) {
+          await supabase.auth.signOut()
+        }
+      } catch {
+        // Ignorar errores silenciosamente
+      }
+    }
+    clearInvalidSession()
+  }, [])
 
   async function handleLoginSubmit(e: React.FormEvent) {
     e.preventDefault()
