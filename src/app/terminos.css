@@ -413,3 +413,80 @@
   transform: translateY(0);
 }
 .back-top:hover { background: var(--klia); }
+
+/* ---------- Transparency chips ---------- */
+.transparency {
+  margin: 28px 0 8px;
+  padding: 26px 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+  overflow: hidden;
+}
+.transparency::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse 400px 200px at center, #000 0%, transparent 80%);
+  pointer-events: none;
+}
+.transparency-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 4px 18px;
+  border-right: 1px dashed var(--line);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.transparency-item:last-child { border-right: none; }
+.transparency-item:first-child { padding-left: 0; }
+.transparency-ico {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--klia-50);
+  color: var(--klia);
+  margin-bottom: 4px;
+}
+.transparency-h {
+  font-family: var(--font-geist), system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0;
+}
+.transparency-p {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--slate);
+  margin: 0;
+}
+.transparency-tag {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--klia);
+}
+@media (max-width: 720px) {
+  .transparency { grid-template-columns: 1fr; }
+  .transparency-item {
+    border-right: none;
+    border-bottom: 1px dashed var(--line);
+    padding: 14px 0;
+  }
+  .transparency-item:first-child { padding-top: 0; }
+  .transparency-item:last-child { border-bottom: none; padding-bottom: 0; }
+}
