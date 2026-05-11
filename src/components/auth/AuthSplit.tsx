@@ -291,7 +291,7 @@ const RegisterForm = ({ loading, error, onSubmit, form, setForm }: RegisterFormP
     <label className="checkbox" style={{ marginTop: 4 }}>
       <input type="checkbox" checked={form.acceptTerms} onChange={(e) => setForm({ ...form, acceptTerms: e.target.checked })} required />
       <span>
-        Acepto los <a href="#terms">Términos</a> y la <a href="#privacy">Política de privacidad</a>. Klia cumple con la Ley 25.326 de protección de datos.
+        Acepto los <a href="/terminos">Términos</a> y la <a href="/terminos">Política de privacidad</a>. Klia cumple con la Ley 25.326 de protección de datos.
       </span>
     </label>
 
@@ -498,8 +498,8 @@ export default function AuthSplit() {
           </div>
 
           <div className="auth-split-form-foot">
-            <a href="#privacy">Privacidad</a>
-            <a href="#terms">Términos</a>
+            <a href="/terminos">Privacidad</a>
+            <a href="/terminos">Términos</a>
           </div>
         </div>
 

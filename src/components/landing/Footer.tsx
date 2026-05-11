@@ -22,6 +22,16 @@ const COLS = [
   },
 ]
 
+function getLinkHref(link: string): string {
+  switch (link) {
+    case 'Privacidad':
+    case 'Términos':
+      return '/terminos'
+    default:
+      return '#'
+  }
+}
+
 export default function Footer() {
   return (
     <footer style={{ background: '#0E1430', color: 'rgba(255,255,255,.7)', position: 'relative', overflow: 'hidden' }}>
@@ -82,7 +92,7 @@ export default function Footer() {
                 {col.links.map((link) => (
                   <a
                     key={link}
-                    href="#"
+                    href={getLinkHref(link)}
                     className="footer-link block py-1.5 text-sm transition-all hover:translate-x-1"
                   >
                     {link}
