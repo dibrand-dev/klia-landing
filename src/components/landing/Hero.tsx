@@ -42,8 +42,7 @@ export default function Hero() {
             <div className="eyebrow mb-6">PARA PROFESIONALES Y CLÍNICAS DE SALUD EN ARGENTINA</div>
 
             <h1 className="h-display mb-6" style={{ color: '#0E1430' }}>
-              La gestión de tu<br />
-              consultorio,<br />
+              La gestión de tu consultorio,<br />
               <span className="serif-it" style={{ color: '#3F519E' }}>simplificada.</span>
             </h1>
 
