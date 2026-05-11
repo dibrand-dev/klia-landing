@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Nav from '@/components/landing/Nav'
 import '@/app/terminos.css'
 
 const PRIVACY_SECTIONS = [
@@ -84,7 +85,8 @@ export default function PrivacidadPage() {
 
   return (
     <div className="terms-shell">
-      <header className="terms-hero">
+      <Nav />
+      <header className="terms-hero" style={{ marginTop: '80px' }}>
         <div className="max-w-container mx-auto px-7">
           <div className="terms-hero-inner">
             <div className="eyebrow">Documento legal · Klia</div>
