@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Inter, Instrument_Serif } from 'next/font/google'
+import { ClearInvalidSession } from '@/components/auth/ClearInvalidSession'
 import './globals.css'
 
 const geist = localFont({
@@ -45,7 +46,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${geist.variable} ${geistMono.variable} ${inter.variable} ${instrumentSerif.variable}`}>
-      <body>{children}</body>
+      <body>
+        <ClearInvalidSession />
+        {children}
+      </body>
     </html>
   )
 }
