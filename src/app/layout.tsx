@@ -35,6 +35,10 @@ const instrumentSerif = Instrument_Serif({
 export const metadata: Metadata = {
   title: 'Klia — Menos administración, más terapia',
   description: 'La plataforma de gestión clínica y administrativa para profesionales y clínicas de salud en Argentina. Agenda, facturación ARCA, cobros por Mercado Pago e informes con IA.',
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
   openGraph: {
     title: 'Klia — Menos administración, más terapia',
     description: 'La gestión de tu consultorio, simplificada.',
