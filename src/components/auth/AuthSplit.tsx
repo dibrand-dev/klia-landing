@@ -345,8 +345,14 @@ export default function AuthSplit() {
       return
     }
 
-    // Redirect to app
-    window.location.href = `${APP_URL}/`
+    // Wait for session to be established, then redirect
+    const { data } = await supabase.auth.getSession()
+    if (data.session) {
+      window.location.href = `${APP_URL}/`
+    } else {
+      setError('No se pudo establecer la sesión. Intenta de nuevo.')
+      setLoading(false)
+    }
   }
 
   async function handleRegisterSubmit(e: React.FormEvent) {
