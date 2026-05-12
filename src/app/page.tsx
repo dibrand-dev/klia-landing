@@ -7,7 +7,6 @@ import Products from '@/components/landing/Products'
 import Benefits from '@/components/landing/Benefits'
 import Cases from '@/components/landing/Cases'
 import Testimonials from '@/components/landing/Testimonials'
-import Pricing from '@/components/landing/Pricing'
 import FAQ from '@/components/landing/FAQ'
 import CTAFinal from '@/components/landing/CTAFinal'
 import Footer from '@/components/landing/Footer'
@@ -25,7 +24,6 @@ export default function HomePage() {
         <Benefits />
         <Cases />
         <Testimonials />
-        <Pricing />
         <FAQ />
         <CTAFinal />
       </main>
