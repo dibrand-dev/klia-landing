@@ -1,9 +1,4 @@
-'use client'
-
-import { useState } from 'react'
 import { SYSTEM_FEATURES, CATEGORIAS } from '@/lib/features'
-
-type Billing = 'monthly' | 'annual'
 
 export type PlanData = {
   id: string
@@ -53,10 +48,6 @@ const TableDash = () => (
   </span>
 )
 
-// Visual treatment per plan based on its position in the sorted list.
-// 0 (cheapest)  → ghost CTA  · "Para empezar"
-// 1 (middle)    → accent CTA · "★ Más elegido"  (featured)
-// 2 (highest)   → primary CTA · "Práctica avanzada"
 type PlanVisuals = {
   tag: string
   ctaStyle: 'ghost' | 'accent' | 'primary'
@@ -69,7 +60,6 @@ function getVisuals(index: number, totalPlans: number): PlanVisuals {
   if (totalPlans === 1) {
     return { tag: '★ Único plan', ctaStyle: 'accent', ctaLabel: 'Empezar gratis', featured: true, foot: '21 días gratis · sin tarjeta' }
   }
-  // Middle position is featured
   const isMiddle = totalPlans >= 3 && index === Math.floor(totalPlans / 2)
   const isLast = index === totalPlans - 1
   const isFirst = index === 0
@@ -86,19 +76,7 @@ function getVisuals(index: number, totalPlans: number): PlanVisuals {
   return { tag: 'Plan', ctaStyle: 'ghost', ctaLabel: 'Empezar gratis', featured: false, foot: '14 días de prueba · cancelás cuando quieras' }
 }
 
-function PlanCard({
-  plan,
-  visuals,
-  billing,
-}: {
-  plan: PlanData
-  visuals: PlanVisuals
-  billing: Billing
-}) {
-  const priceMonthly = plan.precio_mensual
-  const priceAnnual = Math.round(plan.precio_mensual * 0.8)
-  const price = billing === 'annual' ? priceAnnual : priceMonthly
-  const strike = billing === 'annual' ? priceMonthly : null
+function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
   const registerUrl = `${APP_URL}/registro?plan=${plan.id}`
   const planFeatureSet = new Set(plan.funcionalidades)
 
@@ -115,15 +93,10 @@ function PlanCard({
 
       <div className="plan-price">
         <span className="plan-price-currency">$</span>
-        <span className="plan-price-num">{price.toLocaleString('es-AR')}</span>
+        <span className="plan-price-num">{plan.precio_mensual.toLocaleString('es-AR')}</span>
         <span className="plan-price-period">/ mes</span>
-        {strike && <span className="plan-price-strike">{formatARS(strike)}</span>}
       </div>
-      <div className="plan-billed">
-        {billing === 'annual'
-          ? `Facturado anual · ${formatARS(price * 12)}`
-          : 'Facturado mensual · sin permanencia'}
-      </div>
+      <div className="plan-billed">Facturado mensual · sin permanencia</div>
 
       <a href={registerUrl} className={`plan-cta plan-cta-${visuals.ctaStyle}`}>
         {visuals.ctaLabel}
@@ -152,7 +125,6 @@ function PlanCard({
 }
 
 export default function Pricing({ plans }: { plans: PlanData[] }) {
-  const [billing, setBilling] = useState<Billing>('annual')
   const sorted = [...plans].sort((a, b) => a.precio_mensual - b.precio_mensual)
   const total = sorted.length
   const featuredIndex = total >= 3 ? Math.floor(total / 2) : -1
@@ -169,97 +141,88 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
           <p className="pricing-hero-lead">
             Planes diseñados para profesionales de la salud que ejercen de forma independiente. Sin permanencia, sin tarjeta para empezar y 21 días gratis del plan completo. Precios en pesos argentinos, IVA incluido.
           </p>
-          <div className="billing-toggle" role="tablist">
-            <button
-              className={billing === 'monthly' ? 'is-active' : ''}
-              onClick={() => setBilling('monthly')}
-            >
-              Mensual
-            </button>
-            <button
-              className={billing === 'annual' ? 'is-active' : ''}
-              onClick={() => setBilling('annual')}
-            >
-              Anual <span className="billing-save">2 meses gratis</span>
-            </button>
-          </div>
         </div>
       </header>
 
       {/* PLANS */}
       <section className="plans">
         <div className="container">
-          <div className="plans-grid">
-            {sorted.map((p, i) => (
-              <PlanCard key={p.id} plan={p} visuals={getVisuals(i, total)} billing={billing} />
-            ))}
-          </div>
+          {sorted.length === 0 ? (
+            <p style={{ textAlign: 'center', opacity: 0.7 }}>
+              Estamos actualizando nuestros planes. Volvé a intentar en unos minutos.
+            </p>
+          ) : (
+            <div className="plans-grid">
+              {sorted.map((p, i) => (
+                <PlanCard key={p.id} plan={p} visuals={getVisuals(i, total)} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       {/* COMPARE */}
-      <section className="compare">
-        <div className="container">
-          <div className="compare-head">
-            <div className="eyebrow eyebrow-center">Comparativa completa</div>
-            <h2>
-              Todo lo que necesitás <span className="serif-it">como profesional.</span>
-            </h2>
-          </div>
+      {sorted.length > 0 && (
+        <section className="compare">
+          <div className="container">
+            <div className="compare-head">
+              <div className="eyebrow eyebrow-center">Comparativa completa</div>
+              <h2>
+                Todo lo que necesitás <span className="serif-it">como profesional.</span>
+              </h2>
+            </div>
 
-          <div className="compare-table-wrap">
-            <table className="compare-table">
-              <thead>
-                <tr>
-                  <th style={{ width: '36%' }}>Funcionalidad</th>
-                  {sorted.map((p, i) => {
-                    const price = billing === 'annual' ? Math.round(p.precio_mensual * 0.8) : p.precio_mensual
-                    return (
+            <div className="compare-table-wrap">
+              <table className="compare-table">
+                <thead>
+                  <tr>
+                    <th style={{ width: '36%' }}>Funcionalidad</th>
+                    {sorted.map((p, i) => (
                       <th key={p.id} className={i === featuredIndex ? 'is-featured' : ''}>
                         {p.nombre}
-                        <span className="plan-head-blurb">{formatARS(price)} / mes</span>
+                        <span className="plan-head-blurb">{formatARS(p.precio_mensual)} / mes</span>
                       </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {CATEGORIAS.map((cat) => {
+                    const featuresInCat = SYSTEM_FEATURES.filter((f) => f.categoria === cat)
+                    if (featuresInCat.length === 0) return null
+                    return (
+                      <>
+                        <tr key={`section-${cat}`} className="compare-section">
+                          <td colSpan={sorted.length + 1}>{cat}</td>
+                        </tr>
+                        {featuresInCat.map((feat) => (
+                          <tr key={feat.key}>
+                            <td className="feature">
+                              {feat.label}
+                              <span>{feat.description}</span>
+                            </td>
+                            {sorted.map((p, i) => {
+                              const has = p.funcionalidades.includes(feat.key)
+                              return (
+                                <td
+                                  key={p.id}
+                                  data-label={p.nombre}
+                                  className={i === featuredIndex ? 'is-featured' : ''}
+                                >
+                                  {has ? <TableCheck /> : <TableDash />}
+                                </td>
+                              )
+                            })}
+                          </tr>
+                        ))}
+                      </>
                     )
                   })}
-                </tr>
-              </thead>
-              <tbody>
-                {CATEGORIAS.map((cat) => {
-                  const featuresInCat = SYSTEM_FEATURES.filter((f) => f.categoria === cat)
-                  if (featuresInCat.length === 0) return null
-                  return (
-                    <>
-                      <tr key={`section-${cat}`} className="compare-section">
-                        <td colSpan={sorted.length + 1}>{cat}</td>
-                      </tr>
-                      {featuresInCat.map((feat) => (
-                        <tr key={feat.key}>
-                          <td className="feature">
-                            {feat.label}
-                            <span>{feat.description}</span>
-                          </td>
-                          {sorted.map((p, i) => {
-                            const has = p.funcionalidades.includes(feat.key)
-                            return (
-                              <td
-                                key={p.id}
-                                data-label={p.nombre}
-                                className={i === featuredIndex ? 'is-featured' : ''}
-                              >
-                                {has ? <TableCheck /> : <TableDash />}
-                              </td>
-                            )
-                          })}
-                        </tr>
-                      ))}
-                    </>
-                  )
-                })}
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="pricing-cta">
