@@ -43,14 +43,14 @@ export default async function Pricing() {
     <section id="precios" className="py-32 bg-white">
       <div className="max-w-container mx-auto px-7">
         <div className="mb-20 text-center">
-          <div className="eyebrow mb-4 reveal" style={{ justifyContent: 'center' }}>Precios</div>
-          <h2 className="h-2 reveal reveal-d1 mx-auto mb-4" style={{ color: '#0E1430', maxWidth: '19ch' }}>
+          <div className="eyebrow mb-4" style={{ justifyContent: 'center' }}>Precios</div>
+          <h2 className="h-2 mx-auto mb-4" style={{ color: '#0E1430', maxWidth: '19ch' }}>
             Sin permanencia. Sin sorpresas.
           </h2>
-          <p className="serif-it reveal reveal-d2 mb-6" style={{ color: '#3F519E', fontSize: '1.5rem', textAlign: 'center' }}>
+          <p className="serif-it mb-6" style={{ color: '#3F519E', fontSize: '1.5rem', textAlign: 'center' }}>
             21 días gratis.
           </p>
-          <p className="lead reveal reveal-d2 mx-auto text-center" style={{ maxWidth: '55ch' }}>
+          <p className="lead mx-auto text-center" style={{ maxWidth: '55ch' }}>
             Empezá el trial sin tarjeta. Al vencer, elegís el plan que mejor se adapta a tu práctica.
           </p>
         </div>
