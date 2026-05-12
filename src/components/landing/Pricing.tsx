@@ -56,24 +56,21 @@ type PlanVisuals = {
   foot: string
 }
 
-function getVisuals(index: number, totalPlans: number): PlanVisuals {
-  if (totalPlans === 1) {
-    return { tag: '★ Único plan', ctaStyle: 'accent', ctaLabel: 'Empezar gratis', featured: true, foot: '21 días gratis · sin tarjeta' }
-  }
-  const isMiddle = totalPlans >= 3 && index === Math.floor(totalPlans / 2)
+function getVisuals(plan: PlanData, index: number, totalPlans: number, featuredIndex: number): PlanVisuals {
+  const isFeatured = index === featuredIndex
   const isLast = index === totalPlans - 1
-  const isFirst = index === 0
+  const isFree = plan.precio_mensual === 0
 
-  if (isMiddle) {
+  if (isFeatured) {
     return { tag: '★ Más elegido', ctaStyle: 'accent', ctaLabel: 'Empezar 21 días gratis', featured: true, foot: '21 días gratis sin tarjeta · cancelás cuando quieras' }
+  }
+  if (isFree) {
+    return { tag: 'Gratuito', ctaStyle: 'ghost', ctaLabel: 'Crear cuenta', featured: false, foot: 'Sin tarjeta · cancelás cuando quieras' }
   }
   if (isLast) {
     return { tag: 'Práctica avanzada', ctaStyle: 'primary', ctaLabel: 'Empezar gratis', featured: false, foot: 'Onboarding incluido · soporte prioritario' }
   }
-  if (isFirst) {
-    return { tag: 'Para empezar', ctaStyle: 'ghost', ctaLabel: 'Probar gratis', featured: false, foot: '14 días de prueba · cancelás cuando quieras' }
-  }
-  return { tag: 'Plan', ctaStyle: 'ghost', ctaLabel: 'Empezar gratis', featured: false, foot: '14 días de prueba · cancelás cuando quieras' }
+  return { tag: 'Para empezar', ctaStyle: 'ghost', ctaLabel: 'Probar gratis', featured: false, foot: '14 días de prueba · cancelás cuando quieras' }
 }
 
 function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
@@ -124,10 +121,20 @@ function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
   )
 }
 
+function pickFeaturedIndex(sorted: PlanData[]): number {
+  if (sorted.length === 0) return -1
+  if (sorted.length === 1) return 0
+  // Highlight the most expensive plan that is NOT the absolute top tier when there are 4+ plans,
+  // otherwise highlight the second-most-expensive (typical 3-plan ladder).
+  if (sorted.length >= 4) return sorted.length - 2
+  return sorted.length - 2
+}
+
 export default function Pricing({ plans }: { plans: PlanData[] }) {
   const sorted = [...plans].sort((a, b) => a.precio_mensual - b.precio_mensual)
   const total = sorted.length
-  const featuredIndex = total >= 3 ? Math.floor(total / 2) : -1
+  const featuredIndex = pickFeaturedIndex(sorted)
+  const gridCols = Math.min(Math.max(total, 1), 4)
 
   return (
     <div className="pricing-shell">
@@ -152,9 +159,9 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
               Estamos actualizando nuestros planes. Volvé a intentar en unos minutos.
             </p>
           ) : (
-            <div className="plans-grid">
+            <div className="plans-grid" style={{ gridTemplateColumns: `repeat(${gridCols}, 1fr)` }}>
               {sorted.map((p, i) => (
-                <PlanCard key={p.id} plan={p} visuals={getVisuals(i, total)} />
+                <PlanCard key={p.id} plan={p} visuals={getVisuals(p, i, total, featuredIndex)} />
               ))}
             </div>
           )}
