@@ -1,49 +1,68 @@
 import Nav from '@/components/landing/Nav'
-import Pricing from '@/components/landing/Pricing'
+import Pricing, { type PlanData } from '@/components/landing/Pricing'
 import Footer from '@/components/landing/Footer'
 import { createClient } from '@/lib/supabase/server'
 import './pricing.css'
 
-const DEFAULT_PRICES = {
-  esencial: 7900,
-  profesional: 14900,
-  premium: 24900,
-}
+const DEFAULT_PLANS: PlanData[] = [
+  {
+    id: 'esencial',
+    nombre: 'Esencial',
+    descripcion: 'Para profesionales que empiezan a digitalizar su consultorio.',
+    precio_mensual: 7900,
+    es_ilimitado: false,
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico'],
+  },
+  {
+    id: 'profesional',
+    nombre: 'Profesional',
+    descripcion: 'El plan completo para el profesional independiente.',
+    precio_mensual: 14900,
+    es_ilimitado: true,
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'facturacion', 'informes'],
+  },
+  {
+    id: 'premium',
+    nombre: 'Premium',
+    descripcion: 'Todo incluido. Para profesionales con alta demanda.',
+    precio_mensual: 24900,
+    es_ilimitado: true,
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'objetivos_terapeuticos', 'medicacion', 'interconsultas', 'facturacion', 'informes'],
+  },
+]
 
-async function getPrices() {
+async function getPlans(): Promise<PlanData[]> {
   try {
     const supabase = createClient()
     const { data } = await supabase
-      .from('configuracion')
-      .select('clave, valor')
-      .in('clave', [
-        'precio_esencial_mensual',
-        'precio_profesional_mensual',
-        'precio_premium_mensual',
-      ])
+      .from('planes')
+      .select('id, nombre, descripcion, precio_mensual, es_ilimitado, plan_funcionalidades(funcionalidad)')
+      .eq('es_publico', true)
+      .eq('activo', true)
+      .order('precio_mensual', { ascending: true })
 
-    if (!data || data.length === 0) return DEFAULT_PRICES
+    if (!data || data.length === 0) return DEFAULT_PLANS
 
-    const map: Record<string, string> = {}
-    for (const row of data) map[row.clave] = row.valor
-
-    return {
-      esencial: Number(map['precio_esencial_mensual']) || DEFAULT_PRICES.esencial,
-      profesional: Number(map['precio_profesional_mensual']) || DEFAULT_PRICES.profesional,
-      premium: Number(map['precio_premium_mensual']) || DEFAULT_PRICES.premium,
-    }
+    return data.map((p) => ({
+      id: p.id,
+      nombre: p.nombre,
+      descripcion: p.descripcion,
+      precio_mensual: p.precio_mensual,
+      es_ilimitado: p.es_ilimitado,
+      funcionalidades: (p.plan_funcionalidades ?? []).map((f: { funcionalidad: string }) => f.funcionalidad),
+    }))
   } catch {
-    return DEFAULT_PRICES
+    return DEFAULT_PLANS
   }
 }
 
 export default async function PreciosPage() {
-  const prices = await getPrices()
+  const plans = await getPlans()
   return (
     <>
       <Nav />
       <main>
-        <Pricing prices={prices} />
+        <Pricing plans={plans} />
       </main>
       <Footer />
     </>
