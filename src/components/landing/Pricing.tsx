@@ -44,7 +44,7 @@ export default async function Pricing() {
       <div className="max-w-container mx-auto px-7">
         <div className="mb-20 text-center">
           <div className="eyebrow mb-4 reveal" style={{ justifyContent: 'center' }}>Precios</div>
-          <h2 className="h-2 reveal reveal-d1 mx-auto" style={{ color: '#0E1430', maxWidth: '20ch' }}>
+          <h2 className="h-2 reveal reveal-d1 mx-auto" style={{ color: '#0E1430', maxWidth: '35ch' }}>
             Sin permanencia. Sin sorpresas.{' '}
             <span className="serif-it" style={{ color: '#3F519E' }}>21 días gratis.</span>
           </h2>
