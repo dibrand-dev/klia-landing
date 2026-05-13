@@ -126,9 +126,9 @@ const EmailField = ({ id = 'email', value, onChange }: EmailFieldProps) => (
   </div>
 )
 
-const OAuthRow = () => (
+const OAuthRow = ({ onGoogleClick }: { onGoogleClick: () => void }) => (
   <div className="oauth-row">
-    <button type="button" className="oauth-btn">
+    <button type="button" className="oauth-btn" onClick={onGoogleClick}>
       <svg width="16" height="16" viewBox="0 0 18 18">
         <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.71v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.61z" />
         <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.91-2.26c-.81.54-1.84.86-3.05.86-2.34 0-4.33-1.58-5.04-3.71H.96v2.33A9 9 0 0 0 9 18z" />
@@ -175,10 +175,11 @@ interface LoginFormProps {
   onSubmit: (e: React.FormEvent) => void
   form: LoginData
   setForm: (form: LoginData) => void
+  onGoogleClick: () => void
 }
 
 // Login form
-const LoginForm = ({ loading, error, onSubmit, form, setForm }: LoginFormProps) => (
+const LoginForm = ({ loading, error, onSubmit, form, setForm, onGoogleClick }: LoginFormProps) => (
   <form className="auth-form" onSubmit={onSubmit}>
     {error && <div style={{ background: '#FEE2E2', border: '1px solid #FECACA', color: '#991B1B', padding: '12px 16px', borderRadius: '12px', fontSize: '14px' }}>{error}</div>}
 
@@ -217,7 +218,7 @@ const LoginForm = ({ loading, error, onSubmit, form, setForm }: LoginFormProps) 
     <div className="auth-divider">
       <span>o continuar con</span>
     </div>
-    <OAuthRow />
+    <OAuthRow onGoogleClick={onGoogleClick} />
   </form>
 )
 
@@ -227,10 +228,11 @@ interface RegisterFormProps {
   onSubmit: (e: React.FormEvent) => void
   form: RegisterData
   setForm: (form: RegisterData) => void
+  onGoogleClick: () => void
 }
 
 // Register form
-const RegisterForm = ({ loading, error, onSubmit, form, setForm }: RegisterFormProps) => (
+const RegisterForm = ({ loading, error, onSubmit, form, setForm, onGoogleClick }: RegisterFormProps) => (
   <form className="auth-form" onSubmit={onSubmit}>
     {error && <div style={{ background: '#FEE2E2', border: '1px solid #FECACA', color: '#991B1B', padding: '12px 16px', borderRadius: '12px', fontSize: '14px' }}>{error}</div>}
 
@@ -306,7 +308,7 @@ const RegisterForm = ({ loading, error, onSubmit, form, setForm }: RegisterFormP
     <div className="auth-divider">
       <span>o registrarse con</span>
     </div>
-    <OAuthRow />
+    <OAuthRow onGoogleClick={onGoogleClick} />
   </form>
 )
 
@@ -369,6 +371,26 @@ export default function AuthSplit() {
       setError('No se pudo establecer la sesión. Intenta de nuevo.')
       setLoading(false)
     }
+  }
+
+  async function handleGoogleLogin() {
+    const supabase = createClient()
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${APP_URL}/auth/callback`,
+      },
+    })
+  }
+
+  async function handleGoogleRegister() {
+    const supabase = createClient()
+    await supabase.auth.signInWithOAuth({
+      provider: 'google',
+      options: {
+        redirectTo: `${APP_URL}/auth/callback?new=true`,
+      },
+    })
   }
 
   async function handleRegisterSubmit(e: React.FormEvent) {
@@ -487,9 +509,9 @@ export default function AuthSplit() {
             </div>
 
             {mode === 'login' ? (
-              <LoginForm loading={loading} error={error} onSubmit={handleLoginSubmit} form={loginForm} setForm={setLoginForm} />
+              <LoginForm loading={loading} error={error} onSubmit={handleLoginSubmit} form={loginForm} setForm={setLoginForm} onGoogleClick={handleGoogleLogin} />
             ) : (
-              <RegisterForm loading={loading} error={error} onSubmit={handleRegisterSubmit} form={registerForm} setForm={setRegisterForm} />
+              <RegisterForm loading={loading} error={error} onSubmit={handleRegisterSubmit} form={registerForm} setForm={setRegisterForm} onGoogleClick={handleGoogleRegister} />
             )}
 
             <div className="auth-footer-text">
