@@ -62,18 +62,18 @@ export default function Nav() {
 
         {/* Actions */}
         <div className="flex items-center gap-3.5">
-          <Link
-            href="/login"
+          <a
+            href="https://app.klia.com.ar/login"
             className="hidden md:block text-sm font-medium text-ink-2 hover:text-klia transition-colors"
           >
             Ingresar
-          </Link>
-          <Link
-            href="/registro"
+          </a>
+          <a
+            href="https://app.klia.com.ar/registro"
             className="btn btn-accent btn-sm"
           >
             Probar gratis <ArrowRight size={14} />
-          </Link>
+          </a>
 
           {/* Mobile burger */}
           <button
@@ -100,20 +100,20 @@ export default function Nav() {
             </a>
           ))}
           <div className="flex flex-col gap-3 mt-4">
-            <Link
-              href="/login"
+            <a
+              href="https://app.klia.com.ar/login"
               className="btn btn-ghost text-center justify-center"
               onClick={() => setOpen(false)}
             >
               Ingresar
-            </Link>
-            <Link
-              href="/registro"
+            </a>
+            <a
+              href="https://app.klia.com.ar/registro"
               className="btn btn-accent text-center justify-center"
               onClick={() => setOpen(false)}
             >
               Probar gratis <ArrowRight size={14} />
-            </Link>
+            </a>
           </div>
         </div>
       )}

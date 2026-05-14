@@ -1,7 +1,8 @@
 'use client'
 
-import Link from 'next/link'
 import { ArrowRight, Play, Star, Brain, Check, Sparkle } from '@/components/ui/Icons'
+
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
 
 const MARQUEE_ITEMS = [
   'ARCA · Facturación electrónica',
@@ -52,9 +53,9 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">
-              <Link href="/registro" className="btn btn-accent btn-lg">
+              <a href={`${APP_URL}/registro`} className="btn btn-accent btn-lg">
                 Probar 21 días gratis <ArrowRight size={16} />
-              </Link>
+              </a>
               <a href="#producto" className="btn btn-ghost btn-lg">
                 <Play size={18} /> Ver cómo funciona
               </a>

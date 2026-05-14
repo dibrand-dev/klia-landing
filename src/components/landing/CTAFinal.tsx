@@ -1,5 +1,6 @@
-import Link from 'next/link'
 import { ArrowRight } from '@/components/ui/Icons'
+
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
 
 export default function CTAFinal() {
   return (
@@ -43,9 +44,9 @@ export default function CTAFinal() {
               </p>
 
               <div className="flex flex-wrap gap-3">
-                <Link href="/registro" className="btn btn-coral btn-lg">
+                <a href={`${APP_URL}/registro`} className="btn btn-coral btn-lg">
                   Empezar gratis <ArrowRight size={16} />
-                </Link>
+                </a>
                 <a
                   href="mailto:hola@klia.com.ar"
                   className="btn btn-lg"
