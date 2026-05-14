@@ -51,7 +51,7 @@ export default function FAQ() {
               ¿No encontrás tu pregunta? Escribinos por WhatsApp y te contestamos en menos de una hora.
             </p>
             <a
-              href="https://wa.me/5491100000000"
+              href="https://wa.me/5491165939115"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-ghost mt-6 reveal reveal-d3 inline-flex"

@@ -48,7 +48,9 @@ export default function CTAFinal() {
                   Empezar gratis <ArrowRight size={16} />
                 </a>
                 <a
-                  href="mailto:hola@klia.com.ar"
+                  href="https://wa.me/5491165939115"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-lg"
                   style={{
                     background: 'rgba(255,255,255,.1)',
