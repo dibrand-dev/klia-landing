@@ -204,6 +204,7 @@
 @layer utilities {
   .text-balance { text-wrap: balance; }
   .muted { color: var(--slate); }
+  .h-display, .h-1, .h-2, .h-3 { height: auto; }
 }
 
 @keyframes marquee {
