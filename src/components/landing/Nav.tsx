@@ -41,7 +41,7 @@ export default function Nav() {
             alt="Klia"
             width={235}
             height={80}
-            className="h-20 w-auto"
+            className="h-10 w-auto"
             priority
           />
         </Link>
