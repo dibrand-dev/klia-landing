@@ -130,13 +130,11 @@
 
   /* Reveal animation */
   .reveal {
-    opacity: 0;
+    opacity: 1;
     transition: opacity .7s cubic-bezier(.2,.8,.2,1);
-    animation: reveal-fallback 0s 1.5s forwards;
   }
   .reveal.in {
     opacity: 1;
-    animation: none;
   }
   .reveal-d1 { transition-delay: .1s; }
   .reveal-d2 { transition-delay: .2s; }
@@ -206,10 +204,6 @@
 @layer utilities {
   .text-balance { text-wrap: balance; }
   .muted { color: var(--slate); }
-}
-
-@keyframes reveal-fallback {
-  to { opacity: 1; }
 }
 
 @keyframes marquee {
