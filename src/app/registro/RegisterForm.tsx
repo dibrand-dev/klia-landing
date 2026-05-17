@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { createClient } from '@/lib/supabase/client'
 import { ESPECIALIDADES } from '@/lib/especialidades'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
@@ -41,28 +40,27 @@ export default function RegisterForm() {
     }
 
     setLoading(true)
-    const supabase = createClient()
 
-    const { error: signUpError } = await supabase.auth.signUp({
-      email: form.email,
-      password: form.password,
-      options: {
-        data: {
-          nombre: form.nombre,
-          apellido: form.apellido,
-          especialidad: form.especialidad || null,
-        },
-        emailRedirectTo: `${APP_URL}/auth/redirect`,
-      },
+    const response = await fetch('https://app.klia.com.ar/api/auth/registro', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: form.email,
+        password: form.password,
+        nombre: form.nombre,
+        apellido: form.apellido,
+        especialidad: form.especialidad || null,
+      }),
     })
 
+    const data = await response.json()
     setLoading(false)
 
-    if (signUpError) {
+    if (!response.ok) {
       setError(
-        signUpError.message.includes('already registered')
-          ? 'Ese email ya está registrado. ¿Querés iniciar sesión?'
-          : 'Error al crear la cuenta. Intentá de nuevo.'
+        data.error === 'already_registered'
+          ? 'Ya existe una cuenta con ese email. Intentá iniciar sesión.'
+          : data.error || 'Error al crear la cuenta. Intentá de nuevo.'
       )
       return
     }

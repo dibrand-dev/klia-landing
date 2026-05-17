@@ -380,29 +380,28 @@ export default function AuthSplit() {
     }
 
     setLoading(true)
-    const supabase = createClient()
 
-    const { error: signUpError } = await supabase.auth.signUp({
-      email: registerForm.email,
-      password: registerForm.password,
-      options: {
-        data: {
-          nombre: registerForm.nombre,
-          apellido: registerForm.apellido,
-          especialidad: registerForm.especialidad || null,
-          matricula: registerForm.matricula || null,
-        },
-        emailRedirectTo: `${APP_URL}/auth/redirect`,
-      },
+    const response = await fetch('https://app.klia.com.ar/api/auth/registro', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: registerForm.email,
+        password: registerForm.password,
+        nombre: registerForm.nombre,
+        apellido: registerForm.apellido,
+        especialidad: registerForm.especialidad || null,
+        matricula: registerForm.matricula || null,
+      }),
     })
 
+    const data = await response.json()
     setLoading(false)
 
-    if (signUpError) {
+    if (!response.ok) {
       setError(
-        signUpError.message.includes('already registered')
-          ? 'Ese email ya está registrado. ¿Querés iniciar sesión?'
-          : 'Error al crear la cuenta. Intentá de nuevo.'
+        data.error === 'already_registered'
+          ? 'Ya existe una cuenta con ese email. Intentá iniciar sesión.'
+          : data.error || 'Error al crear la cuenta. Intentá de nuevo.'
       )
       return
     }
