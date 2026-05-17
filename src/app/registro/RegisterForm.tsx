@@ -2,39 +2,9 @@
 
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { ESPECIALIDADES } from '@/lib/especialidades'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
-
-const ESPECIALIDADES = [
-  'Acompañamiento Terapéutico',
-  'Cardiología',
-  'Cosmetología',
-  'Clínica Médica',
-  'Dermatología',
-  'Endocrinología',
-  'Esteticista',
-  'Estimulación Temprana',
-  'Fisiatría',
-  'Fonoaudiología',
-  'Gastroenterología',
-  'Ginecología y Obstetricia',
-  'Kinesiología',
-  'Medicina de Familia',
-  'Musicoterapia',
-  'Neurología',
-  'Neuropsicología',
-  'Nutrición',
-  'Pediatría',
-  'Psicología',
-  'Psicopedagogía',
-  'Psiquiatría',
-  'Psiquiatría Infanto-Juvenil',
-  'Secretariado Médico',
-  'Terapia Ocupacional',
-  'Traumatología',
-  'Urología',
-  'Otro / No listado',
-]
 
 type FormData = {
   nombre: string
