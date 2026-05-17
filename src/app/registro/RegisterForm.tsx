@@ -8,9 +8,11 @@ const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
 const ESPECIALIDADES = [
   'Acompañamiento Terapéutico',
   'Cardiología',
+  'Cosmetología',
   'Clínica Médica',
   'Dermatología',
   'Endocrinología',
+  'Esteticista',
   'Estimulación Temprana',
   'Fisiatría',
   'Fonoaudiología',
