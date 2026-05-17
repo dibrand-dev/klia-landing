@@ -409,39 +409,6 @@ export default function AuthSplit() {
     setSuccess(true)
   }
 
-  if (success) {
-    return (
-      <div className="auth-shell">
-        <div className="auth-split">
-          <div className="auth-split-form">
-            <div className="auth-split-form-top">
-              <Link href="/" className="auth-logo" aria-label="Klia">
-                <Image src="/klia-logo.png" alt="Klia" width={120} height={36} style={{ height: '56px', width: 'auto' }} />
-              </Link>
-            </div>
-            <div className="auth-split-form-body" style={{ margin: '0 auto' }}>
-              <div style={{ textAlign: 'center' }}>
-                <div style={{ width: '64px', height: '64px', borderRadius: '50%', background: '#D5EFDF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-                  <svg className="w-8 h-8" style={{ color: '#3D9C6B', width: '32px', height: '32px' }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h2 className="auth-heading">¡Cuenta creada!</h2>
-                <p className="auth-sub" style={{ textAlign: 'center' }}>
-                  Te enviamos un email de confirmación a
-                </p>
-                <p style={{ fontWeight: 600, fontSize: '14px', marginTop: '8px' }}>{registerForm.email}</p>
-                <p className="auth-sub" style={{ textAlign: 'center', marginTop: '16px' }}>
-                  Revisá tu bandeja de entrada (y la carpeta de spam). Al confirmar, accedés directo a Klia.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="auth-shell">
       <div className="auth-split">
@@ -461,49 +428,69 @@ export default function AuthSplit() {
           </div>
 
           <div className="auth-split-form-body">
-            <div>
-              <AuthTabs mode={mode} setMode={setMode} />
-              <h1 className="auth-heading" style={{ marginTop: '18px' }}>
-                {mode === 'login' ? (
-                  <>
-                    Volvé a tu<span style={{ color: 'var(--klia)', fontFamily: 'var(--font-instrument-serif), Georgia, serif', fontStyle: 'italic', fontWeight: 400 }}> consultorio</span>
-                  </>
-                ) : (
-                  <>
-                    Creá tu cuenta<span style={{ color: 'var(--klia)', fontFamily: 'var(--font-instrument-serif), Georgia, serif', fontStyle: 'italic', fontWeight: 400 }}> gratis</span>
-                  </>
-                )}
-              </h1>
-              <p className="auth-sub">
-                {mode === 'login' ? 'Tu agenda, cobros e informes te esperan.' : '21 días gratis. Sin tarjeta. Cancelás cuando quieras.'}
-              </p>
-            </div>
-
-            {mode === 'login' ? (
-              <LoginForm loading={loading} error={error} onSubmit={handleLoginSubmit} form={loginForm} setForm={setLoginForm} onGoogleClick={handleGoogleLogin} />
+            {success ? (
+              <div style={{ textAlign: 'center', padding: '40px 0' }}>
+                <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#D5EFDF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
+                  <svg style={{ color: '#3D9C6B', width: 32, height: 32 }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h2 className="auth-heading">¡Cuenta creada!</h2>
+                <p className="auth-sub" style={{ textAlign: 'center' }}>
+                  Te enviamos un email de confirmación a
+                </p>
+                <p style={{ fontWeight: 600, fontSize: '14px', marginTop: '8px', marginBottom: '16px' }}>{registerForm.email}</p>
+                <p className="auth-sub" style={{ textAlign: 'center' }}>
+                  Revisá tu bandeja de entrada (y la carpeta de spam). Al confirmar, accedés directo a Klia.
+                </p>
+              </div>
             ) : (
-              <RegisterForm loading={loading} error={error} onSubmit={handleRegisterSubmit} form={registerForm} setForm={setRegisterForm} onGoogleClick={handleGoogleRegister} />
+              <>
+                <div>
+                  <AuthTabs mode={mode} setMode={setMode} />
+                  <h1 className="auth-heading" style={{ marginTop: '18px' }}>
+                    {mode === 'login' ? (
+                      <>
+                        Volvé a tu<span style={{ color: 'var(--klia)', fontFamily: 'var(--font-instrument-serif), Georgia, serif', fontStyle: 'italic', fontWeight: 400 }}> consultorio</span>
+                      </>
+                    ) : (
+                      <>
+                        Creá tu cuenta<span style={{ color: 'var(--klia)', fontFamily: 'var(--font-instrument-serif), Georgia, serif', fontStyle: 'italic', fontWeight: 400 }}> gratis</span>
+                      </>
+                    )}
+                  </h1>
+                  <p className="auth-sub">
+                    {mode === 'login' ? 'Tu agenda, cobros e informes te esperan.' : '21 días gratis. Sin tarjeta. Cancelás cuando quieras.'}
+                  </p>
+                </div>
+
+                {mode === 'login' ? (
+                  <LoginForm loading={loading} error={error} onSubmit={handleLoginSubmit} form={loginForm} setForm={setLoginForm} onGoogleClick={handleGoogleLogin} />
+                ) : (
+                  <RegisterForm loading={loading} error={error} onSubmit={handleRegisterSubmit} form={registerForm} setForm={setRegisterForm} onGoogleClick={handleGoogleRegister} />
+                )}
+
+                <div className="auth-footer-text">
+                  {mode === 'login' ? (
+                    <>
+                      ¿Sos nuevo en Klia?{' '}
+                      <a href="#" onClick={(e) => { e.preventDefault(); setMode('register') }}>
+                        Crear cuenta gratis
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      ¿Ya tenés cuenta?{' '}
+                      <a href="#" onClick={(e) => { e.preventDefault(); setMode('login') }}>
+                        Ingresar
+                      </a>
+                    </>
+                  )}
+                </div>
+
+                {mode === 'register' && <TrustStrip />}
+              </>
             )}
-
-            <div className="auth-footer-text">
-              {mode === 'login' ? (
-                <>
-                  ¿Sos nuevo en Klia?{' '}
-                  <a href="#" onClick={(e) => { e.preventDefault(); setMode('register') }}>
-                    Crear cuenta gratis
-                  </a>
-                </>
-              ) : (
-                <>
-                  ¿Ya tenés cuenta?{' '}
-                  <a href="#" onClick={(e) => { e.preventDefault(); setMode('login') }}>
-                    Ingresar
-                  </a>
-                </>
-              )}
-            </div>
-
-            {mode === 'register' && <TrustStrip />}
           </div>
 
           <div className="auth-split-form-foot">
