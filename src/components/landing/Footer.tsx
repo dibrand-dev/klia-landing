@@ -6,7 +6,7 @@ import { Globe, Shield, ArrowRight } from '@/components/ui/Icons'
 const COLS = [
   {
     title: 'Producto',
-    links: ['Facturación ARCA', 'Cobros Mercado Pago', 'Informes con IA', 'Agenda inteligente', 'Historia clínica', 'Reportes contables'],
+    links: ['Atenciones del Día', 'Cobros Mercado Pago', 'Informes con IA', 'Agenda inteligente', 'Historia clínica', 'Reportes contables'],
   },
   {
     title: 'Soluciones',

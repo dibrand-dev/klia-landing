@@ -10,7 +10,7 @@ const ITEMS = [
     bg: '#FFD3CC', ini: 'LM',
   },
   {
-    quote: 'La facturación ARCA siempre fue mi pesadilla. Hoy la hago sin pensar: la sesión termina y la factura ya está enviada.',
+    quote: 'Antes llegaba a cada sesión sin contexto. Ahora Klia me genera el resumen clínico antes de que entre el paciente. Es un cambio enorme.',
     name: 'Lic. Martín Rodríguez', role: 'Kinesiólogo · Córdoba',
     bg: '#D6E0F5', ini: 'MR',
   },

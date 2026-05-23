@@ -6,7 +6,7 @@ import { Plus, Minus, Chat } from '@/components/ui/Icons'
 const ITEMS = [
   {
     q: '¿Necesito conocimientos contables para usar Klia?',
-    a: 'No. Klia se conecta con ARCA y emite los comprobantes según tu condición fiscal.',
+    a: 'No. Klia organiza automáticamente los turnos del día y genera resúmenes clínicos con IA antes de cada sesión, sin que tengas que configurar nada.',
   },
   {
     q: '¿Qué pasa con mi información clínica? ¿Es segura?',

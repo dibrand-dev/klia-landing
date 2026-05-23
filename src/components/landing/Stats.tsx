@@ -1,7 +1,7 @@
 const STATS = [
   { num: '84%',  label: 'de los profesionales pierden cobros por errores en liquidaciones de Obras Sociales.' },
   { num: '79%',  label: 'del tiempo extra se consume redactando informes evolutivos y pericias.' },
-  { num: '63%',  label: 'de los especialistas dedican más de una hora mensual a la facturación manual en ARCA.' },
+  { num: '63%',  label: 'de los especialistas dedican más de una hora mensual a preparar resúmenes clínicos antes de cada sesión.' },
   { num: '8 seg',label: 'promedio para generar un borrador técnico de informe con nuestra IA.' },
 ]
 
