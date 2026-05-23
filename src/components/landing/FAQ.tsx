@@ -5,7 +5,7 @@ import { Plus, Minus, Chat } from '@/components/ui/Icons'
 
 const ITEMS = [
   {
-    q: '¿Necesito conocimientos contables para usar Klia?',
+    q: '¿Tengo que preparar algo antes de cada sesión?',
     a: 'No. Klia organiza automáticamente los turnos del día y genera resúmenes clínicos con IA antes de cada sesión, sin que tengas que configurar nada.',
   },
   {
