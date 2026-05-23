@@ -1,17 +1,17 @@
 'use client'
 
 import { useState } from 'react'
-import { Receipt, Wallet, Brain, Calendar, Check, ArrowRight } from '@/components/ui/Icons'
+import { Wallet, Brain, Calendar, Check, ArrowRight } from '@/components/ui/Icons'
 
 const TABS = [
   {
-    id: 'fact',
-    label: 'Facturación ARCA',
-    Icon: Receipt,
-    title: 'Facturación electrónica, sin abrir ARCA.',
-    body: 'Klia genera y envía tus comprobantes de forma automática al cerrar la sesión. Monotributistas y responsables inscriptos. Reporte mensual descargable para tu contador.',
-    bullets: ['Factura A, B, C automáticas', 'Notas de crédito y débito', 'Reporte para contador', 'Multi-CUIT en clínicas'],
-    accentColor: '#3F519E',
+    id: 'atenciones',
+    label: 'Atenciones del Día',
+    Icon: Brain,
+    title: 'Tu sala de espera inteligente.',
+    body: 'Visualizá todos los turnos del día en orden cronológico y generá un resumen clínico con IA antes de cada sesión. La IA se adapta automáticamente a tu especialidad — psicología, kinesiología, pediatría y más.',
+    bullets: ['Turnos del día ordenados por horario', 'Resumen clínico con IA pre-sesión', 'Adaptación automática por especialidad', 'Vista rápida del historial del paciente'],
+    accentColor: '#5B6CF9',
   },
   {
     id: 'mp',
