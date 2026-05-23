@@ -13,7 +13,7 @@ const PLANES_FALLBACK: PlanData[] = [
     descripcion: 'Para profesionales que recién formalizan su práctica.',
     precio_mensual: 15000,
     es_ilimitado: false,
-    funcionalidades: ['Agenda y turnos', 'Cobros por Mercado Pago', 'Recordatorios por WhatsApp', 'Historia clínica digital'],
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico'],
   },
   {
     id: 'profesional',
@@ -21,7 +21,7 @@ const PLANES_FALLBACK: PlanData[] = [
     descripcion: 'El plan completo para el profesional independiente.',
     precio_mensual: 28000,
     es_ilimitado: false,
-    funcionalidades: ['Todo lo de Esencial', 'Atenciones del Día con IA', 'Informes clínicos con IA', 'Reportes contables', 'Soporte prioritario'],
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'objetivos_terapeuticos', 'facturacion', 'informes'],
   },
   {
     id: 'premium',
@@ -29,7 +29,7 @@ const PLANES_FALLBACK: PlanData[] = [
     descripcion: 'Para clínicas y equipos multi-profesional.',
     precio_mensual: 42000,
     es_ilimitado: true,
-    funcionalidades: ['Todo lo de Profesional', 'Multi-profesional ilimitado', 'Panel de administración', 'Integración con obras sociales', 'Onboarding personalizado'],
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'objetivos_terapeuticos', 'medicacion', 'interconsultas', 'facturacion', 'informes'],
   },
 ]
 
