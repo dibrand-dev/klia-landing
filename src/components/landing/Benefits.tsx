@@ -4,7 +4,7 @@ const BENEFITS = [
   { Icon: Clock,  title: 'Recuperá horas cada semana',
     body: 'Automatizamos la facturación y la redacción de borradores técnicos.' },
   { Icon: Shield, title: 'Cumplimiento sin fricción',
-    body: 'Facturación ARCA integrada y backups encriptados según Ley 25.326.' },
+    body: 'Resúmenes clínicos con IA y backups encriptados según Ley 25.326.' },
   { Icon: Bolt,   title: 'Cobrá en el momento',
     body: 'La sesión se cierra con el pago acreditado en tu cuenta de Mercado Pago.' },
   { Icon: Brain,  title: 'IA entrenada para salud',

@@ -124,7 +124,7 @@ const TrustStrip = () => (
       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M20 6L9 17l-5-5" />
       </svg>
-      ARCA · facturación
+      IA · Atenciones del Día
     </span>
     <span className="trust-pill">
       <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -525,8 +525,8 @@ export default function AuthSplit() {
                   </svg>
                 </div>
                 <div>
-                  <strong>Factura C emitida</strong>
-                  <span>ARCA · 8 segundos</span>
+                  <strong>Resumen clínico generado</strong>
+                  <span>IA · 8 segundos</span>
                 </div>
               </div>
 
