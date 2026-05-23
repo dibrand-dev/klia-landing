@@ -5,7 +5,7 @@ import { ArrowRight, Play, Star, Brain, Check, Sparkle } from '@/components/ui/I
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
 
 const MARQUEE_ITEMS = [
-  'ARCA · Facturación electrónica',
+  'Atenciones del Día · IA integrada',
   'Mercado Pago · Cobros instantáneos',
   'IA · Informes en segundos',
   'Agenda inteligente',
@@ -48,7 +48,7 @@ export default function Hero() {
             </h1>
 
             <p className="lead mb-9">
-              Agenda sincronizada, facturación ARCA, cobros por Mercado Pago e informes con IA.
+              Agenda sincronizada, atenciones del día con IA, cobros por Mercado Pago e informes automáticos.
               Todo desde tu teléfono.
             </p>
 
