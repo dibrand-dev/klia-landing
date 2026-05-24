@@ -21,7 +21,7 @@ const PLANES_FALLBACK: PlanData[] = [
     descripcion: 'El plan completo para el profesional independiente.',
     precio_mensual: 28000,
     es_ilimitado: false,
-    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'objetivos_terapeuticos', 'facturacion', 'informes'],
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'cobros', 'facturacion', 'estadisticas', 'atenciones_ia', 'informes_ia'],
   },
   {
     id: 'premium',
@@ -29,7 +29,7 @@ const PLANES_FALLBACK: PlanData[] = [
     descripcion: 'Para clínicas y equipos multi-profesional.',
     precio_mensual: 42000,
     es_ilimitado: true,
-    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'objetivos_terapeuticos', 'medicacion', 'interconsultas', 'facturacion', 'informes'],
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'google_calendar', 'multi_moneda', 'firmas', 'cobros', 'facturacion', 'liquidacion_os', 'planillas_pdf', 'atenciones_ia', 'informes_ia', 'estadisticas', 'soporte_prioritario'],
   },
 ]
 
