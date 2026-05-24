@@ -167,7 +167,7 @@ const LoginForm = ({ loading, error, onSubmit, form, setForm, onGoogleClick }: L
         <label className="field-label" htmlFor="password" style={{ marginBottom: 0 }}>
           Contraseña
         </label>
-        <a href="#recuperar" style={{ cursor: 'pointer' }}>
+        <a href="https://app.klia.com.ar/recuperar" style={{ cursor: 'pointer' }}>
           ¿Olvidaste tu contraseña?
         </a>
       </div>
