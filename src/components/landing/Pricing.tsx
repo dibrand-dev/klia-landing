@@ -103,17 +103,12 @@ function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
       <div className="plan-includes">{includesLine}</div>
 
       <ul className="plan-features">
-        {SYSTEM_FEATURES.map((feat) => {
-          const has = planFeatureSet.has(feat.key)
-          return (
-            <li key={feat.key} className={`plan-feature ${!has ? 'plan-feature-na' : ''}`}>
-              <span className={`plan-feature-ico ${!has ? 'plan-feature-ico-na' : ''}`}>
-                {has ? <Check /> : <Dash />}
-              </span>
-              <span>{feat.label}</span>
-            </li>
-          )
-        })}
+        {SYSTEM_FEATURES.filter((feat) => planFeatureSet.has(feat.key)).map((feat) => (
+          <li key={feat.key} className="plan-feature">
+            <span className="plan-feature-ico"><Check /></span>
+            <span>{feat.label}</span>
+          </li>
+        ))}
       </ul>
 
       <div className="plan-foot">{visuals.foot}</div>
