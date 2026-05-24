@@ -1,4 +1,27 @@
-import { SYSTEM_FEATURES, CATEGORIAS } from '@/lib/features'
+import { SYSTEM_FEATURES } from '@/lib/features'
+
+const COMPARATIVA = [
+  // GESTIÓN BÁSICA
+  { categoria: 'Gestión básica', feature: 'Agenda y calendario',             esencial: true,  profesional: true,  premium: true },
+  { categoria: 'Gestión básica', feature: 'Turnos y citas',                  esencial: true,  profesional: true,  premium: true },
+  { categoria: 'Gestión básica', feature: 'Gestión de pacientes',            esencial: true,  profesional: true,  premium: true },
+  { categoria: 'Gestión básica', feature: 'Historial clínico',               esencial: true,  profesional: true,  premium: true },
+  { categoria: 'Gestión básica', feature: 'Entrevistas de evaluación',       esencial: true,  profesional: true,  premium: true },
+  { categoria: 'Gestión básica', feature: 'Firmas digitales',                esencial: true,  profesional: true,  premium: true },
+  { categoria: 'Gestión básica', feature: 'Multi-moneda ARS / USD / EUR',    esencial: true,  profesional: true,  premium: true },
+  { categoria: 'Gestión básica', feature: 'Sincronización Google Calendar',  esencial: true,  profesional: true,  premium: true },
+  // FACTURACIÓN Y COBROS
+  { categoria: 'Facturación y cobros', feature: 'Gestión de cobros',               esencial: false, profesional: true,  premium: true },
+  { categoria: 'Facturación y cobros', feature: 'Facturación',                     esencial: false, profesional: true,  premium: true },
+  { categoria: 'Facturación y cobros', feature: 'Liquidación de obras sociales',   esencial: false, profesional: true,  premium: true },
+  { categoria: 'Facturación y cobros', feature: 'Planillas PDF por obra social',   esencial: false, profesional: true,  premium: true },
+  // INTELIGENCIA ARTIFICIAL
+  { categoria: 'Inteligencia Artificial', feature: 'Atenciones del Día con IA ✨', esencial: false, profesional: true,  premium: true },
+  { categoria: 'Inteligencia Artificial', feature: 'Informes clínicos con IA ✨',  esencial: false, profesional: false, premium: true },
+  { categoria: 'Inteligencia Artificial', feature: 'Estadísticas del consultorio', esencial: false, profesional: false, premium: true },
+  // SOPORTE
+  { categoria: 'Soporte', feature: 'Soporte prioritario', esencial: false, profesional: false, premium: true },
+] as const
 
 export type PlanData = {
   id: string
@@ -34,13 +57,6 @@ const TableCheck = () => (
   </span>
 )
 
-const TableDash = () => (
-  <span className="compare-no">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-      <line x1="5" y1="12" x2="19" y2="12" />
-    </svg>
-  </span>
-)
 
 type PlanVisuals = {
   tag: string
@@ -182,29 +198,21 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {CATEGORIAS.map((cat) => {
-                    const featuresInCat = SYSTEM_FEATURES.filter((f) => f.categoria === cat)
-                    if (featuresInCat.length === 0) return null
+                  {(['Gestión básica', 'Facturación y cobros', 'Inteligencia Artificial', 'Soporte'] as const).map((cat) => {
+                    const rows = COMPARATIVA.filter((r) => r.categoria === cat)
                     return (
                       <>
                         <tr key={`section-${cat}`} className="compare-section">
                           <td colSpan={sorted.length + 1}>{cat}</td>
                         </tr>
-                        {featuresInCat.map((feat) => (
-                          <tr key={feat.key}>
-                            <td className="feature">
-                              {feat.label}
-                              <span>{feat.description}</span>
-                            </td>
+                        {rows.map((row) => (
+                          <tr key={row.feature}>
+                            <td className="feature">{row.feature}</td>
                             {sorted.map((p, i) => {
-                              const has = p.funcionalidades.includes(feat.key)
+                              const has = (row as Record<string, unknown>)[p.id] === true
                               return (
-                                <td
-                                  key={p.id}
-                                  data-label={p.nombre}
-                                  className={i === featuredIndex ? 'is-featured' : ''}
-                                >
-                                  {has ? <TableCheck /> : <TableDash />}
+                                <td key={p.id} data-label={p.nombre} className={i === featuredIndex ? 'is-featured' : ''}>
+                                  {has ? <TableCheck /> : <span style={{ color: 'var(--slate)' }}>—</span>}
                                 </td>
                               )
                             })}
