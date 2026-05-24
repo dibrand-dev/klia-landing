@@ -64,7 +64,7 @@ function getVisuals(plan: PlanData, index: number, totalPlans: number, featuredI
   if (isLast) {
     return { tag: 'Práctica avanzada', ctaStyle: 'primary', ctaLabel: 'Empezar gratis', featured: false, foot: 'Onboarding incluido · soporte prioritario' }
   }
-  return { tag: 'Para empezar', ctaStyle: 'ghost', ctaLabel: 'Probar gratis', featured: false, foot: '14 días de prueba · cancelás cuando quieras' }
+  return { tag: 'Para empezar', ctaStyle: 'ghost', ctaLabel: 'Probar gratis', featured: false, foot: '21 días de prueba · cancelás cuando quieras' }
 }
 
 function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
