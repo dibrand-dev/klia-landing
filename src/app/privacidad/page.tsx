@@ -9,6 +9,7 @@ const PRIVACY_SECTIONS = [
   { id: 'datos', num: '02', title: 'Información que recopilamos' },
   { id: 'google', num: '03', title: 'Uso de datos y Google API' },
   { id: 'seguridad', num: '04', title: 'Seguridad y almacenamiento' },
+  { id: 'subprocesadores', num: '04b', title: 'Subprocesadores y transferencias' },
   { id: 'ia', num: '05', title: 'Procesamiento con IA' },
   { id: 'derechos', num: '06', title: 'Derechos del usuario (Ley 25.326)' },
 ]
@@ -208,6 +209,16 @@ export default function PrivacidadPage() {
                   </div>
                 </div>
 
+                <div className="terms-identity" style={{ marginTop: 24 }}>
+                  <div className="terms-identity-row">
+                    <div className="terms-identity-label">Registro AAIP</div>
+                    <div className="terms-identity-value">EX-2026-51700917--APN-DNPDP#AAIP</div>
+                  </div>
+                </div>
+                <p>
+                  Base de datos inscripta ante la Agencia de Acceso a la Información Pública conforme al artículo 21 de la Ley 25.326.
+                </p>
+
                 <p>
                   Para consultas relacionadas con la privacidad, ejercicio de derechos o cualquier inquietud sobre el tratamiento de datos, escribinos al correo arriba indicado. Respondemos en un plazo máximo de 10 días hábiles.
                 </p>
@@ -294,6 +305,22 @@ export default function PrivacidadPage() {
                 </p>
               </Section>
 
+              <Section id="subprocesadores" num="04b" title="Subprocesadores y transferencias internacionales">
+                <p>
+                  Klia utiliza los siguientes proveedores externos que procesan datos personales fuera de Argentina, todos con políticas de privacidad y niveles de protección adecuados:
+                </p>
+                <ul>
+                  <li><strong>Supabase Inc.</strong> (Estados Unidos) — almacenamiento de base de datos y archivos. Política: <a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">supabase.com/privacy</a></li>
+                  <li><strong>Vercel Inc.</strong> (Estados Unidos) — infraestructura de hosting y CDN. Política: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">vercel.com/legal/privacy-policy</a></li>
+                  <li><strong>Brevo SAS</strong> (Francia / Unión Europea) — envío de emails transaccionales. Política: <a href="https://www.brevo.com/legal/privacypolicy" target="_blank" rel="noopener noreferrer">brevo.com/legal/privacypolicy</a></li>
+                  <li><strong>Google LLC</strong> (Estados Unidos) — autenticación OAuth y sincronización de calendario. Política: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></li>
+                  <li><strong>Mercado Pago S.A.</strong> (Argentina / Brasil) — procesamiento de pagos. Política: <a href="https://www.mercadopago.com.ar/privacidad" target="_blank" rel="noopener noreferrer">mercadopago.com.ar/privacidad</a></li>
+                </ul>
+                <p>
+                  Estas transferencias se realizan conforme al artículo 12 de la Ley 25.326, hacia países u organismos con niveles de protección adecuados.
+                </p>
+              </Section>
+
               <Section id="ia" num="05" title="Procesamiento con Inteligencia Artificial">
                 <p>
                   Para los suscriptores del <strong>Plan Premium</strong>, las notas clínicas pueden ser procesadas por las APIs de <strong>Anthropic</strong> (Claude) o <strong>Google Gemini</strong> con la única finalidad de generar borradores de informes profesionales.
@@ -335,6 +362,20 @@ export default function PrivacidadPage() {
                 <p>
                   Para ejercer cualquiera de estos derechos, enviá un correo a <a href="mailto:legal@klia.com.ar">legal@klia.com.ar</a> desde la dirección registrada en tu cuenta. Respondemos en un plazo máximo de 10 días hábiles, conforme a lo previsto por la normativa.
                 </p>
+                <h3>Plazos de conservación de datos</h3>
+                <p>
+                  Conforme al artículo 4° inciso 7 de la Ley 25.326, los datos se conservan por los siguientes plazos:
+                </p>
+                <ul>
+                  <li><strong>Datos clínicos de pacientes</strong> (historias, notas de evolución): 5 años desde la cancelación de la cuenta del profesional.</li>
+                  <li><strong>Datos de cuenta del profesional</strong> (perfil, configuración): 2 años desde la cancelación.</li>
+                  <li><strong>Datos de pagos y facturación</strong>: 5 años desde la transacción (obligación impositiva AFIP).</li>
+                  <li><strong>Backups</strong>: eliminación completa a los 90 días posteriores al vencimiento del período de retención correspondiente.</li>
+                </ul>
+                <p>
+                  Al cancelar su cuenta, el profesional recibirá un aviso para exportar sus datos clínicos antes del cierre definitivo. Transcurrido el plazo de retención, los datos serán eliminados de forma permanente e irrecuperable.
+                </p>
+
                 <p>
                   El órgano de control en Argentina es la <strong>Agencia de Acceso a la Información Pública</strong>, ante quien podés presentar un reclamo si considerás que tu solicitud no fue atendida adecuadamente.
                 </p>
