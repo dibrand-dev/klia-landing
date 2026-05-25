@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Wallet, Brain, Calendar, Check, ArrowRight } from '@/components/ui/Icons'
+import { Wallet, Brain, Calendar, Check } from '@/components/ui/Icons'
 
 const TABS = [
   {
@@ -114,9 +114,6 @@ export default function Products() {
               ))}
             </ul>
 
-            <a href="#" className="inline-flex items-center gap-2 text-klia font-medium border-b border-current pb-0.5 hover:gap-3.5 transition-all">
-              Ver detalle del módulo <ArrowRight size={14} />
-            </a>
           </div>
 
           {/* Phone visual */}

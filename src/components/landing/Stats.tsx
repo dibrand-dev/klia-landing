@@ -13,8 +13,8 @@ export default function Stats() {
           {STATS.map((s, i) => (
             <div
               key={i}
-              className="reveal"
-              style={{ transitionDelay: `${i * 80}ms`, borderLeft: i === 0 ? 'none' : '1px solid var(--line)', paddingLeft: i === 0 ? 0 : 24 }}
+              className={`reveal${i > 0 ? ' lg:border-l lg:border-line lg:pl-6' : ''}`}
+              style={{ transitionDelay: `${i * 80}ms` }}
             >
               <div
                 className="h-display mb-3.5"

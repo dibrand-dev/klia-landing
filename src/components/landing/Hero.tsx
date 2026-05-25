@@ -1,6 +1,6 @@
 'use client'
 
-import { ArrowRight, Play, Star, Brain, Check, Sparkle } from '@/components/ui/Icons'
+import { ArrowRight, Star, Brain, Check, Sparkle } from '@/components/ui/Icons'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
 
@@ -55,9 +55,6 @@ export default function Hero() {
             <div className="flex flex-wrap gap-3 mb-10">
               <a href={`${APP_URL}/registro`} className="btn btn-accent btn-lg">
                 Probar 21 días gratis <ArrowRight size={16} />
-              </a>
-              <a href="#producto" className="btn btn-ghost btn-lg">
-                <Play size={18} /> Ver cómo funciona
               </a>
             </div>
 
