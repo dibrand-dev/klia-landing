@@ -248,7 +248,7 @@ const RegisterForm = ({ loading, error, onSubmit, form, setForm, onGoogleClick }
         <label className="field-label" htmlFor="mat">
           Matrícula (opcional)
         </label>
-        <input id="mat" className="input" type="text" placeholder="MN 12.345" onChange={(e) => setForm({ ...form, matricula: e.target.value })} />
+        <input id="mat" className="input" type="text" placeholder="MN 12.345" autoComplete="off" onChange={(e) => setForm({ ...form, matricula: e.target.value })} />
       </div>
     </div>
 
