@@ -4,7 +4,7 @@ import Footer from '@/components/landing/Footer'
 import { createClient } from '@/lib/supabase/server'
 import './pricing.css'
 
-export const revalidate = 60
+export const revalidate = 0
 
 const PLANES_FALLBACK: PlanData[] = [
   {
@@ -21,7 +21,7 @@ const PLANES_FALLBACK: PlanData[] = [
     descripcion: 'El plan completo para el profesional independiente.',
     precio_mensual: 28000,
     es_ilimitado: false,
-    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'cobros', 'facturacion', 'estadisticas', 'atenciones_ia', 'informes_ia'],
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'cobros', 'facturacion', 'estadisticas', 'atenciones_ia', 'nota_voz', 'informes_ia'],
   },
   {
     id: 'premium',
@@ -29,7 +29,7 @@ const PLANES_FALLBACK: PlanData[] = [
     descripcion: 'Para clínicas y equipos multi-profesional.',
     precio_mensual: 42000,
     es_ilimitado: true,
-    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'google_calendar', 'multi_moneda', 'firmas', 'cobros', 'facturacion', 'liquidacion_os', 'planillas_pdf', 'atenciones_ia', 'informes_ia', 'estadisticas', 'soporte_prioritario'],
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'google_calendar', 'multi_moneda', 'firmas', 'cobros', 'facturacion', 'liquidacion_os', 'planillas_pdf', 'atenciones_ia', 'nota_voz', 'informes_ia', 'estadisticas', 'soporte_prioritario'],
   },
 ]
 
