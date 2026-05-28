@@ -19,6 +19,7 @@ export const SYSTEM_FEATURES: SystemFeature[] = [
   { key: 'liquidacion_os',      label: 'Liquidación de obras sociales',    description: 'Liquidación y seguimiento de obras sociales',         categoria: 'Administración' },
   { key: 'planillas_pdf',       label: 'Planillas PDF por obra social',    description: 'Generación de planillas PDF por obra social',         categoria: 'Administración' },
   { key: 'atenciones_ia',       label: 'Atenciones del Día con IA ✨',     description: 'Resúmenes clínicos con IA antes de cada sesión',      categoria: 'IA' },
+  { key: 'nota_voz',            label: 'Notas de voz con transcripción IA 🎤', description: 'Grabá y transcribí notas clínicas por voz',         categoria: 'IA' },
   { key: 'informes_ia',         label: 'Informes clínicos con IA ✨',      description: 'Generación automática de informes con IA',            categoria: 'IA' },
   { key: 'estadisticas',        label: 'Estadísticas del consultorio',     description: 'Reportes de actividad y rendimiento',                 categoria: 'Administración' },
   { key: 'soporte_prioritario', label: 'Soporte prioritario',              description: 'Atención prioritaria por chat y email',               categoria: 'Core' },

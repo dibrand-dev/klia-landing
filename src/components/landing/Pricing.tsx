@@ -16,8 +16,9 @@ const COMPARATIVA = [
   { categoria: 'Facturación y cobros', feature: 'Liquidación de obras sociales',   esencial: false, profesional: true,  premium: true },
   { categoria: 'Facturación y cobros', feature: 'Planillas PDF por obra social',   esencial: false, profesional: true,  premium: true },
   // INTELIGENCIA ARTIFICIAL
-  { categoria: 'Inteligencia Artificial', feature: 'Atenciones del Día con IA ✨', esencial: false, profesional: true,  premium: true },
-  { categoria: 'Inteligencia Artificial', feature: 'Informes clínicos con IA ✨',  esencial: false, profesional: false, premium: true },
+  { categoria: 'Inteligencia Artificial', feature: 'Atenciones del Día con IA ✨',          esencial: false, profesional: true,  premium: true },
+  { categoria: 'Inteligencia Artificial', feature: 'Notas de voz con transcripción IA 🎤', esencial: false, profesional: true,  premium: true },
+  { categoria: 'Inteligencia Artificial', feature: 'Informes clínicos con IA ✨',           esencial: false, profesional: false, premium: true },
   { categoria: 'Inteligencia Artificial', feature: 'Estadísticas del consultorio', esencial: false, profesional: false, premium: true },
   // SOPORTE
   { categoria: 'Soporte', feature: 'Soporte prioritario', esencial: false, profesional: false, premium: true },
