@@ -36,8 +36,8 @@ const TABS = [
     label: 'Agenda inteligente',
     Icon: Calendar,
     title: 'Una agenda que entiende tu práctica.',
-    body: 'Recordatorios por WhatsApp, lista de espera con auto-confirmación y bloques recurrentes. Menos huecos, más sesiones.',
-    bullets: ['Recordatorios WhatsApp', 'Lista de espera inteligente', 'Sincronización Google Calendar', 'Reagendado en 1 clic'],
+    body: 'Visualizá tu semana de un vistazo, evitá conflictos automáticamente y sincronizá con Google Calendar. Todo en un solo lugar.',
+    bullets: ['Vistas día, semana y mes', 'Sincronización Google Calendar', 'Videollamadas con Meet automático', 'Turnos recurrentes y entrevistas'],
     accentColor: '#3D9C6B',
   },
 ]
