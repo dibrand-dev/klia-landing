@@ -4,7 +4,7 @@ import Footer from '@/components/landing/Footer'
 import { createClient } from '@/lib/supabase/server'
 import './pricing.css'
 
-export const revalidate = 0
+export const revalidate = 3600
 
 const PLANES_FALLBACK: PlanData[] = [
   {
