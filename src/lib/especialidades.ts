@@ -17,6 +17,7 @@ export const ESPECIALIDADES = [
   'Neurología',
   'Neuropsicología',
   'Nutrición',
+  'Odontología',
   'Pediatría',
   'Psicología',
   'Psicopedagogía',
