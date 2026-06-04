@@ -3,7 +3,18 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ESPECIALIDADES } from '@/lib/especialidades'
+import { createClient } from '@/lib/supabase/client'
 import './cro.css'
+
+const APP_URL = 'https://app.klia.com.ar'
+
+async function handleGoogleSignup() {
+  const supabase = createClient()
+  await supabase.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: `${APP_URL}/auth/callback?new=true` },
+  })
+}
 
 /* ---- SVG Icon primitives ---- */
 const Icon = ({ children, size = 22, stroke = 1.6, className = '' }: { children: React.ReactNode; size?: number; stroke?: number; className?: string }) => (
@@ -222,7 +233,8 @@ function RegistroForm() {
           nombre: form.nombre,
           apellido: '',
           email: form.email,
-          especialidad: form.especialidad,
+          especialidad: form.especialidad || null,
+          matricula: null,
           password: Math.random().toString(36).slice(-10) + 'Kl1a!',
         }),
       })
@@ -329,10 +341,10 @@ function CroHero() {
           </p>
 
           <div className="cro-cta-zone cro-reveal">
-            <a href="https://app.klia.com.ar/api/auth/google" className="cro-google-btn">
+            <button type="button" onClick={handleGoogleSignup} className="cro-google-btn">
               <GoogleG />
               <span>Registrate gratis con Google <span className="g-tap">(En 1 tap)</span></span>
-            </a>
+            </button>
 
             <div className="cro-divider">
               <span className="cro-divider-line" />
@@ -638,10 +650,10 @@ function CroFinalCTA() {
         <h2 className="cro-reveal">Empezá hoy. Tu primera liquidación automática está a 2 minutos.</h2>
         <p className="cro-reveal">Sumate a los profesionales de la salud que ya gestionan su consultorio sin planillas ni papeles.</p>
         <div className="cro-reveal" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-          <a href="https://app.klia.com.ar/api/auth/google" className="cro-google-btn">
+          <button type="button" onClick={handleGoogleSignup} className="cro-google-btn">
             <GoogleG />
             <span>Registrate gratis con Google <span className="g-tap">(En 1 tap)</span></span>
-          </a>
+          </button>
           <p className="cro-trust">
             ⚡ <span><b>21 días</b> de prueba Plan Premium gratis. Sin tarjeta. Cancelás cuando querés.</span>
           </p>
