@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Nav from '@/components/landing/Nav'
 import Pricing, { type PlanData } from '@/components/landing/Pricing'
 import Footer from '@/components/landing/Footer'
@@ -5,6 +6,11 @@ import { createClient } from '@/lib/supabase/server'
 import './pricing.css'
 
 export const revalidate = 3600
+
+export const metadata: Metadata = {
+  title: 'Precios — KLIA | Planes para profesionales de salud en Argentina',
+  description: 'Planes desde $15.000/mes. Esencial, Profesional y Premium para psicólogos, médicos y kinesiólogos. 21 días gratis, sin tarjeta de crédito.',
+}
 
 const PLANES_FALLBACK: PlanData[] = [
   {
