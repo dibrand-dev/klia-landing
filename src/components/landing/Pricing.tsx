@@ -210,7 +210,11 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
                           <tr key={row.feature}>
                             <td className="feature">{row.feature}</td>
                             {sorted.map((p, i) => {
-                              const has = (row as Record<string, unknown>)[p.id] === true
+                              const planKey = p.nombre.toLowerCase()
+                                .normalize('NFD')
+                                .replace(/[̀-ͯ]/g, '')
+                                .replace(/\s+/g, '_')
+                              const has = (row as Record<string, unknown>)[planKey] === true
                               return (
                                 <td key={p.id} data-label={p.nombre} className={i === featuredIndex ? 'is-featured' : ''}>
                                   {has ? <TableCheck /> : <span style={{ color: 'var(--slate)' }}>—</span>}
