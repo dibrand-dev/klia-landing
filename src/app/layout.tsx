@@ -36,8 +36,14 @@ export const metadata: Metadata = {
   title: 'Klia — Menos papeleo, más atención',
   description: 'La plataforma de gestión clínica y administrativa para profesionales y clínicas de salud en Argentina. Agenda, atenciones del día con IA, cobros por Mercado Pago e informes automáticos.',
   icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    shortcut: '/favicon.ico',
   },
   openGraph: {
     title: 'Klia — Menos papeleo, más atención',
