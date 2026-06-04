@@ -299,7 +299,7 @@ function CroNav() {
     <header className={`cro-nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="container cro-nav-inner">
         <div className="cro-nav-logo" aria-label="KLIA">
-          <Image src="/klia-logo.png" alt="KLIA" width={120} height={40} style={{ height: 34, width: 'auto' }} priority />
+          <Image src="/klia-logo.png" alt="KLIA" width={235} height={80} style={{ height: 40, width: 'auto' }} priority />
         </div>
         <div className="cro-nav-right">
           <a href="https://app.klia.com.ar/login" className="cro-login">Iniciar sesión</a>

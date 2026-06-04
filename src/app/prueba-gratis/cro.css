@@ -45,7 +45,7 @@
   height: 64px;
 }
 .cro-nav-logo { display: flex; align-items: center; }
-.cro-nav-logo img { height: 34px !important; width: auto !important; display: block; }
+.cro-nav-logo img { height: 40px !important; width: auto !important; display: block; }
 .cro-nav-right { display: flex; align-items: center; gap: 14px; }
 .cro-login {
   font-size: 14px; font-weight: 500; color: var(--slate);
@@ -54,7 +54,7 @@
 .cro-login:hover { color: var(--ink); }
 @media (max-width: 600px) {
   .cro-nav-inner { height: 56px; }
-  .cro-nav-logo img { height: 28px !important; }
+  .cro-nav-logo img { height: 34px !important; }
 }
 
 /* ---------- HERO ---------- */
