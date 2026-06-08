@@ -171,8 +171,44 @@
 
 /* ---- Inline Form ---- */
 .cro-form-wrap {
-  width: 100%; max-width: 420px; margin: 0 auto;
+  width: 100%; max-width: 480px; margin: 0 auto;
   text-align: left;
+}
+.cro-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.cro-form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-2);
+  margin-bottom: 5px;
+}
+.cro-form-optional { font-weight: 400; color: var(--slate-2); }
+.cro-form-pass-wrap { position: relative; }
+.cro-form-pass-wrap input { padding-right: 42px; }
+.cro-form-pass-toggle {
+  position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+  background: none; border: none; padding: 4px; cursor: pointer;
+  color: var(--slate); display: flex; align-items: center; line-height: 1;
+}
+.cro-form-pass-toggle:hover { color: var(--ink-2); }
+.cro-form-hint { font-size: 12px; color: var(--slate-2); margin-top: 5px; }
+.cro-form-check {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 13px; color: var(--slate); line-height: 1.5;
+  margin-bottom: 12px; cursor: pointer;
+}
+.cro-form-check input[type="checkbox"] {
+  width: 16px; height: 16px; margin-top: 2px; flex-shrink: 0;
+  accent-color: var(--klia); cursor: pointer;
+}
+.cro-form-check a { color: var(--klia); text-decoration: none; }
+.cro-form-check a:hover { text-decoration: underline; }
+@media (max-width: 520px) {
+  .cro-form-row { grid-template-columns: 1fr; }
 }
 .cro-form-field {
   margin-bottom: 10px;

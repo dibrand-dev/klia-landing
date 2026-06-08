@@ -213,14 +213,27 @@ const LocalizationMock = () => (
 
 /* ---- Registration form ---- */
 function RegistroForm() {
-  const [form, setForm] = useState({ nombre: '', email: '', especialidad: '' })
+  const [form, setForm] = useState({ nombre: '', apellido: '', email: '', especialidad: '', matricula: '', password: '' })
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState(false)
+  const [showPass, setShowPass] = useState(false)
+  const [terms, setTerms] = useState(false)
+
+  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) =>
+    setForm(f => ({ ...f, [k]: e.target.value }))
 
   const handleSubmit = async () => {
-    if (!form.nombre || !form.email || !form.especialidad) {
-      setError('Completá todos los campos')
+    if (!form.nombre || !form.apellido || !form.email || !form.especialidad || !form.password) {
+      setError('Completá todos los campos requeridos')
+      return
+    }
+    if (form.password.length < 8) {
+      setError('La contraseña debe tener al menos 8 caracteres')
+      return
+    }
+    if (!terms) {
+      setError('Aceptá los términos para continuar')
       return
     }
     setLoading(true)
@@ -231,11 +244,11 @@ function RegistroForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           nombre: form.nombre,
-          apellido: null,
+          apellido: form.apellido,
           email: form.email,
-          especialidad: form.especialidad || null,
-          matricula: null,
-          password: Math.random().toString(36).slice(-10) + 'Kl1a!',
+          especialidad: form.especialidad,
+          matricula: form.matricula || null,
+          password: form.password,
         }),
       })
       const data = await res.json()
@@ -263,33 +276,56 @@ function RegistroForm() {
 
   return (
     <div className="cro-form-wrap">
-      <div className="cro-form-field">
-        <input
-          type="text"
-          placeholder="Tu nombre"
-          value={form.nombre}
-          onChange={(e) => setForm(f => ({ ...f, nombre: e.target.value }))}
-          autoComplete="given-name"
-        />
+      <div className="cro-form-row">
+        <div className="cro-form-field">
+          <label className="cro-form-label">Nombre</label>
+          <input type="text" placeholder="Lucía" value={form.nombre} onChange={set('nombre')} autoComplete="given-name" />
+        </div>
+        <div className="cro-form-field">
+          <label className="cro-form-label">Apellido</label>
+          <input type="text" placeholder="Méndez" value={form.apellido} onChange={set('apellido')} autoComplete="family-name" />
+        </div>
       </div>
       <div className="cro-form-field">
-        <input
-          type="email"
-          placeholder="tu@email.com"
-          value={form.email}
-          onChange={(e) => setForm(f => ({ ...f, email: e.target.value }))}
-          autoComplete="email"
-        />
+        <label className="cro-form-label">Email profesional</label>
+        <input type="email" placeholder="lucia@consultorio.com.ar" value={form.email} onChange={set('email')} autoComplete="email" />
+      </div>
+      <div className="cro-form-row">
+        <div className="cro-form-field">
+          <label className="cro-form-label">Profesión</label>
+          <select value={form.especialidad} onChange={set('especialidad')}>
+            <option value="">Seleccioná</option>
+            {ESPECIALIDADES.map((e) => <option key={e} value={e}>{e}</option>)}
+          </select>
+        </div>
+        <div className="cro-form-field">
+          <label className="cro-form-label">Matrícula <span className="cro-form-optional">(opcional)</span></label>
+          <input type="text" placeholder="MN 12.345" value={form.matricula} onChange={set('matricula')} autoComplete="off" />
+        </div>
       </div>
       <div className="cro-form-field">
-        <select
-          value={form.especialidad}
-          onChange={(e) => setForm(f => ({ ...f, especialidad: e.target.value }))}
-        >
-          <option value="">Tu especialidad</option>
-          {ESPECIALIDADES.map((e) => <option key={e} value={e}>{e}</option>)}
-        </select>
+        <label className="cro-form-label">Contraseña</label>
+        <div className="cro-form-pass-wrap">
+          <input
+            type={showPass ? 'text' : 'password'}
+            placeholder="Mínimo 8 caracteres"
+            value={form.password}
+            onChange={set('password')}
+            autoComplete="new-password"
+          />
+          <button type="button" className="cro-form-pass-toggle" onClick={() => setShowPass(v => !v)} aria-label="Mostrar contraseña">
+            {showPass
+              ? <Icon size={15}><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></Icon>
+              : <Icon size={15}><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></Icon>
+            }
+          </button>
+        </div>
+        <div className="cro-form-hint">Usá al menos 8 caracteres, una mayúscula y un número.</div>
       </div>
+      <label className="cro-form-check">
+        <input type="checkbox" checked={terms} onChange={e => setTerms(e.target.checked)} />
+        <span>Acepto los <a href="https://www.klia.com.ar/terminos" target="_blank" rel="noopener noreferrer">Términos</a> y la <a href="https://www.klia.com.ar/privacidad" target="_blank" rel="noopener noreferrer">Política de privacidad</a>. Klia cumple con la Ley 25.326.</span>
+      </label>
       <button className="cro-form-submit" onClick={handleSubmit} disabled={loading}>
         {loading ? 'Creando tu cuenta…' : 'Crear cuenta gratis — 21 días Premium'}
       </button>
