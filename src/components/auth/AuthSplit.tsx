@@ -109,7 +109,7 @@ const OAuthRow = ({ onGoogleClick }: { onGoogleClick: () => void }) => (
       </svg>
       Google
     </button>
-    <button type="button" className="oauth-btn">
+    <button type="button" className="oauth-btn" style={{ display: 'none' }}>
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
       </svg>
@@ -282,6 +282,113 @@ const RegisterForm = ({ loading, error, onSubmit, form, setForm, onGoogleClick }
     </div>
     <OAuthRow onGoogleClick={onGoogleClick} />
   </form>
+)
+
+// ---- Phone mockup for right panel ----
+const PhSvg = ({ children, size = 16 }: { children: React.ReactNode; size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">{children}</svg>
+)
+
+const PhoneTabBar = ({ active }: { active: string }) => (
+  <div className="ph-tabbar">
+    <div className={`ph-tab ${active === 'home' ? 'on' : ''}`}>
+      <PhSvg size={16}><path d="M3 19h18"/><path d="M5 15l4-5 4 3 6-8"/><path d="M14 5h5v5"/></PhSvg>
+    </div>
+    <div className={`ph-tab ${active === 'cal' ? 'on' : ''}`}>
+      <PhSvg size={16}><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></PhSvg>
+    </div>
+    <div className={`ph-tab ph-tab-fab ${active === 'ai' ? 'on' : ''}`}>
+      <PhSvg size={18}><path d="M12 4l1.6 4.4L18 10l-4.4 1.6L12 16l-1.6-4.4L6 10l4.4-1.6z"/></PhSvg>
+    </div>
+    <div className={`ph-tab ${active === 'pay' ? 'on' : ''}`}>
+      <PhSvg size={16}><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18"/><circle cx="16.5" cy="14" r="1.2" fill="currentColor" stroke="none"/></PhSvg>
+    </div>
+    <div className={`ph-tab ${active === 'users' ? 'on' : ''}`}>
+      <PhSvg size={16}><circle cx="9" cy="8" r="3"/><path d="M3 19c.5-3 3-5 6-5s5.5 2 6 5"/></PhSvg>
+    </div>
+  </div>
+)
+
+const PhoneHome = () => (
+  <div className="ph-screen ph-home">
+    <div className="ph-status">
+      <span>9:41</span>
+      <span className="ph-status-icons">
+        <svg width="12" height="8" viewBox="0 0 14 9" fill="currentColor"><rect x="0" y="6" width="2" height="3" rx=".4"/><rect x="3" y="4" width="2" height="5" rx=".4"/><rect x="6" y="2" width="2" height="7" rx=".4"/><rect x="9" y="0" width="2" height="9" rx=".4"/></svg>
+        <svg width="18" height="9" viewBox="0 0 22 10" fill="none" stroke="currentColor" strokeWidth=".8"><rect x=".4" y=".4" width="18" height="9.2" rx="2"/><rect x="2" y="2" width="12" height="6" rx="1" fill="currentColor"/></svg>
+      </span>
+    </div>
+    <div className="ph-app-bar">
+      <div>
+        <div className="ph-greeting muted">Buen día, Dra.</div>
+        <div className="ph-name">Lucía Méndez</div>
+      </div>
+      <div className="ph-avatar">LM</div>
+    </div>
+    <div className="ph-pill-row">
+      <div className="ph-pill ph-pill-active">Hoy</div>
+      <div className="ph-pill">Semana</div>
+      <div className="ph-pill">Pacientes</div>
+    </div>
+    <div className="ph-summary">
+      <div className="ph-summary-label">Cobrado este mes</div>
+      <div className="ph-summary-amount">$ 487.200</div>
+      <div className="ph-summary-trend"><span className="trend-up">↑ 12,4%</span> vs. mes pasado</div>
+      <div className="ph-summary-bars">
+        {[40, 65, 50, 80, 70, 92, 60].map((h, i) => (
+          <div key={i} className="ph-bar" style={{ height: `${h}%`, animationDelay: `${i * 0.08}s` }} />
+        ))}
+      </div>
+    </div>
+    <div className="ph-section-title">
+      <span>Próximo turno</span>
+      <span className="ph-section-link">Ver agenda</span>
+    </div>
+    <div className="ph-appt">
+      <div className="ph-appt-time">
+        <div className="ph-appt-hour">10:30</div>
+        <div className="ph-appt-mins">45 min</div>
+      </div>
+      <div className="ph-appt-body">
+        <div className="ph-appt-name">Carolina Vázquez</div>
+        <div className="ph-appt-tags">
+          <span className="ph-tag ph-tag-blue">Sesión 12</span>
+          <span className="ph-tag ph-tag-mint">Pagado</span>
+        </div>
+      </div>
+      <div className="ph-appt-cta">›</div>
+    </div>
+    <div className="ph-quick-row">
+      <div className="ph-quick">
+        <div className="ph-quick-ico" style={{ background: '#FFE9E5', color: '#E55A45' }}>
+          <PhSvg size={13}><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/></PhSvg>
+        </div>
+        <div className="ph-quick-label">Facturar</div>
+      </div>
+      <div className="ph-quick">
+        <div className="ph-quick-ico" style={{ background: '#E8ECF8', color: '#3F519E' }}>
+          <PhSvg size={13}><path d="M9 5a3 3 0 0 0-3 3v1a3 3 0 0 0-2 2.8c0 1.2.7 2.2 1.8 2.7A3 3 0 0 0 9 18a3 3 0 0 0 3-1.5"/><path d="M15 5a3 3 0 0 1 3 3v1a3 3 0 0 1 2 2.8c0 1.2-.7 2.2-1.8 2.7A3 3 0 0 1 15 18a3 3 0 0 1-3-1.5"/><path d="M12 5v13"/></PhSvg>
+        </div>
+        <div className="ph-quick-label">Informe IA</div>
+      </div>
+      <div className="ph-quick">
+        <div className="ph-quick-ico" style={{ background: '#E5F5EC', color: '#3D9C6B' }}>
+          <PhSvg size={13}><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10h18"/><circle cx="16.5" cy="14" r="1.2" fill="currentColor" stroke="none"/></PhSvg>
+        </div>
+        <div className="ph-quick-label">Cobrar</div>
+      </div>
+    </div>
+    <PhoneTabBar active="home" />
+  </div>
+)
+
+const PhoneFrame = ({ children, scale = 1 }: { children: React.ReactNode; scale?: number }) => (
+  <div className="phone" style={{ transform: `scale(${scale})` }}>
+    <div className="phone-bezel">
+      <div className="phone-notch" />
+      <div className="phone-screen">{children}</div>
+    </div>
+  </div>
 )
 
 // Main Split Editorial component
@@ -525,8 +632,8 @@ export default function AuthSplit() {
                   </svg>
                 </div>
                 <div>
-                  <strong>Resumen clínico generado</strong>
-                  <span>IA · 8 segundos</span>
+                  <strong>Factura C emitida</strong>
+                  <span>ARCA · 8 segundos</span>
                 </div>
               </div>
 
@@ -540,6 +647,10 @@ export default function AuthSplit() {
                   <strong>$ 18.500 acreditado</strong>
                   <span>Mercado Pago</span>
                 </div>
+              </div>
+
+              <div className="auth-split-stage-phone">
+                <PhoneFrame scale={0.85}><PhoneHome /></PhoneFrame>
               </div>
             </div>
 
