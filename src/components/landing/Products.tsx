@@ -3,7 +3,17 @@
 import { useState } from 'react'
 import { Wallet, Brain, Calendar, Check } from '@/components/ui/Icons'
 
-const TABS = [
+type Bullet = string | { title: string; desc: string }
+
+const TABS: {
+  id: string
+  label: string
+  Icon: React.ComponentType<{ size?: number; className?: string }>
+  title: string
+  body: string
+  bullets: Bullet[]
+  accentColor: string
+}[] = [
   {
     id: 'atenciones',
     label: 'Atenciones del Día',
@@ -17,9 +27,13 @@ const TABS = [
     id: 'mp',
     label: 'Cobros Mercado Pago',
     Icon: Wallet,
-    title: 'El paciente paga, vos cerrás la sesión.',
-    body: 'QR dinámico, link de pago compartible y débito automático. Acreditación instantánea con la tasa preferencial de Klia.',
-    bullets: ['QR dinámico por sesión', 'Link de pago por WhatsApp', 'Débito recurrente', 'Conciliación automática'],
+    title: 'El paciente paga, Klia hace el resto.',
+    body: 'Compartí tu link de pago único o dejá que abonen en el momento exacto de reservar su turno. Sin planillas manuales, sin mensajes persecutorios y con conciliación inmediata en tu agenda.',
+    bullets: [
+      { title: 'Link de pago por WhatsApp', desc: 'Un enlace único y personalizado para enviarle a tus pacientes particulares en segundos. Simple para ellos, directo para vos.' },
+      { title: 'Pago integrado al reservar', desc: 'Tus pacientes abonan la sesión de forma manual en el mismo momento en que agendan su turno desde la plataforma.' },
+      { title: 'Conciliación automática', desc: "Olvidate de revisar el homebanking. En cuanto impacta el pago, Klia marca la sesión como 'Confirmada y Pagada' automáticamente en tu sistema." },
+    ],
     accentColor: '#00B1EA',
   },
   {
@@ -106,12 +120,22 @@ export default function Products() {
             <p className="lead mb-7">{current.body}</p>
 
             <ul className="grid grid-cols-2 gap-3 mb-8 p-0 list-none">
-              {current.bullets.map((b, i) => (
-                <li key={i} className="flex items-start gap-2.5 text-sm text-ink-2">
-                  <Check size={16} className="flex-shrink-0 mt-0.5" style={{ color: current.accentColor }} />
-                  <span>{b}</span>
-                </li>
-              ))}
+              {current.bullets.map((b, i) =>
+                typeof b === 'string' ? (
+                  <li key={i} className="flex items-start gap-2.5 text-sm text-ink-2">
+                    <Check size={16} className="flex-shrink-0 mt-0.5" style={{ color: current.accentColor }} />
+                    <span>{b}</span>
+                  </li>
+                ) : (
+                  <li key={i} className="flex items-start gap-2.5">
+                    <Check size={16} className="flex-shrink-0 mt-1" style={{ color: current.accentColor }} />
+                    <div>
+                      <div className="text-sm font-medium text-ink-1">{b.title}</div>
+                      <div className="text-xs text-ink-2 mt-0.5 leading-relaxed">{b.desc}</div>
+                    </div>
+                  </li>
+                )
+              )}
             </ul>
 
           </div>
