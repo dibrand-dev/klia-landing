@@ -461,7 +461,7 @@ function CroFeatures() {
       media: <PhoneFrame scale={0.92}><PhonePay /></PhoneFrame>,
       title: 'Liquidación y planillas de asistencia automatizadas',
       body: 'KLIA cuenta con un motor genérico y plantillas preconfiguradas con los formatos oficiales exigidos en Argentina (Plan de Salud del Hospital Italiano, IOMA, Swiss Medical). Exportá en un clic el PDF o Excel mensual cruzando números de autorización con las firmas digitalizadas del profesional y del paciente cargadas en el sistema.',
-      list: ['Plantillas oficiales: Hospital Italiano, IOMA, Swiss Medical', 'Cruce automático de números de autorización', 'Firmas digitalizadas del profesional y del paciente', 'PDF + Excel oficial'],
+      list: ['Plantillas oficiales: Hospital Italiano, IOMA, Swiss Medical', 'Firmas digitalizadas del profesional y del paciente', 'PDF + Excel oficial'],
       tags: ['Motor de planillas', 'Firmas digitalizadas', 'PDF + Excel'],
     },
     {
