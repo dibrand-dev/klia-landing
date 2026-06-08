@@ -231,7 +231,7 @@ function RegistroForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           nombre: form.nombre,
-          apellido: '',
+          apellido: null,
           email: form.email,
           especialidad: form.especialidad || null,
           matricula: null,
