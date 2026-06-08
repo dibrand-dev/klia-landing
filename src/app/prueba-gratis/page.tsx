@@ -371,7 +371,7 @@ function CroHero() {
             Generá las planillas de tus Obras Sociales <span className="hl">en segundos</span> y sin errores de tipeo.
           </h1>
           <p className="cro-hero-sub cro-reveal">
-            KLIA es la plataforma integral para profesionales de la salud mental y rehabilitación en
+            KLIA es la plataforma integral para profesionales de la salud en
             Argentina. Automatizá tu agenda, gestioná historias clínicas y exportá liquidaciones
             listas para presentar.
           </p>
@@ -379,7 +379,7 @@ function CroHero() {
           <div className="cro-cta-zone cro-reveal">
             <button type="button" onClick={handleGoogleSignup} className="cro-google-btn">
               <GoogleG />
-              <span>Registrate gratis con Google <span className="g-tap">(En 1 tap)</span></span>
+              <span>Registrate gratis con Google <span className="g-tap">(En 1 click)</span></span>
             </button>
 
             <div className="cro-divider">
@@ -688,7 +688,7 @@ function CroFinalCTA() {
         <div className="cro-reveal" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <button type="button" onClick={handleGoogleSignup} className="cro-google-btn">
             <GoogleG />
-            <span>Registrate gratis con Google <span className="g-tap">(En 1 tap)</span></span>
+            <span>Registrate gratis con Google <span className="g-tap">(En 1 click)</span></span>
           </button>
           <p className="cro-trust">
             ⚡ <span><b>21 días</b> de prueba Plan Premium gratis. Sin tarjeta. Cancelás cuando querés.</span>

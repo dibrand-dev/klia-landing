@@ -138,7 +138,7 @@
 
 .cro-divider {
   display: flex; align-items: center; gap: 14px;
-  max-width: 420px; margin: 16px auto 4px;
+  max-width: 480px; margin: 28px auto 24px;
 }
 .cro-divider-line { height: 1px; flex: 1; background: var(--line); }
 .cro-divider-text { font-size: 12.5px; font-weight: 500; color: var(--slate-2); white-space: nowrap; }
