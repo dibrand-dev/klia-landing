@@ -485,6 +485,10 @@
 .cro-plan-feats li { display: flex; gap: 10px; align-items: flex-start; font-size: 13.5px; color: var(--ink-2); line-height: 1.45; }
 .cro-plan-feats .chk { flex-shrink: 0; width: 18px; height: 18px; border-radius: 6px; background: var(--klia-50); color: var(--klia); display: flex; align-items: center; justify-content: center; margin-top: 1px; }
 .cro-plan-feats .inc-prev { color: var(--slate); font-weight: 500; }
+.cro-plan-footer {
+  margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--slate-2); text-align: center; line-height: 1.5;
+}
 .cro-price-note {
   text-align: center; margin: 40px auto 0; max-width: 620px;
   background: var(--money-50); border: 1px solid var(--money-100);

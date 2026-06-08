@@ -460,26 +460,26 @@ function CroFeatures() {
       n: '01',
       media: <PhoneFrame scale={0.92}><PhonePay /></PhoneFrame>,
       title: 'Liquidación y planillas de asistencia automatizadas',
-      body: 'KLIA cuenta con un motor genérico y plantillas preconfiguradas con los formatos oficiales exigidos en Argentina (Plan de Salud del Hospital Italiano, IOMA, OMINT, Choferes de Camiones, OSPETELCO). Exportá en un clic el PDF o Excel mensual cruzando números de autorización con las firmas digitales del profesional y del paciente cargadas en el sistema.',
-      list: ['Plantillas oficiales: Hospital Italiano, IOMA, OMINT, OSPETELCO', 'Cruce automático de números de autorización', 'Firmas digitales del profesional y del paciente'],
-      tags: ['PDF + Excel oficial', 'Motor de planillas', 'Firmas digitales'],
+      body: 'KLIA cuenta con un motor genérico y plantillas preconfiguradas con los formatos oficiales exigidos en Argentina (Plan de Salud del Hospital Italiano, IOMA, Swiss Medical). Exportá en un clic el PDF o Excel mensual cruzando números de autorización con las firmas digitalizadas del profesional y del paciente cargadas en el sistema.',
+      list: ['Plantillas oficiales: Hospital Italiano, IOMA, Swiss Medical', 'Cruce automático de números de autorización', 'Firmas digitalizadas del profesional y del paciente', 'PDF + Excel oficial'],
+      tags: ['Motor de planillas', 'Firmas digitalizadas', 'PDF + Excel'],
     },
     {
       n: '02',
       reverse: true,
       media: <PhoneFrame scale={0.92}><PhoneAI /></PhoneFrame>,
       title: 'Historias clínicas con Inteligencia Artificial',
-      body: 'Editor de texto enriquecido (TipTap) potenciado con notas de voz grabadas directamente desde KLIA. El sistema transcribe automáticamente el audio a texto en español usando Orchard AI (Whisper large-v3-turbo). Adjuntá estudios y órdenes médicas que se almacenan de forma segura y privada en tu propia cuenta de Google Drive corporativa, manteniendo el costo de almacenamiento en cero.',
-      list: ['Notas de voz transcriptas en español (Orchard AI · Whisper large-v3-turbo)', 'Editor rich-text con TipTap', 'Estudios y órdenes guardados en tu propio Google Drive, costo cero'],
-      tags: ['TipTap', 'Orchard AI', 'Google Drive propio'],
+      body: 'Editor de texto enriquecido potenciado con notas de voz grabadas directamente desde KLIA. El sistema transcribe automáticamente el audio a texto en español usando inteligencia artificial de transcripción de alta precisión. Adjuntá estudios y órdenes médicas que se almacenan de forma segura y privada.',
+      list: ['Notas de voz transcriptas a texto con IA de alta precisión', 'Editor de texto enriquecido inteligente', 'Estudios y órdenes guardados de forma segura y privada'],
+      tags: ['Transcripción IA', 'Editor enriquecido', 'Almacenamiento seguro'],
     },
     {
       n: '03',
       media: <PhoneFrame scale={0.92}><PhoneHome /></PhoneFrame>,
       title: 'Agenda coordinada y Consultorio Autónomo',
-      body: 'Sincronización bidireccional inteligente con Google Calendar (caché de 6 meses) y recordatorios automáticos de turnos por email 24 hs antes vía Brevo API. Tus pacientes particulares pueden reservar turnos de forma independiente mediante tu URL pública única estilo Calendly (/p/nombre-apellido) con cobro previo integrado a través de Mercado Pago.',
-      list: ['Sincronización bidireccional con Google Calendar (caché 6 meses)', 'Recordatorios por email 24 hs antes vía Brevo API', 'Reservas en tu URL pública /p/nombre-apellido con cobro previo'],
-      tags: ['Google Calendar 2-way', 'Recordatorios Brevo', 'Reservas + Mercado Pago'],
+      body: 'Sincronización bidireccional inteligente con Google Calendar y recordatorios automáticos de turnos por email 24 hs antes de forma automatizada. Tus pacientes particulares pueden reservar turnos de forma independiente mediante tu URL pública única con cobro previo integrado a través de Mercado Pago.',
+      list: ['Sincronización bidireccional con Google Calendar', 'Recordatorios automáticos por email 24 hs antes', 'Reservas en tu URL pública única con cobro previo por Mercado Pago'],
+      tags: ['Google Calendar 2-way', 'Recordatorios automáticos', 'Reservas + Mercado Pago'],
     },
     {
       n: '04',
@@ -536,12 +536,16 @@ function CroPricing() {
       desc: 'Lo necesario para ordenar tu consultorio y dejar el papel atrás.',
       monthly: 15000, annual: 13750,
       cta: 'Empezar gratis', featured: false,
+      footer: '21 días de prueba · cancelás cuando quieras',
       feats: [
-        { t: 'Agenda (día / semana / mes)', prev: false },
+        { t: 'Agenda y calendario', prev: false },
         { t: 'Gestión de pacientes', prev: false },
-        { t: 'Historias clínicas', prev: false },
+        { t: 'Turnos y citas', prev: false },
+        { t: 'Historial clínico', prev: false },
+        { t: 'Entrevistas de evaluación', prev: false },
+        { t: 'Sincronización Google Calendar', prev: false },
+        { t: 'Multi-moneda ARS / USD / EUR', prev: false },
         { t: 'Firmas digitales', prev: false },
-        { t: 'Feriados + sincronización con Google Calendar', prev: false },
       ],
     },
     {
@@ -549,13 +553,15 @@ function CroPricing() {
       desc: 'Para quien factura, cobra y presenta a obras sociales todos los meses.',
       monthly: 28000, annual: 25667,
       cta: 'Probar 21 días gratis', featured: true,
+      footer: '21 días gratis sin tarjeta · cancelás cuando quieras',
       feats: [
         { t: 'Todo lo del Plan Esencial', prev: true },
-        { t: 'Gestión de cobros y deudas', prev: false },
+        { t: 'Gestión de cobros', prev: false },
+        { t: 'Facturación', prev: false },
+        { t: 'Liquidación de obras sociales', prev: false },
         { t: 'Planillas PDF por obra social', prev: false },
-        { t: 'Atenciones del día con IA', prev: false },
-        { t: 'Notas de voz con transcripción automática', prev: false },
-        { t: 'Integración de Mercado Pago', prev: false },
+        { t: 'Atenciones del Día con IA ✨', prev: false },
+        { t: 'Notas de voz con transcripción IA 🎤', prev: false },
       ],
     },
     {
@@ -563,11 +569,11 @@ function CroPricing() {
       desc: 'La práctica completamente automatizada, de la reserva al informe.',
       monthly: 48000, annual: 44000,
       cta: 'Probar 21 días gratis', featured: false,
+      footer: 'Onboarding incluido · soporte prioritario',
       feats: [
         { t: 'Todo lo del Plan Profesional', prev: true },
-        { t: 'Archivos adjuntos en Google Drive', prev: false },
-        { t: 'Link público de reservas (Calendly)', prev: false },
-        { t: 'Informes clínicos avanzados con IA', prev: false },
+        { t: 'Informes clínicos con IA ✨', prev: false },
+        { t: 'Estadísticas del consultorio', prev: false },
         { t: 'Soporte prioritario', prev: false },
       ],
     },
@@ -621,6 +627,7 @@ function CroPricing() {
                   </li>
                 ))}
               </ul>
+              {p.footer && <div className="cro-plan-footer">{p.footer}</div>}
             </div>
           ))}
         </div>
@@ -636,7 +643,7 @@ function CroPricing() {
 const FAQ_ITEMS = [
   {
     q: '¿Cómo funciona el motor de planillas para Obras Sociales?',
-    a: <>KLIA procesa los turnos marcados como <strong>«Atendidos»</strong> durante el mes. El sistema toma los datos de cobertura del paciente, el número de afiliado, el código de práctica y el número de autorización médica. Luego genera automáticamente el archivo Excel o PDF con el formato exacto requerido por obras sociales como el <strong>Hospital Italiano</strong> o <strong>IOMA</strong>, incluyendo la firma del profesional y la firma digital interactiva del paciente o tutor para evitar rechazos administrativos.</>,
+    a: <>KLIA procesa los turnos marcados como <strong>«Atendidos»</strong> durante el mes. El sistema toma los datos de cobertura del paciente, el número de afiliado, el código de práctica y el número de autorización médica. Luego genera automáticamente el archivo Excel o PDF con el formato exacto requerido por obras sociales como el <strong>Hospital Italiano</strong> o <strong>IOMA</strong>, incluyendo la firma del profesional y la firma digitalizada interactiva del paciente o tutor para evitar rechazos administrativos.</>,
   },
   {
     q: '¿Mis datos clínicos están protegidos por ley en Argentina?',
