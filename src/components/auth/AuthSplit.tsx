@@ -393,11 +393,11 @@ const PhoneFrame = ({ children, scale = 1 }: { children: React.ReactNode; scale?
 )
 
 // Main Split Editorial component
-function AuthSplitInner() {
+function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 'register' }) {
   const searchParams = useSearchParams()
   const urlError = searchParams.get('error')
 
-  const [mode, setMode] = useState<'login' | 'register'>('login')
+  const [mode, setMode] = useState<'login' | 'register'>(defaultMode)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
@@ -689,10 +689,10 @@ function AuthSplitInner() {
   )
 }
 
-export default function AuthSplit() {
+export default function AuthSplit({ defaultMode }: { defaultMode?: 'login' | 'register' }) {
   return (
     <Suspense fallback={null}>
-      <AuthSplitInner />
+      <AuthSplitInner defaultMode={defaultMode} />
     </Suspense>
   )
 }

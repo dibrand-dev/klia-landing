@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 }
 
 export default function RegistroPage() {
-  return <AuthSplit />
+  return <AuthSplit defaultMode="register" />
 }
