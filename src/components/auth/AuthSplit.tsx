@@ -1,9 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import Image from 'next/image'
 import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { ESPECIALIDADES } from '@/lib/especialidades'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
@@ -392,7 +393,10 @@ const PhoneFrame = ({ children, scale = 1 }: { children: React.ReactNode; scale?
 )
 
 // Main Split Editorial component
-export default function AuthSplit() {
+function AuthSplitInner() {
+  const searchParams = useSearchParams()
+  const urlError = searchParams.get('error')
+
   const [mode, setMode] = useState<'login' | 'register'>('login')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -535,6 +539,16 @@ export default function AuthSplit() {
           </div>
 
           <div className="auth-split-form-body">
+            {urlError === 'auth_callback_error' && (
+              <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', color: '#92400E', padding: '14px 16px', borderRadius: '12px', fontSize: '14px', lineHeight: '1.5', marginBottom: '8px' }}>
+                <strong style={{ display: 'block', marginBottom: '4px' }}>El link de confirmación expiró o ya fue usado.</strong>
+                Intentá iniciar sesión con tu email y contraseña. Si no recordás la contraseña,{' '}
+                <a href="https://app.klia.com.ar/recuperar" style={{ color: '#92400E', textDecoration: 'underline' }}>
+                  recuperala acá
+                </a>
+                .
+              </div>
+            )}
             {success ? (
               <div style={{ textAlign: 'center', padding: '40px 0' }}>
                 <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#D5EFDF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
@@ -672,5 +686,13 @@ export default function AuthSplit() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function AuthSplit() {
+  return (
+    <Suspense fallback={null}>
+      <AuthSplitInner />
+    </Suspense>
   )
 }
