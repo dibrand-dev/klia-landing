@@ -545,7 +545,7 @@ function CroPricing() {
         { t: 'Entrevistas de evaluación', prev: false },
         { t: 'Sincronización Google Calendar', prev: false },
         { t: 'Multi-moneda ARS / USD / EUR', prev: false },
-        { t: 'Firmas digitales', prev: false },
+        { t: 'Firmas escaneadas', prev: false },
       ],
     },
     {
@@ -643,7 +643,7 @@ function CroPricing() {
 const FAQ_ITEMS = [
   {
     q: '¿Cómo funciona el motor de planillas para Obras Sociales?',
-    a: <>KLIA procesa los turnos marcados como <strong>«Atendidos»</strong> durante el mes. El sistema toma los datos de cobertura del paciente, el número de afiliado, el código de práctica y el número de autorización médica. Luego genera automáticamente el archivo Excel o PDF con el formato exacto requerido por obras sociales como el <strong>Hospital Italiano</strong> o <strong>IOMA</strong>, incluyendo la firma del profesional y la firma digitalizada interactiva del paciente o tutor para evitar rechazos administrativos.</>,
+    a: <>KLIA procesa los turnos marcados como <strong>«Atendidos»</strong> durante el mes. El sistema toma los datos de cobertura del paciente, el número de afiliado, el código de práctica y el número de autorización médica. Luego genera automáticamente el archivo Excel o PDF con el formato exacto requerido por obras sociales como el <strong>Hospital Italiano</strong> o <strong>IOMA</strong>, incluyendo la firma del profesional y la imagen de firma escaneada del paciente o tutor para evitar rechazos administrativos.</>,
   },
   {
     q: '¿Mis datos clínicos están protegidos por ley en Argentina?',
