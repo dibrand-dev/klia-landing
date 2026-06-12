@@ -77,6 +77,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img height="1" width="1" style={{ display: 'none' }} src="https://www.facebook.com/tr?id=1330774269119331&ev=PageView&noscript=1" alt="" />
         </noscript>
+        {/* Zoho SalesIQ */}
+        <script dangerouslySetInnerHTML={{ __html: `window.$zoho=window.$zoho||{};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}` }} />
+        <script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq195479a499f719dd02043e3c9eb1e5e6" defer />
       </head>
       <body>
         {/* Google Tag Manager (noscript) */}
