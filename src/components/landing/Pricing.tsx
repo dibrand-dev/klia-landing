@@ -7,7 +7,7 @@ const COMPARATIVA = [
   { categoria: 'Gestión básica', feature: 'Gestión de pacientes',            esencial: true,  profesional: true,  premium: true },
   { categoria: 'Gestión básica', feature: 'Historial clínico',               esencial: true,  profesional: true,  premium: true },
   { categoria: 'Gestión básica', feature: 'Entrevistas de evaluación',       esencial: true,  profesional: true,  premium: true },
-  { categoria: 'Gestión básica', feature: 'Firmas digitales',                esencial: true,  profesional: true,  premium: true },
+  { categoria: 'Gestión básica', feature: 'Firmas escaneadas',               esencial: true,  profesional: true,  premium: true },
   { categoria: 'Gestión básica', feature: 'Multi-moneda ARS / USD / EUR',    esencial: true,  profesional: true,  premium: true },
   { categoria: 'Gestión básica', feature: 'Sincronización Google Calendar',  esencial: true,  profesional: true,  premium: true },
   // FACTURACIÓN Y COBROS
@@ -15,6 +15,7 @@ const COMPARATIVA = [
   { categoria: 'Facturación y cobros', feature: 'Facturación',                     esencial: false, profesional: true,  premium: true },
   { categoria: 'Facturación y cobros', feature: 'Liquidación de obras sociales',   esencial: false, profesional: true,  premium: true },
   { categoria: 'Facturación y cobros', feature: 'Planillas PDF por obra social',   esencial: false, profesional: true,  premium: true },
+  { categoria: 'Facturación y cobros', feature: 'Aviso de deuda automático',       esencial: false, profesional: false, premium: true },
   // INTELIGENCIA ARTIFICIAL
   { categoria: 'Inteligencia Artificial', feature: 'Atenciones del Día con IA ✨',          esencial: false, profesional: true,  premium: true },
   { categoria: 'Inteligencia Artificial', feature: 'Notas de voz con transcripción IA 🎤', esencial: false, profesional: true,  premium: true },
