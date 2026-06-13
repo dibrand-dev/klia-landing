@@ -13,7 +13,7 @@ export const SYSTEM_FEATURES: SystemFeature[] = [
   { key: 'entrevistas',         label: 'Entrevistas de evaluación',        description: 'Formularios de evaluación inicial',                   categoria: 'Clínico' },
   { key: 'google_calendar',     label: 'Sincronización Google Calendar',   description: 'Sincronización bidireccional con Google Calendar',     categoria: 'Core' },
   { key: 'multi_moneda',        label: 'Multi-moneda ARS / USD / EUR',     description: 'Cobros en múltiples monedas',                         categoria: 'Administración' },
-  { key: 'firmas',              label: 'Firmas digitales',                 description: 'Consentimientos y documentos con firma digital',       categoria: 'Clínico' },
+  { key: 'firmas',              label: 'Firmas escaneadas',                description: 'Consentimientos y documentos con firma digital',       categoria: 'Clínico' },
   { key: 'cobros',              label: 'Gestión de cobros',                description: 'Cobros, pagos y conciliación',                        categoria: 'Administración' },
   { key: 'facturacion',         label: 'Facturación',                      description: 'Emisión de comprobantes fiscales',                    categoria: 'Administración' },
   { key: 'liquidacion_os',      label: 'Liquidación de obras sociales',    description: 'Liquidación y seguimiento de obras sociales',         categoria: 'Administración' },
@@ -23,6 +23,7 @@ export const SYSTEM_FEATURES: SystemFeature[] = [
   { key: 'informes_ia',         label: 'Informes clínicos con IA ✨',      description: 'Generación automática de informes con IA',            categoria: 'IA' },
   { key: 'estadisticas',        label: 'Estadísticas del consultorio',     description: 'Reportes de actividad y rendimiento',                 categoria: 'Administración' },
   { key: 'soporte_prioritario', label: 'Soporte prioritario',              description: 'Atención prioritaria por chat y email',               categoria: 'Core' },
+  { key: 'aviso_deuda',        label: 'Aviso de deuda automático',        description: 'Email automático al paciente cuando tiene deuda pendiente', categoria: 'Administración' },
 ]
 
 export const CATEGORIAS = ['Core', 'Clínico', 'IA', 'Administración']

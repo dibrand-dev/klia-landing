@@ -35,7 +35,7 @@ const PLANES_FALLBACK: PlanData[] = [
     descripcion: 'Para clínicas y equipos multi-profesional.',
     precio_mensual: 42000,
     es_ilimitado: true,
-    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'google_calendar', 'multi_moneda', 'firmas', 'cobros', 'facturacion', 'liquidacion_os', 'planillas_pdf', 'atenciones_ia', 'nota_voz', 'informes_ia', 'estadisticas', 'soporte_prioritario'],
+    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'google_calendar', 'multi_moneda', 'firmas', 'cobros', 'facturacion', 'liquidacion_os', 'planillas_pdf', 'atenciones_ia', 'nota_voz', 'informes_ia', 'estadisticas', 'soporte_prioritario', 'aviso_deuda'],
   },
 ]
 
