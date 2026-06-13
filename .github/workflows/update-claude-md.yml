@@ -1,0 +1,61 @@
+name: Actualizar CLAUDE.md
+
+on:
+  schedule:
+    # 00:00 UTC = 21:00 hora Argentina (ART, UTC-3)
+    - cron: '0 0 * * *'
+  workflow_dispatch: # permite correrlo manualmente desde GitHub
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verificar commits del día
+        id: commits
+        run: |
+          COMMITS=$(git log --since="24 hours ago" --oneline --no-merges)
+          if [ -z "$COMMITS" ]; then
+            echo "sin_cambios=true" >> $GITHUB_OUTPUT
+          else
+            echo "sin_cambios=false" >> $GITHUB_OUTPUT
+            echo "lista<<EOF" >> $GITHUB_OUTPUT
+            echo "$COMMITS" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Actualizar sección "Últimos cambios" en CLAUDE.md
+        if: steps.commits.outputs.sin_cambios == 'false'
+        run: |
+          FECHA=$(TZ="America/Argentina/Buenos_Aires" date +"%Y-%m-%d")
+          COMMITS="${{ steps.commits.outputs.lista }}"
+
+          # Eliminar sección anterior si existe
+          sed -i '/^## Últimos cambios/,/^## /{ /^## Últimos cambios/d; /^## /!d }' CLAUDE.md
+
+          # Agregar sección al final
+          cat >> CLAUDE.md << SECTION
+
+## Últimos cambios
+_Actualizado automáticamente el ${FECHA}_
+
+\`\`\`
+${{ steps.commits.outputs.lista }}
+\`\`\`
+SECTION
+
+      - name: Commit y push
+        if: steps.commits.outputs.sin_cambios == 'false'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add CLAUDE.md
+          git diff --cached --quiet || git commit -m "docs: CLAUDE.md — commits del día $(TZ='America/Argentina/Buenos_Aires' date +'%Y-%m-%d')"
+          git push
