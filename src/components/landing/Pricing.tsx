@@ -1,10 +1,8 @@
-export type PlanFeature = {
-  id: string
-  plan_id: string
-  texto: string
-  incluido: boolean
-  orden: number
-  categoria: string
+export type ModuloItem = {
+  modulo_id: string
+  nombre: string
+  descripcion: string
+  planes: string[]
 }
 
 export type PlanData = {
@@ -13,7 +11,7 @@ export type PlanData = {
   descripcion: string | null
   precio_mensual: number
   es_ilimitado: boolean
-  features: PlanFeature[]
+  modulos: ModuloItem[]
 }
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
@@ -95,12 +93,15 @@ function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
       <div className="plan-includes">{includesLine}</div>
 
       <ul className="plan-features">
-        {plan.features.filter(f => f.incluido).map((feat) => (
-          <li key={feat.id} className="plan-feature">
-            <span className="plan-feature-ico"><Check /></span>
-            <span>{feat.texto}</span>
-          </li>
-        ))}
+        {plan.modulos
+          .filter(m => m.planes.includes(plan.id))
+          .map(m => (
+            <li key={m.modulo_id} className="plan-feature">
+              <span className="plan-feature-ico"><Check /></span>
+              <span>{m.nombre}</span>
+            </li>
+          ))
+        }
       </ul>
 
       <div className="plan-foot">{visuals.foot}</div>
@@ -114,25 +115,14 @@ function pickFeaturedIndex(sorted: PlanData[]): number {
   return sorted.length - 2
 }
 
-function buildComparativa(plans: PlanData[]) {
-  const seen = new Map<string, { categoria: string; texto: string }>()
-  for (const plan of plans) {
-    for (const feat of plan.features) {
-      const key = `${feat.categoria}|||${feat.texto}`
-      if (!seen.has(key)) {
-        seen.set(key, { categoria: feat.categoria, texto: feat.texto })
-      }
+function buildComparativa(plans: PlanData[], todosModulos: ModuloItem[]) {
+  return todosModulos.map(modulo => {
+    const row: Record<string, unknown> = {
+      feature: modulo.nombre,
+      modulo_id: modulo.modulo_id,
     }
-  }
-
-  return Array.from(seen.values()).map(({ categoria, texto }) => {
-    const row: Record<string, unknown> = { categoria, feature: texto }
     for (const plan of plans) {
-      const planKey = plan.nombre.toLowerCase()
-        .normalize('NFD')
-        .replace(/[̀-ͯ]/g, '')
-        .replace(/\s+/g, '_')
-      row[planKey] = plan.features.some(f => f.texto === texto && f.incluido)
+      row[plan.id] = modulo.planes.includes(plan.id)
     }
     return row
   })
@@ -143,8 +133,8 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
   const total = sorted.length
   const featuredIndex = pickFeaturedIndex(sorted)
   const gridCols = Math.min(Math.max(total, 1), 4)
-  const comparativa = buildComparativa(sorted)
-  const categorias = Array.from(new Set(comparativa.map(r => r.categoria as string)))
+  const todosModulos = sorted.length > 0 ? sorted[0].modulos : []
+  const comparativa = buildComparativa(sorted, todosModulos)
 
   return (
     <div className="pricing-shell">
@@ -203,33 +193,16 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {categorias.map((cat) => {
-                    const rows = comparativa.filter(r => r.categoria === cat)
-                    return (
-                      <>
-                        <tr key={`section-${cat}`} className="compare-section">
-                          <td colSpan={sorted.length + 1}>{cat}</td>
-                        </tr>
-                        {rows.map((row) => (
-                          <tr key={row.feature as string}>
-                            <td className="feature">{row.feature as string}</td>
-                            {sorted.map((p, i) => {
-                              const planKey = p.nombre.toLowerCase()
-                                .normalize('NFD')
-                                .replace(/[̀-ͯ]/g, '')
-                                .replace(/\s+/g, '_')
-                              const has = row[planKey] === true
-                              return (
-                                <td key={p.id} data-label={p.nombre} className={i === featuredIndex ? 'is-featured' : ''}>
-                                  {has ? <TableCheck /> : <span style={{ color: 'var(--slate)' }}>—</span>}
-                                </td>
-                              )
-                            })}
-                          </tr>
-                        ))}
-                      </>
-                    )
-                  })}
+                  {comparativa.map((row) => (
+                    <tr key={row.modulo_id as string}>
+                      <td className="feature">{row.feature as string}</td>
+                      {sorted.map((p, i) => (
+                        <td key={p.id} data-label={p.nombre} className={i === featuredIndex ? 'is-featured' : ''}>
+                          {row[p.id] === true ? <TableCheck /> : <span style={{ color: 'var(--slate)' }}>—</span>}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/landing/Nav'
-import Pricing, { type PlanData, type PlanFeature } from '@/components/landing/Pricing'
+import Pricing, { type PlanData } from '@/components/landing/Pricing'
 import Footer from '@/components/landing/Footer'
 import { createClient } from '@/lib/supabase/server'
 import './pricing.css'
@@ -12,10 +12,17 @@ export const metadata: Metadata = {
   description: 'Planes desde $15.000/mes. Esencial, Profesional y Premium para psicólogos, médicos y kinesiólogos. 21 días gratis, sin tarjeta de crédito.',
 }
 
+type ModuloItem = {
+  modulo_id: string
+  nombre: string
+  descripcion: string
+  planes: string[]
+}
+
 const PLANES_FALLBACK: PlanData[] = [
-  { id: 'esencial',    nombre: 'Esencial',    descripcion: 'Para profesionales que recién formalizan su práctica.', precio_mensual: 15000, es_ilimitado: false, features: [] },
-  { id: 'profesional', nombre: 'Profesional', descripcion: 'El plan completo para el profesional independiente.',   precio_mensual: 28000, es_ilimitado: false, features: [] },
-  { id: 'premium',     nombre: 'Premium',     descripcion: 'Para clínicas y equipos multi-profesional.',            precio_mensual: 42000, es_ilimitado: true,  features: [] },
+  { id: 'esencial',    nombre: 'Esencial',    descripcion: 'Para profesionales que recién formalizan su práctica.', precio_mensual: 15000, es_ilimitado: false, modulos: [] },
+  { id: 'profesional', nombre: 'Profesional', descripcion: 'El plan completo para el profesional independiente.',   precio_mensual: 28000, es_ilimitado: false, modulos: [] },
+  { id: 'premium',     nombre: 'Premium',     descripcion: 'Para clínicas y equipos multi-profesional.',            precio_mensual: 42000, es_ilimitado: true,  modulos: [] },
 ]
 
 async function getPlans(): Promise<PlanData[]> {
@@ -34,24 +41,17 @@ async function getPlans(): Promise<PlanData[]> {
       return PLANES_FALLBACK
     }
 
-    const planIds = planes.map((p) => p.id)
-    const { data: features, error: featuresError } = await supabase
-      .from('plan_features')
-      .select('id, plan_id, texto, incluido, orden, categoria')
-      .in('plan_id', planIds)
+    const { data: modulos, error: modulosError } = await supabase
+      .from('modulos_config')
+      .select('modulo_id, nombre, descripcion, planes')
       .eq('activo', true)
-      .order('orden', { ascending: true })
+      .order('modulo_id')
 
-    if (featuresError) {
-      console.error('[precios] plan_features query failed', featuresError)
+    if (modulosError) {
+      console.error('[precios] modulos_config query failed', modulosError)
     }
 
-    const byPlan = new Map<string, PlanFeature[]>()
-    for (const feat of features ?? []) {
-      const list = byPlan.get(feat.plan_id) ?? []
-      list.push(feat)
-      byPlan.set(feat.plan_id, list)
-    }
+    const todosModulos: ModuloItem[] = modulos ?? []
 
     return planes.map((p) => ({
       id: p.id,
@@ -59,7 +59,7 @@ async function getPlans(): Promise<PlanData[]> {
       descripcion: p.descripcion,
       precio_mensual: p.precio_mensual,
       es_ilimitado: p.es_ilimitado,
-      features: byPlan.get(p.id) ?? [],
+      modulos: todosModulos,
     }))
   } catch (err) {
     console.error('[precios] unexpected error, using fallback:', err)
