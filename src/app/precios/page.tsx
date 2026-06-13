@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/landing/Nav'
-import Pricing, { type PlanData } from '@/components/landing/Pricing'
+import Pricing, { type PlanData, type PlanFeature } from '@/components/landing/Pricing'
 import Footer from '@/components/landing/Footer'
 import { createClient } from '@/lib/supabase/server'
 import './pricing.css'
@@ -13,30 +13,9 @@ export const metadata: Metadata = {
 }
 
 const PLANES_FALLBACK: PlanData[] = [
-  {
-    id: 'esencial',
-    nombre: 'Esencial',
-    descripcion: 'Para profesionales que recién formalizan su práctica.',
-    precio_mensual: 15000,
-    es_ilimitado: false,
-    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico'],
-  },
-  {
-    id: 'profesional',
-    nombre: 'Profesional',
-    descripcion: 'El plan completo para el profesional independiente.',
-    precio_mensual: 28000,
-    es_ilimitado: false,
-    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'cobros', 'facturacion', 'estadisticas', 'atenciones_ia', 'nota_voz', 'informes_ia'],
-  },
-  {
-    id: 'premium',
-    nombre: 'Premium',
-    descripcion: 'Para clínicas y equipos multi-profesional.',
-    precio_mensual: 42000,
-    es_ilimitado: true,
-    funcionalidades: ['agenda', 'pacientes', 'turnos', 'historial_clinico', 'entrevistas', 'google_calendar', 'multi_moneda', 'firmas', 'cobros', 'facturacion', 'liquidacion_os', 'planillas_pdf', 'atenciones_ia', 'nota_voz', 'informes_ia', 'estadisticas', 'soporte_prioritario', 'aviso_deuda'],
-  },
+  { id: 'esencial',    nombre: 'Esencial',    descripcion: 'Para profesionales que recién formalizan su práctica.', precio_mensual: 15000, es_ilimitado: false, features: [] },
+  { id: 'profesional', nombre: 'Profesional', descripcion: 'El plan completo para el profesional independiente.',   precio_mensual: 28000, es_ilimitado: false, features: [] },
+  { id: 'premium',     nombre: 'Premium',     descripcion: 'Para clínicas y equipos multi-profesional.',            precio_mensual: 42000, es_ilimitado: true,  features: [] },
 ]
 
 async function getPlans(): Promise<PlanData[]> {
@@ -56,20 +35,22 @@ async function getPlans(): Promise<PlanData[]> {
     }
 
     const planIds = planes.map((p) => p.id)
-    const { data: funcs, error: funcsError } = await supabase
-      .from('plan_funcionalidades')
-      .select('plan_id, funcionalidad')
+    const { data: features, error: featuresError } = await supabase
+      .from('plan_features')
+      .select('id, plan_id, texto, incluido, orden, categoria')
       .in('plan_id', planIds)
+      .eq('activo', true)
+      .order('orden', { ascending: true })
 
-    if (funcsError) {
-      console.error('[precios] plan_funcionalidades query failed', funcsError)
+    if (featuresError) {
+      console.error('[precios] plan_features query failed', featuresError)
     }
 
-    const byPlan = new Map<string, string[]>()
-    for (const row of funcs ?? []) {
-      const list = byPlan.get(row.plan_id) ?? []
-      list.push(row.funcionalidad)
-      byPlan.set(row.plan_id, list)
+    const byPlan = new Map<string, PlanFeature[]>()
+    for (const feat of features ?? []) {
+      const list = byPlan.get(feat.plan_id) ?? []
+      list.push(feat)
+      byPlan.set(feat.plan_id, list)
     }
 
     return planes.map((p) => ({
@@ -78,7 +59,7 @@ async function getPlans(): Promise<PlanData[]> {
       descripcion: p.descripcion,
       precio_mensual: p.precio_mensual,
       es_ilimitado: p.es_ilimitado,
-      funcionalidades: byPlan.get(p.id) ?? [],
+      features: byPlan.get(p.id) ?? [],
     }))
   } catch (err) {
     console.error('[precios] unexpected error, using fallback:', err)

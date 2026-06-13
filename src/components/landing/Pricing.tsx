@@ -1,29 +1,11 @@
-import { SYSTEM_FEATURES } from '@/lib/features'
-
-const COMPARATIVA = [
-  // GESTIÓN BÁSICA
-  { categoria: 'Gestión básica', feature: 'Agenda y calendario',             esencial: true,  profesional: true,  premium: true },
-  { categoria: 'Gestión básica', feature: 'Turnos y citas',                  esencial: true,  profesional: true,  premium: true },
-  { categoria: 'Gestión básica', feature: 'Gestión de pacientes',            esencial: true,  profesional: true,  premium: true },
-  { categoria: 'Gestión básica', feature: 'Historial clínico',               esencial: true,  profesional: true,  premium: true },
-  { categoria: 'Gestión básica', feature: 'Entrevistas de evaluación',       esencial: true,  profesional: true,  premium: true },
-  { categoria: 'Gestión básica', feature: 'Firmas escaneadas',               esencial: true,  profesional: true,  premium: true },
-  { categoria: 'Gestión básica', feature: 'Multi-moneda ARS / USD / EUR',    esencial: true,  profesional: true,  premium: true },
-  { categoria: 'Gestión básica', feature: 'Sincronización Google Calendar',  esencial: true,  profesional: true,  premium: true },
-  // FACTURACIÓN Y COBROS
-  { categoria: 'Facturación y cobros', feature: 'Gestión de cobros',               esencial: false, profesional: true,  premium: true },
-  { categoria: 'Facturación y cobros', feature: 'Facturación',                     esencial: false, profesional: true,  premium: true },
-  { categoria: 'Facturación y cobros', feature: 'Liquidación de obras sociales',   esencial: false, profesional: true,  premium: true },
-  { categoria: 'Facturación y cobros', feature: 'Planillas PDF por obra social',   esencial: false, profesional: true,  premium: true },
-  { categoria: 'Facturación y cobros', feature: 'Aviso de deuda automático',       esencial: false, profesional: false, premium: true },
-  // INTELIGENCIA ARTIFICIAL
-  { categoria: 'Inteligencia Artificial', feature: 'Atenciones del Día con IA ✨',          esencial: false, profesional: true,  premium: true },
-  { categoria: 'Inteligencia Artificial', feature: 'Notas de voz con transcripción IA 🎤', esencial: false, profesional: true,  premium: true },
-  { categoria: 'Inteligencia Artificial', feature: 'Informes clínicos con IA ✨',           esencial: false, profesional: false, premium: true },
-  { categoria: 'Inteligencia Artificial', feature: 'Estadísticas del consultorio', esencial: false, profesional: false, premium: true },
-  // SOPORTE
-  { categoria: 'Soporte', feature: 'Soporte prioritario', esencial: false, profesional: false, premium: true },
-] as const
+export type PlanFeature = {
+  id: string
+  plan_id: string
+  texto: string
+  incluido: boolean
+  orden: number
+  categoria: string
+}
 
 export type PlanData = {
   id: string
@@ -31,7 +13,7 @@ export type PlanData = {
   descripcion: string | null
   precio_mensual: number
   es_ilimitado: boolean
-  funcionalidades: string[]
+  features: PlanFeature[]
 }
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
@@ -58,7 +40,6 @@ const TableCheck = () => (
     </svg>
   </span>
 )
-
 
 type PlanVisuals = {
   tag: string
@@ -87,7 +68,6 @@ function getVisuals(plan: PlanData, index: number, totalPlans: number, featuredI
 
 function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
   const registerUrl = `${APP_URL}/registro?plan=${plan.id}`
-  const planFeatureSet = new Set(plan.funcionalidades)
 
   const includesLine = plan.es_ilimitado
     ? 'Para 1 profesional · ilimitado'
@@ -115,10 +95,10 @@ function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
       <div className="plan-includes">{includesLine}</div>
 
       <ul className="plan-features">
-        {SYSTEM_FEATURES.filter((feat) => planFeatureSet.has(feat.key)).map((feat) => (
-          <li key={feat.key} className="plan-feature">
+        {plan.features.filter(f => f.incluido).map((feat) => (
+          <li key={feat.id} className="plan-feature">
             <span className="plan-feature-ico"><Check /></span>
-            <span>{feat.label}</span>
+            <span>{feat.texto}</span>
           </li>
         ))}
       </ul>
@@ -131,10 +111,31 @@ function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
 function pickFeaturedIndex(sorted: PlanData[]): number {
   if (sorted.length === 0) return -1
   if (sorted.length === 1) return 0
-  // Highlight the most expensive plan that is NOT the absolute top tier when there are 4+ plans,
-  // otherwise highlight the second-most-expensive (typical 3-plan ladder).
-  if (sorted.length >= 4) return sorted.length - 2
   return sorted.length - 2
+}
+
+function buildComparativa(plans: PlanData[]) {
+  const seen = new Map<string, { categoria: string; texto: string }>()
+  for (const plan of plans) {
+    for (const feat of plan.features) {
+      const key = `${feat.categoria}|||${feat.texto}`
+      if (!seen.has(key)) {
+        seen.set(key, { categoria: feat.categoria, texto: feat.texto })
+      }
+    }
+  }
+
+  return Array.from(seen.values()).map(({ categoria, texto }) => {
+    const row: Record<string, unknown> = { categoria, feature: texto }
+    for (const plan of plans) {
+      const planKey = plan.nombre.toLowerCase()
+        .normalize('NFD')
+        .replace(/[̀-ͯ]/g, '')
+        .replace(/\s+/g, '_')
+      row[planKey] = plan.features.some(f => f.texto === texto && f.incluido)
+    }
+    return row
+  })
 }
 
 export default function Pricing({ plans }: { plans: PlanData[] }) {
@@ -142,6 +143,8 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
   const total = sorted.length
   const featuredIndex = pickFeaturedIndex(sorted)
   const gridCols = Math.min(Math.max(total, 1), 4)
+  const comparativa = buildComparativa(sorted)
+  const categorias = Array.from(new Set(comparativa.map(r => r.categoria as string)))
 
   return (
     <div className="pricing-shell">
@@ -176,7 +179,7 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
       </section>
 
       {/* COMPARE */}
-      {sorted.length > 0 && (
+      {sorted.length > 0 && comparativa.length > 0 && (
         <section className="compare">
           <div className="container">
             <div className="compare-head">
@@ -200,22 +203,22 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {(['Gestión básica', 'Facturación y cobros', 'Inteligencia Artificial', 'Soporte'] as const).map((cat) => {
-                    const rows = COMPARATIVA.filter((r) => r.categoria === cat)
+                  {categorias.map((cat) => {
+                    const rows = comparativa.filter(r => r.categoria === cat)
                     return (
                       <>
                         <tr key={`section-${cat}`} className="compare-section">
                           <td colSpan={sorted.length + 1}>{cat}</td>
                         </tr>
                         {rows.map((row) => (
-                          <tr key={row.feature}>
-                            <td className="feature">{row.feature}</td>
+                          <tr key={row.feature as string}>
+                            <td className="feature">{row.feature as string}</td>
                             {sorted.map((p, i) => {
                               const planKey = p.nombre.toLowerCase()
                                 .normalize('NFD')
                                 .replace(/[̀-ͯ]/g, '')
                                 .replace(/\s+/g, '_')
-                              const has = (row as Record<string, unknown>)[planKey] === true
+                              const has = row[planKey] === true
                               return (
                                 <td key={p.id} data-label={p.nombre} className={i === featuredIndex ? 'is-featured' : ''}>
                                   {has ? <TableCheck /> : <span style={{ color: 'var(--slate)' }}>—</span>}
