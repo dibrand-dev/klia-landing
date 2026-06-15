@@ -17,6 +17,8 @@
     --bg:    #FFFFFF;
     --bg-alt:#F7F8FB;
     --bg-3:  #FBFAF7;
+    --slate-2: #8990AA;
+    --shadow-lg: 0 30px 60px -20px rgba(14,20,48,.18), 0 10px 24px -10px rgba(14,20,48,.10);
   }
 
   *, *::before, *::after { box-sizing: border-box; }
