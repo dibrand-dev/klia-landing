@@ -1,0 +1,345 @@
+/* ================================================
+   Beneficios — page-specific styles
+   Mirrors the container/margins of /producto and /precios.
+   Base tokens come from globals.css.
+================================================ */
+
+/* ── Container (same as /producto) ── */
+.beneficios-page .container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+@media (max-width: 768px) {
+  .beneficios-page .container { padding: 0 20px; }
+}
+
+/* ── Extra tokens ── */
+:root {
+  --green:     #3D9C6B;
+  --green-50:  #ECFDF5;
+  --purple:    #8C6ED8;
+  --purple-50: #EEEDFE;
+}
+
+/* Use Geist Mono for eyebrows — all other eyebrow styles come from globals.css */
+.beneficios-page .eyebrow {
+  font-family: var(--font-geist-mono), 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ── Hero ── */
+.benef-hero {
+  padding: 148px 0 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.benef-grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, #EFF1F7 1.5px, transparent 1.5px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, rgba(0,0,0,.55) 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, rgba(0,0,0,.55) 40%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="dark"] .benef-grid-bg {
+  background-image: radial-gradient(circle, rgba(63,81,158,.18) 1.5px, transparent 1.5px);
+}
+
+.benef-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.benef-eyebrow-hero {
+  display: block;
+  margin-bottom: 28px;
+}
+
+.benef-h1 {
+  margin-bottom: 28px;
+}
+
+.benef-lead {
+  font-size: 17px;
+  color: var(--slate);
+  line-height: 1.68;
+  max-width: 600px;
+}
+
+/* ── Benefits wrapper ── */
+.benefits-section {
+  padding: 0 0 0;
+}
+
+/* ── Benefit row ── */
+.benef-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 88px 0;
+  border-top: 1px solid var(--line);
+}
+
+.benef-row:last-child {
+  padding-bottom: 0;
+}
+
+/* Default: text left, visual right */
+.benef-text  { order: 0; }
+.benef-visual { order: 1; }
+
+/* Flipped: visual left, text right */
+.benef-row.flip .benef-text  { order: 1; }
+.benef-row.flip .benef-visual { order: 0; }
+
+/* ── Benefit text side ── */
+.benef-row-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.benef-heading {
+  margin: 0 0 22px;
+  line-height: 1.08;
+}
+
+.benef-desc {
+  font-size: 15.5px;
+  color: var(--slate);
+  line-height: 1.76;
+  margin-bottom: 32px;
+}
+
+.benef-desc p {
+  margin: 0 0 14px;
+}
+
+.benef-desc p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Plan badges ── */
+.plan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  font-family: var(--font-inter), 'Inter', sans-serif;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.plan-badge.todos   { background: var(--klia-50);  color: var(--klia);   border: 1px solid var(--klia-100); }
+.plan-badge.prof    { background: var(--purple-50); color: var(--purple); border: 1px solid rgba(140,110,216,.18); }
+.plan-badge.premium { background: #FFF5E6;          color: #B45309;       border: 1px solid rgba(180,83,9,.15); }
+
+/* ── Visual card ── */
+.benef-card {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 56px 44px 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(14,20,48,.04), 0 16px 48px rgba(14,20,48,.08);
+  transition: transform .3s cubic-bezier(.2,.8,.2,1), box-shadow .3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 320px;
+  justify-content: center;
+}
+
+.benef-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 16px rgba(14,20,48,.07), 0 32px 64px rgba(14,20,48,.13);
+}
+
+/* Subtle ambient glow behind the icon */
+.benef-card::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--card-glow, rgba(63,81,158,.05));
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.benef-card-ico {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  flex-shrink: 0;
+  transition: transform .25s cubic-bezier(.2,.8,.2,1);
+}
+
+.benef-card:hover .benef-card-ico {
+  transform: scale(1.07) rotate(-3deg);
+}
+
+.benef-card-num {
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(52px, 5.8vw, 80px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.benef-card-num-strike {
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(28px, 3vw, 44px);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  color: var(--slate-2);
+  margin-bottom: 4px;
+}
+
+.benef-card-num-new {
+  font-family: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(52px, 5.8vw, 80px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.benef-card-label {
+  font-family: var(--font-geist-mono), 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.benef-card-subtext {
+  font-size: 13px;
+  color: var(--slate-2);
+  line-height: 1.5;
+}
+
+/* ── CTA final ── */
+.benef-cta {
+  padding: 88px 0 128px;
+}
+
+.benef-cta-inner {
+  background: linear-gradient(135deg, #1A2257 0%, #2F3F82 55%, #3F519E 100%);
+  border-radius: 32px;
+  padding: 80px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grid overlay on CTA */
+.benef-cta-inner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,0,0,.4) 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,0,0,.4) 40%, transparent 100%);
+  pointer-events: none;
+}
+
+.benef-cta-title {
+  color: #fff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.benef-cta-lead {
+  font-size: 17px;
+  color: rgba(255,255,255,.72);
+  line-height: 1.62;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  position: relative;
+}
+
+.benef-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.btn-ghost-light {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.35);
+  transition: background .18s ease, border-color .18s ease;
+}
+
+.btn-ghost-light:hover {
+  background: rgba(255,255,255,.1);
+  border-color: rgba(255,255,255,.55);
+  transform: none;
+}
+
+/* ── Reveal animation ── */
+/* Content always visible — animation is progressive enhancement only */
+.b-reveal { opacity: 1; }
+.b-reveal.in { opacity: 1; }
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .benef-row { gap: 52px; }
+}
+
+@media (max-width: 768px) {
+  .benef-hero { padding: 120px 0 72px; }
+
+  .benef-row {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 64px 0;
+  }
+
+  /* Always: text first, card second on mobile */
+  .benef-text,
+  .benef-row.flip .benef-text  { order: 0 !important; }
+  .benef-visual,
+  .benef-row.flip .benef-visual { order: 1 !important; }
+
+  .benef-cta-inner { padding: 60px 36px; }
+  .benef-cta { padding: 64px 0 96px; }
+
+  .benef-card { padding: 44px 32px; min-height: 280px; }
+  .benef-card-num { font-size: clamp(48px, 12vw, 72px); }
+}
+
+@media (max-width: 480px) {
+  .benef-row { padding: 52px 0; }
+  .benef-cta-inner { padding: 48px 24px; }
+  .benef-card { padding: 40px 24px; }
+}
