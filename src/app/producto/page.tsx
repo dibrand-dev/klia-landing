@@ -309,7 +309,7 @@ export default function ProductoPage() {
   return (
     <>
       <Nav />
-      <main>
+      <main className="producto-page">
         <Hero />
         <Modules />
         <Differentiators />

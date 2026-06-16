@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { ArrowRight, Menu, X } from '@/components/ui/Icons'
 
 const links = [
-  { href: '#producto',   label: 'Producto' },
+  { href: '/producto',   label: 'Producto' },
   { href: '#beneficios', label: 'Beneficios' },
   { href: '#casos',      label: 'Casos de uso' },
   { href: '/precios',    label: 'Precios' },

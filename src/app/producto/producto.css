@@ -1,3 +1,12 @@
+.producto-page .container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+@media (max-width: 768px) {
+  .producto-page .container { padding: 0 20px; }
+}
+
 /* ── Hero ── */
 .prod-hero {
   padding: 148px 0 80px;
