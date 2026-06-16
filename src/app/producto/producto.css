@@ -85,7 +85,7 @@
 
 /* ── Section head ── */
 .prod-section-head { margin-bottom: 56px; }
-.prod-section-head .eyebrow { margin-bottom: 16px; display: block; }
+.prod-section-head .eyebrow { margin-bottom: 16px; display: inline-flex; }
 .prod-section-head .h-2 { margin-bottom: 14px; line-height: 1.08; height: auto; }
 .section-sub {
   font-size: 17px; color: var(--slate);
@@ -156,7 +156,7 @@
   padding: 64px;
 }
 .diff-header { margin-bottom: 48px; max-width: 620px; }
-.diff-header .eyebrow { margin-bottom: 14px; display: block; }
+.diff-header .eyebrow { margin-bottom: 14px; display: inline-flex; }
 .diff-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -180,7 +180,7 @@
 
 /* ── Integrations ── */
 .integrations-section { padding: 0 0 64px; }
-.integrations-section .eyebrow { margin-bottom: 28px; display: block; }
+.integrations-section .eyebrow { margin-bottom: 28px; display: inline-flex; }
 .chips-row { display: flex; flex-wrap: wrap; gap: 10px; }
 .chip {
   display: inline-flex; align-items: center; gap: 8px;
