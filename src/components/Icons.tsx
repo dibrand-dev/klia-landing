@@ -35,6 +35,7 @@ export const Icons = {
   Shield:   (p: IconProps) => <Ico {...p}><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2.2 2.2L15 10.5"/></Ico>,
   Sun:      (p: IconProps) => <Ico {...p}><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6 19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></Ico>,
   Moon:     (p: IconProps) => <Ico {...p}><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></Ico>,
+  Stethoscope: (p: IconProps) => <Ico {...p}><path d="M5 4v6a4 4 0 0 0 8 0V4"/><path d="M5 4H3M13 4h2"/><path d="M9 14v2.5a4 4 0 0 0 8 0v-1.2"/><circle cx="17" cy="13.5" r="1.8"/></Ico>,
   X:        (p: IconProps) => <Ico {...p}><path d="M6 6l12 12M18 6L6 18"/></Ico>,
   Menu:     (p: IconProps) => <Ico {...p}><path d="M4 7h16M4 12h16M4 17h16"/></Ico>,
 };

@@ -8,7 +8,7 @@ import { ArrowRight, Menu, X } from '@/components/ui/Icons'
 const links = [
   { href: '/producto',   label: 'Producto' },
   { href: '/beneficios', label: 'Beneficios' },
-  { href: '#casos',      label: 'Casos de uso' },
+  { href: '/casos',      label: 'Casos de uso' },
   { href: '/precios',    label: 'Precios' },
   { href: '#faq',        label: 'FAQ' },
 ]
