@@ -76,3 +76,13 @@ Production: https://www.klia.com.ar
 - GTM: inline in <head> via dangerouslySetInnerHTML
 - Meta Pixel: inline in <head> via dangerouslySetInnerHTML, ID 1330774269119331
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
+
+## Ultimos cambios
+_Actualizado el 2026-06-17_
+
+```
+fc90bbe feat: agregar script update_claude.sh para workflow CLAUDE.md
+68a97d1 fix: workflow CLAUDE.md - reemplazar heredoc por script separado
+58d4e09 fix: enlazar "Beneficios" del nav a /beneficios
+f6f42bd feat: página /beneficios implementada pixel perfect
+```
