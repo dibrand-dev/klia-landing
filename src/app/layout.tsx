@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Inter, Instrument_Serif } from 'next/font/google'
+import Script from 'next/script'
 import { ClearInvalidSession } from '@/components/auth/ClearInvalidSession'
 import './globals.css'
 
@@ -91,8 +92,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <ClearInvalidSession />
         {children}
         {/* Zoho SalesIQ */}
-        <script dangerouslySetInnerHTML={{ __html: `window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}` }} />
-        <script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siq195479a499f719dd02043e3c9eb1e5e6" defer />
+        <Script
+          id="zoho-salesiq-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: `window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}` }}
+        />
+        <Script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.com/widget?wc=siq195479a499f719dd02043e3c9eb1e5e6"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
