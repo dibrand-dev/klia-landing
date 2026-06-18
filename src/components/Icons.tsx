@@ -38,6 +38,16 @@ export const Icons = {
   Stethoscope: (p: IconProps) => <Ico {...p}><path d="M5 4v6a4 4 0 0 0 8 0V4"/><path d="M5 4H3M13 4h2"/><path d="M9 14v2.5a4 4 0 0 0 8 0v-1.2"/><circle cx="17" cy="13.5" r="1.8"/></Ico>,
   X:        (p: IconProps) => <Ico {...p}><path d="M6 6l12 12M18 6L6 18"/></Ico>,
   Menu:     (p: IconProps) => <Ico {...p}><path d="M4 7h16M4 12h16M4 17h16"/></Ico>,
+  Quote:    ({ size = 22, className, style }: IconProps) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" stroke="none" className={className} style={style}>
+      <path d="M7.2 5C5 6.5 3.5 9 3.5 12.2c0 3 1.7 5 4.2 5 1.7 0 3-1.2 3-2.9 0-1.5-1-2.7-2.5-2.9-.6 0-.9-.2-.9-.7 0-1.3 1-2.7 2.4-3.7zM17.2 5c-2.2 1.5-3.7 4-3.7 7.2 0 3 1.7 5 4.2 5 1.7 0 3-1.2 3-2.9 0-1.5-1-2.7-2.5-2.9-.6 0-.9-.2-.9-.7 0-1.3 1-2.7 2.4-3.7z"/>
+    </svg>
+  ),
+  Users:    (p: IconProps) => <Ico {...p}><circle cx="9" cy="8" r="3.2"/><path d="M3 19c.5-3.3 3-5.5 6-5.5s5.5 2.2 6 5.5"/><circle cx="17" cy="9" r="2.5"/><path d="M21 18c-.3-2.2-1.7-3.7-3.5-4.2"/></Ico>,
+  Layers:   (p: IconProps) => <Ico {...p}><path d="M12 3l8.5 4.5L12 12 3.5 7.5z"/><path d="M3.5 12L12 16.5 20.5 12"/><path d="M3.5 16.5L12 21l8.5-4.5"/></Ico>,
+  MapPin:   (p: IconProps) => <Ico {...p}><path d="M12 21c4-4.5 7-7.8 7-11a7 7 0 1 0-14 0c0 3.2 3 6.5 7 11z"/><circle cx="12" cy="10" r="2.6"/></Ico>,
+  Lock:     (p: IconProps) => <Ico {...p}><rect x="4.5" y="10.5" width="15" height="10" rx="2"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5"/><circle cx="12" cy="15.5" r="1.2" fill="currentColor" stroke="none"/></Ico>,
+  Building2:(p: IconProps) => <Ico {...p}><path d="M4 21V6.5A1.5 1.5 0 0 1 5.5 5h6A1.5 1.5 0 0 1 13 6.5V21"/><path d="M13 10h4.5A1.5 1.5 0 0 1 19 11.5V21"/><path d="M2.5 21h19"/><path d="M7 9h2M7 13h2M7 17h2"/></Ico>,
 };
 
 export type IconName = keyof typeof Icons;
