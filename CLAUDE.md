@@ -81,8 +81,11 @@ Production: https://www.klia.com.ar
 _Actualizado el 2026-06-17_
 
 ```
+90b5c04 fix: corregir carga de Zoho SalesIQ con next/script
+f49347f feat: página /faq con acordeón y schema FAQPage
+f61d582 feat: página /casos con navegación por especialidad
+9cf17fe docs: CLAUDE.md - commits del dia 2026-06-17
 fc90bbe feat: agregar script update_claude.sh para workflow CLAUDE.md
 68a97d1 fix: workflow CLAUDE.md - reemplazar heredoc por script separado
 58d4e09 fix: enlazar "Beneficios" del nav a /beneficios
-f6f42bd feat: página /beneficios implementada pixel perfect
 ```
