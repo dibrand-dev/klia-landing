@@ -10,7 +10,7 @@ const links = [
   { href: '/beneficios', label: 'Beneficios' },
   { href: '/casos',      label: 'Casos de uso' },
   { href: '/precios',    label: 'Precios' },
-  { href: '#faq',        label: 'FAQ' },
+  { href: '/faq',        label: 'Preguntas frecuentes' },
 ]
 
 export default function Nav() {
