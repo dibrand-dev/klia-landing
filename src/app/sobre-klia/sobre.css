@@ -97,8 +97,15 @@
 }
 
 .sobre-col-head .sobre-eyebrow { margin-bottom: 18px; }
+
+/* Heading sizes matching design system */
 .sobre-h2 {
-  margin-bottom: 28px;
+  font-family: var(--font-geist), system-ui, sans-serif;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 28px;
   line-height: 1.08;
   height: auto;
 }
@@ -355,7 +362,7 @@
   flex-wrap: wrap;
   position: relative;
 }
-.sobre-btn-ghost-light {
+.btn-ghost-light {
   background: transparent;
   color: #fff;
   border: 1.5px solid rgba(255,255,255,.4);
@@ -369,7 +376,7 @@
   transition: background .18s ease, border-color .18s ease, transform .18s ease;
   white-space: nowrap;
 }
-.sobre-btn-ghost-light:hover {
+.btn-ghost-light:hover {
   background: rgba(255,255,255,.1);
   border-color: rgba(255,255,255,.6);
   transform: translateY(-1px);

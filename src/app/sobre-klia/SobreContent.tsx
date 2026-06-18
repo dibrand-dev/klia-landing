@@ -209,7 +209,7 @@ function SobreEquipo() {
       <div className="container">
         <div className="sobre-col-head sobre-reveal" style={{ textAlign: 'center' }}>
           <span className="eyebrow sobre-eyebrow">EL EQUIPO</span>
-          <h2 className="sobre-h2" style={{ maxWidth: '18ch', margin: '0 auto' }}>
+          <h2 className="sobre-h2" style={{ maxWidth: '18ch', margin: '0 auto 28px' }}>
             Las personas detrás{' '}
             <span className="serif-it">de KLIA.</span>
           </h2>
@@ -298,7 +298,7 @@ function SobreCta() {
             <a href="https://app.klia.com.ar/registro" className="btn btn-coral btn-lg">
               Empezar gratis <Icons.Arrow size={16} />
             </a>
-            <a href="mailto:hola@klia.com.ar" className="sobre-btn-ghost-light">
+            <a href="mailto:hola@klia.com.ar" className="btn-ghost-light">
               Hablar con el equipo
             </a>
           </div>
