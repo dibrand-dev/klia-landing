@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import { Icons } from '@/components/Icons'
 
 // ── Scroll reveal ─────────────────────────────────────────────────────────────
@@ -216,7 +217,9 @@ function SobreEquipo() {
 
         <div className="sobre-team-grid">
           <div className="sobre-team-card sobre-reveal sd-1">
-            <div className="sobre-team-avatar">NR</div>
+            <div className="sobre-team-avatar" style={{ padding: 0, overflow: 'hidden' }}>
+              <Image src="/norberto-riccitelli.jpg" alt="Norberto Riccitelli" width={64} height={64} style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+            </div>
             <p className="sobre-team-name">Norberto Riccitelli</p>
             <p className="sobre-team-role">Fundador y CEO</p>
             <p className="sobre-team-desc">
@@ -228,7 +231,9 @@ function SobreEquipo() {
           </div>
 
           <div className="sobre-team-card sobre-reveal sd-2">
-            <div className="sobre-team-avatar"><Icons.Building2 size={28} /></div>
+            <div className="sobre-team-avatar" style={{ padding: 0, overflow: 'hidden', background: '#fff' }}>
+              <Image src="/dibrand-logo.png" alt="Dibrand LLC" width={64} height={64} style={{ objectFit: 'contain', width: '100%', height: '100%', padding: '10px' }} />
+            </div>
             <p className="sobre-team-name">Dibrand LLC</p>
             <p className="sobre-team-role">Empresa desarrolladora</p>
             <p className="sobre-team-desc">
