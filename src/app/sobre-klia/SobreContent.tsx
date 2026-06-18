@@ -232,7 +232,7 @@ function SobreEquipo() {
 
           <div className="sobre-team-card sobre-reveal sd-2">
             <div className="sobre-team-avatar" style={{ padding: 0, overflow: 'hidden', background: '#fff' }}>
-              <Image src="/dibrand-logo.png" alt="Dibrand LLC" width={64} height={64} style={{ objectFit: 'contain', width: '100%', height: '100%', padding: '10px' }} />
+              <Image src="/dibrand-logo.png" alt="Dibrand LLC" width={64} height={64} style={{ objectFit: 'contain', width: '100%', height: '100%', padding: '4px' }} />
             </div>
             <p className="sobre-team-name">Dibrand LLC</p>
             <p className="sobre-team-role">Empresa desarrolladora</p>
