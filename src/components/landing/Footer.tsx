@@ -24,6 +24,8 @@ const COLS = [
 
 function getLinkHref(link: string): string {
   switch (link) {
+    case 'Sobre Klia':
+      return '/sobre-klia'
     case 'Privacidad':
       return '/privacidad'
     case 'Términos':
