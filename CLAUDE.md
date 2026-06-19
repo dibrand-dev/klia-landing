@@ -78,14 +78,13 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-06-17_
+_Actualizado el 2026-06-18_
 
 ```
-90b5c04 fix: corregir carga de Zoho SalesIQ con next/script
-f49347f feat: página /faq con acordeón y schema FAQPage
-f61d582 feat: página /casos con navegación por especialidad
-9cf17fe docs: CLAUDE.md - commits del dia 2026-06-17
-fc90bbe feat: agregar script update_claude.sh para workflow CLAUDE.md
-68a97d1 fix: workflow CLAUDE.md - reemplazar heredoc por script separado
-58d4e09 fix: enlazar "Beneficios" del nav a /beneficios
+7cf5e86 feat: limpiar footer — sacar newsletter y links no activos
+6adadbf fix: corregir tamaños de heading en /sobre-klia — pixel perfect
+e9f1b7d fix: agrandar logo Dibrand en avatar de /sobre-klia
+d085810 feat: usar fotos reales en avatares de /sobre-klia
+31ad82b fix: enlazar 'Sobre Klia' en el footer a /sobre-klia
+34f9c26 feat: página /sobre-klia con historia, equipo y visión de KLIA
 ```
