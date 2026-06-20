@@ -78,13 +78,9 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-06-18_
+_Actualizado el 2026-06-19_
 
 ```
+c5520ca docs: CLAUDE.md - commits del dia 2026-06-18
 7cf5e86 feat: limpiar footer — sacar newsletter y links no activos
-6adadbf fix: corregir tamaños de heading en /sobre-klia — pixel perfect
-e9f1b7d fix: agrandar logo Dibrand en avatar de /sobre-klia
-d085810 feat: usar fotos reales en avatares de /sobre-klia
-31ad82b fix: enlazar 'Sobre Klia' en el footer a /sobre-klia
-34f9c26 feat: página /sobre-klia con historia, equipo y visión de KLIA
 ```
