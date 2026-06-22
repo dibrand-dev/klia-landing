@@ -78,9 +78,9 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-06-19_
+_Actualizado el 2026-06-21_
 
 ```
-c5520ca docs: CLAUDE.md - commits del dia 2026-06-18
-7cf5e86 feat: limpiar footer — sacar newsletter y links no activos
+323d06a seo: agregar noindex a /login y /registro
+97cbb5c seo: actualizar sitemap y agregar canonical a /precios
 ```
