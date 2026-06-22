@@ -5,6 +5,7 @@ import '@/app/auth.css'
 export const metadata: Metadata = {
   title: 'Crear cuenta — Klia',
   description: 'Empezá tu período de prueba de 21 días. Sin tarjeta, sin permanencia.',
+  robots: { index: false, follow: false },
 }
 
 export default function RegistroPage() {
