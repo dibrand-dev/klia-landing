@@ -34,6 +34,7 @@ const instrumentSerif = Instrument_Serif({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.klia.com.ar'),
   title: 'Klia — Menos papeleo, más atención',
   description: 'La plataforma de gestión clínica y administrativa para profesionales y clínicas de salud en Argentina. Agenda, atenciones del día con IA, cobros por Mercado Pago e informes automáticos.',
   icons: {
@@ -49,6 +50,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Klia — Menos papeleo, más atención',
     description: 'La gestión de tu consultorio, simplificada.',
+    url: 'https://www.klia.com.ar',
+    siteName: 'KLIA',
     locale: 'es_AR',
     type: 'website',
   },

@@ -16,6 +16,7 @@ import RevealObserver from '@/components/landing/RevealObserver'
 export const metadata: Metadata = {
   title: 'KLIA — Software de gestión para profesionales de salud en Argentina',
   description: 'Plataforma SaaS para psicólogos, médicos y kinesiólogos en Argentina. Agenda, historia clínica digital, cobros con Mercado Pago e IA. 21 días gratis.',
+  alternates: { canonical: 'https://www.klia.com.ar' },
   openGraph: {
     title: 'KLIA — Software de gestión para profesionales de salud en Argentina',
     description: 'Plataforma SaaS para psicólogos, médicos y kinesiólogos en Argentina.',
