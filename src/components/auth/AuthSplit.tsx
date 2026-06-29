@@ -145,6 +145,8 @@ const TrustStrip = () => (
 interface LoginFormProps {
   loading: boolean
   error: string | null
+  showResendLink: boolean
+  onResend: () => void
   onSubmit: (e: React.FormEvent) => void
   form: LoginData
   setForm: (form: LoginData) => void
@@ -152,9 +154,19 @@ interface LoginFormProps {
 }
 
 // Login form
-const LoginForm = ({ loading, error, onSubmit, form, setForm, onGoogleClick }: LoginFormProps) => (
+const LoginForm = ({ loading, error, showResendLink, onResend, onSubmit, form, setForm, onGoogleClick }: LoginFormProps) => (
   <form className="auth-form" onSubmit={onSubmit}>
-    {error && <div style={{ background: '#FEE2E2', border: '1px solid #FECACA', color: '#991B1B', padding: '12px 16px', borderRadius: '12px', fontSize: '14px' }}>{error}</div>}
+    {error && (
+      <div style={{ background: '#FEE2E2', border: '1px solid #FECACA', color: '#991B1B', padding: '12px 16px', borderRadius: '12px', fontSize: '14px' }}>
+        {error}
+        {showResendLink && (
+          <button type="button" onClick={onResend}
+            style={{ display: 'block', marginTop: '8px', fontSize: '13px', textDecoration: 'underline', color: '#991B1B', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+            Reenviar email de confirmación
+          </button>
+        )}
+      </div>
+    )}
 
     <div className="field">
       <label className="field-label" htmlFor="email">
@@ -401,6 +413,7 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
+  const [showResendLink, setShowResendLink] = useState(false)
 
   const [loginForm, setLoginForm] = useState({ email: '', password: '', rememberMe: false })
   const [registerForm, setRegisterForm] = useState({
@@ -429,10 +442,29 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
     clearInvalidSession()
   }, [])
 
+  async function handleResendConfirmation() {
+    const supabase = createClient()
+    await supabase.auth.resend({ type: 'signup', email: loginForm.email })
+    setError('Te reenviamos el email de confirmación.')
+    setShowResendLink(false)
+  }
+
   async function handleLoginSubmit(e: React.FormEvent) {
     e.preventDefault()
     setError(null)
+    setShowResendLink(false)
     setLoading(true)
+
+    if (!loginForm.email.trim()) {
+      setError('Ingresá tu email.')
+      setLoading(false)
+      return
+    }
+    if (!loginForm.password.trim()) {
+      setError('Ingresá tu contraseña.')
+      setLoading(false)
+      return
+    }
 
     const supabase = createClient()
     const { error: signInError } = await supabase.auth.signInWithPassword({
@@ -441,6 +473,15 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
     })
 
     if (signInError) {
+      if (
+        signInError.message?.includes('Email not confirmed') ||
+        (signInError as { code?: string }).code === 'email_not_confirmed'
+      ) {
+        setError('Confirmá tu email antes de ingresar. Revisá tu casilla.')
+        setShowResendLink(true)
+        setLoading(false)
+        return
+      }
       setError('Email o contraseña incorrectos.')
       setLoading(false)
       return
@@ -586,7 +627,7 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
                 </div>
 
                 {mode === 'login' ? (
-                  <LoginForm loading={loading} error={error} onSubmit={handleLoginSubmit} form={loginForm} setForm={setLoginForm} onGoogleClick={handleGoogleLogin} />
+                  <LoginForm loading={loading} error={error} showResendLink={showResendLink} onResend={handleResendConfirmation} onSubmit={handleLoginSubmit} form={loginForm} setForm={setLoginForm} onGoogleClick={handleGoogleLogin} />
                 ) : (
                   <RegisterForm loading={loading} error={error} onSubmit={handleRegisterSubmit} form={registerForm} setForm={setRegisterForm} onGoogleClick={handleGoogleRegister} />
                 )}
