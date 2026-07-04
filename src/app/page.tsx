@@ -1,6 +1,7 @@
 export const dynamic = 'force-dynamic'
 
 import type { Metadata } from 'next'
+import { getPlanes } from '@/lib/planes'
 import Nav from '@/components/landing/Nav'
 import Hero from '@/components/landing/Hero'
 import Stats from '@/components/landing/Stats'
@@ -26,7 +27,18 @@ export const metadata: Metadata = {
   },
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const planes = await getPlanes()
+  const offers = planes
+    ? planes.map(p => ({
+        '@type': 'Offer',
+        name: `Plan ${p.nombre}`,
+        price: String(p.precio_mensual),
+        priceCurrency: 'ARS',
+        priceValidUntil: '2026-12-31',
+        availability: 'https://schema.org/InStock',
+      }))
+    : []
   return (
     <>
       <RevealObserver />
@@ -55,11 +67,7 @@ export default function HomePage() {
                 operatingSystem: 'Web, iOS, Android',
                 description: 'Plataforma SaaS para profesionales de la salud en Argentina. Gestión de agenda, historia clínica digital, cobros con Mercado Pago e inteligencia artificial.',
                 url: 'https://www.klia.com.ar',
-                offers: [
-                  { '@type': 'Offer', name: 'Plan Esencial', price: '15000', priceCurrency: 'ARS', priceValidUntil: '2026-12-31', availability: 'https://schema.org/InStock' },
-                  { '@type': 'Offer', name: 'Plan Profesional', price: '28000', priceCurrency: 'ARS', priceValidUntil: '2026-12-31', availability: 'https://schema.org/InStock' },
-                  { '@type': 'Offer', name: 'Plan Premium', price: '48000', priceCurrency: 'ARS', priceValidUntil: '2026-12-31', availability: 'https://schema.org/InStock' },
-                ],
+                offers,
                 aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '5' },
               },
               {

@@ -48,16 +48,25 @@ Production: https://www.klia.com.ar
 - Apple OAuth button is hidden (style={{ display: 'none' }})
 - Google OAuth redirects to https://app.klia.com.ar/auth/callback
 
-## Pricing system (as of 2026-06-13)
+## Pricing system (as of 2026-07-04)
 - Source of truth: Supabase tables `planes` + `modulos_config`
 - `planes`: id, nombre, descripcion, precio_mensual, es_ilimitado, es_publico, activo
 - `modulos_config`: modulo_id, nombre, descripcion, planes (string[]), activo
 - Each plan receives ALL active modules — component filters by `m.planes.includes(plan.id)`
 - Plan IDs are 'esencial', 'profesional', 'premium' — used directly as keys (no normalization)
 - Comparativa table is built dynamically from modulos_config (flat list ordered by modulo_id)
-- PLANES_FALLBACK in precios/page.tsx has modulos: [] — shows plans without feature list on Supabase failure
-- revalidate = 3600 (ISR, 1 hour cache)
+- NO hardcoded price fallbacks — if Supabase fails, pages show "Precios no disponibles" error state
+- `src/lib/planes.ts` — shared `getPlanes(): Promise<PlanData[] | null>` used by /precios, /prueba-gratis, and home JSON-LD
+- Annual price in /prueba-gratis computed as `Math.round(precio_mensual * 11 / 12)` (1 free month)
+- revalidate = 3600 in /precios as fallback; pages are `ƒ Dynamic` due to cookies() in createClient()
 - `src/lib/features.ts` was deleted — no longer used
+
+## On-demand revalidation (POST /api/revalidate)
+- Endpoint: `POST https://www.klia.com.ar/api/revalidate?secret=<REVALIDATE_SECRET>`
+- Revalidates /precios and / (home JSON-LD) immediately
+- Ops must call this after updating prices in the `planes` table
+- Set `REVALIDATE_SECRET` env var in Vercel (project settings → Environment Variables)
+- Returns `{ revalidated: true, paths: ['/precios', '/'] }` on success, 401 on invalid secret
 
 ## Known issues fixed
 - .h-2 and .h-3 custom classes conflict with Tailwind height utilities — fixed with `height: auto` in globals.css
