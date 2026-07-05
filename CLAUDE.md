@@ -87,8 +87,8 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-06-29_
+_Actualizado el 2026-07-04_
 
 ```
-af718ba fix: validación de campos vacíos y email no confirmado en login
+76a1fac fix: eliminar precios hardcodeados del landing, leer todo de tabla planes con revalidación on-demand
 ```
