@@ -239,7 +239,7 @@ function RegistroForm() {
     }
     setLoading(true)
     setError('')
-    track('sign_up_attempt', { form_source: 'prueba_gratis' })
+    track('sign_up_attempt', { form_source: 'prueba_gratis', reason: undefined })
     try {
       const res = await fetch('https://app.klia.com.ar/api/auth/registro', {
         method: 'POST',
@@ -264,7 +264,7 @@ function RegistroForm() {
         setError(data.error || 'Error al crear la cuenta')
         return
       }
-      track('sign_up', { form_source: 'prueba_gratis' })
+      track('sign_up', { form_source: 'prueba_gratis', reason: undefined })
       setSuccess(true)
     } catch {
       track('sign_up_failed', { form_source: 'prueba_gratis', reason: 'unknown_error' })

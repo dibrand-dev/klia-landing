@@ -533,7 +533,7 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
     }
 
     setLoading(true)
-    track('sign_up_attempt', { form_source: 'auth_split' })
+    track('sign_up_attempt', { form_source: 'auth_split', reason: undefined })
 
     try {
       const response = await fetch('https://app.klia.com.ar/api/auth/registro', {
@@ -566,7 +566,7 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
         return
       }
 
-      track('sign_up', { form_source: 'auth_split' })
+      track('sign_up', { form_source: 'auth_split', reason: undefined })
       setSuccess(true)
     } catch {
       track('sign_up_failed', { form_source: 'auth_split', reason: 'unknown_error' })

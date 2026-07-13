@@ -41,7 +41,7 @@ export default function RegisterForm() {
     }
 
     setLoading(true)
-    track('sign_up_attempt', { form_source: 'register_form' })
+    track('sign_up_attempt', { form_source: 'register_form', reason: undefined })
 
     try {
       const response = await fetch('https://app.klia.com.ar/api/auth/registro', {
@@ -73,7 +73,7 @@ export default function RegisterForm() {
         return
       }
 
-      track('sign_up', { form_source: 'register_form' })
+      track('sign_up', { form_source: 'register_form', reason: undefined })
       setSuccess(true)
     } catch {
       track('sign_up_failed', { form_source: 'register_form', reason: 'unknown_error' })
