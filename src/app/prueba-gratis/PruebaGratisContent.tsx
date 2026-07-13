@@ -540,7 +540,11 @@ function CroPricing({ prices }: { prices: Record<string, number> | null }) {
     document.getElementById('registro')?.scrollIntoView({ behavior: 'smooth' })
   }
 
-  if (!prices) {
+  const esencial    = prices?.esencial
+  const profesional = prices?.profesional
+  const premium     = prices?.premium
+
+  if (!prices || typeof esencial !== 'number' || typeof profesional !== 'number' || typeof premium !== 'number') {
     return (
       <section id="precios" className="cro-section cro-section-alt">
         <div className="container">
