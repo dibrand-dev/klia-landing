@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { ESPECIALIDADES } from '@/lib/especialidades'
+import { track } from '@/lib/analytics'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
 
@@ -532,33 +533,47 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
     }
 
     setLoading(true)
+    track('sign_up_attempt', { form_source: 'auth_split' })
 
-    const response = await fetch('https://app.klia.com.ar/api/auth/registro', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        email: registerForm.email,
-        password: registerForm.password,
-        nombre: registerForm.nombre,
-        apellido: registerForm.apellido,
-        especialidad: registerForm.especialidad || null,
-        matricula: registerForm.matricula || null,
-      }),
-    })
+    try {
+      const response = await fetch('https://app.klia.com.ar/api/auth/registro', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: registerForm.email,
+          password: registerForm.password,
+          nombre: registerForm.nombre,
+          apellido: registerForm.apellido,
+          especialidad: registerForm.especialidad || null,
+          matricula: registerForm.matricula || null,
+        }),
+      })
 
-    const data = await response.json()
-    setLoading(false)
+      const data = await response.json()
 
-    if (!response.ok) {
-      setError(
-        data.error === 'already_registered'
-          ? 'Ya existe una cuenta con ese email. Intentá iniciar sesión.'
-          : data.error || 'Error al crear la cuenta. Intentá de nuevo.'
-      )
-      return
+      if (!response.ok) {
+        const reason = data.error === 'already_registered'
+          ? 'email_already_exists'
+          : response.status === 400
+          ? 'invalid_password'
+          : 'unknown_error'
+        track('sign_up_failed', { form_source: 'auth_split', reason })
+        setError(
+          data.error === 'already_registered'
+            ? 'Ya existe una cuenta con ese email. Intentá iniciar sesión.'
+            : data.error || 'Error al crear la cuenta. Intentá de nuevo.'
+        )
+        return
+      }
+
+      track('sign_up', { form_source: 'auth_split' })
+      setSuccess(true)
+    } catch {
+      track('sign_up_failed', { form_source: 'auth_split', reason: 'unknown_error' })
+      setError('No pudimos conectar con el servidor. Intentá de nuevo.')
+    } finally {
+      setLoading(false)
     }
-
-    setSuccess(true)
   }
 
   return (

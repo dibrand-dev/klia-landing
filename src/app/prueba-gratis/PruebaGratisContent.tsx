@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { ESPECIALIDADES } from '@/lib/especialidades'
 import { createClient } from '@/lib/supabase/client'
+import { track } from '@/lib/analytics'
 import './cro.css'
 
 const APP_URL = 'https://app.klia.com.ar'
@@ -238,6 +239,7 @@ function RegistroForm() {
     }
     setLoading(true)
     setError('')
+    track('sign_up_attempt', { form_source: 'prueba_gratis' })
     try {
       const res = await fetch('https://app.klia.com.ar/api/auth/registro', {
         method: 'POST',
@@ -253,11 +255,19 @@ function RegistroForm() {
       })
       const data = await res.json()
       if (!res.ok) {
+        const reason = data.error === 'already_registered'
+          ? 'email_already_exists'
+          : res.status === 400
+          ? 'invalid_password'
+          : 'unknown_error'
+        track('sign_up_failed', { form_source: 'prueba_gratis', reason })
         setError(data.error || 'Error al crear la cuenta')
         return
       }
+      track('sign_up', { form_source: 'prueba_gratis' })
       setSuccess(true)
     } catch {
+      track('sign_up_failed', { form_source: 'prueba_gratis', reason: 'unknown_error' })
       setError('No pudimos conectar con el servidor. Intentá de nuevo.')
     } finally {
       setLoading(false)
