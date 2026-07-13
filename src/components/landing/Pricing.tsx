@@ -7,6 +7,7 @@ export type ModuloItem = {
 
 export type PlanData = {
   id: string
+  slug: string | null
   nombre: string
   descripcion: string | null
   precio_mensual: number

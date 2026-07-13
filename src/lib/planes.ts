@@ -22,7 +22,7 @@ export async function getPlanes(): Promise<PlanData[] | null> {
 
     const { data: planes, error: planesError } = await supabase
       .from('planes')
-      .select('id, nombre, descripcion, precio_mensual, es_ilimitado')
+      .select('id, slug, nombre, descripcion, precio_mensual, es_ilimitado')
       .eq('es_publico', true)
       .eq('activo', true)
       .order('precio_mensual', { ascending: true })
@@ -46,6 +46,7 @@ export async function getPlanes(): Promise<PlanData[] | null> {
 
     return planes.map((p) => ({
       id: p.id,
+      slug: p.slug as string | null,
       nombre: p.nombre,
       descripcion: p.descripcion,
       precio_mensual: p.precio_mensual,
