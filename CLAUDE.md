@@ -87,12 +87,8 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-07-13_
+_Actualizado el 2026-07-14_
 
 ```
-58dcbf3 fix: usar slug en vez de id como clave del mapa de precios en /prueba-gratis
-fcc2764 fix(analytics): reset reason to undefined in sign_up_attempt and sign_up events
-2fa8f35 fix: guard against undefined plan keys in /prueba-gratis pricing section
-e1f3cd6 chore: agregar script de test Playwright para eventos de analytics
-e752330 feat: instrumentar eventos GA4 en los tres formularios de registro
+b7d479f docs: CLAUDE.md - commits del dia 2026-07-13
 ```
