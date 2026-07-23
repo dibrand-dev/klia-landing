@@ -7,7 +7,10 @@ export default async function PruebaGratisPage() {
     ? Object.fromEntries(
         planes
           .filter((p): p is typeof p & { slug: string } => p.slug != null)
-          .map(p => [p.slug, p.precio_mensual])
+          .map(p => [p.slug, {
+            mensual: p.precio_mensual,
+            anual: p.precio_anual_mensual ?? Math.round(p.precio_mensual * 11 / 12),
+          }])
       )
     : null
   return <PruebaGratisContent prices={prices} />

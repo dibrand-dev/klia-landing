@@ -533,7 +533,9 @@ function CroFeatures() {
 }
 
 /* ---- Pricing section ---- */
-function CroPricing({ prices }: { prices: Record<string, number> | null }) {
+type PlanPrices = Record<string, { mensual: number; anual: number }>
+
+function CroPricing({ prices }: { prices: PlanPrices | null }) {
   const [annual, setAnnual] = useState(false)
   const scrollToForm = (e: React.MouseEvent) => {
     e.preventDefault()
@@ -544,7 +546,7 @@ function CroPricing({ prices }: { prices: Record<string, number> | null }) {
   const profesional = prices?.profesional
   const premium     = prices?.premium
 
-  if (!prices || typeof esencial !== 'number' || typeof profesional !== 'number' || typeof premium !== 'number') {
+  if (!prices || !esencial || !profesional || !premium) {
     return (
       <section id="precios" className="cro-section cro-section-alt">
         <div className="container">
@@ -563,7 +565,7 @@ function CroPricing({ prices }: { prices: Record<string, number> | null }) {
     {
       name: 'Esencial',
       desc: 'Lo necesario para ordenar tu consultorio y dejar el papel atrás.',
-      monthly: prices.esencial, annual: Math.round(prices.esencial * 11 / 12),
+      monthly: prices.esencial.mensual, annual: prices.esencial.anual,
       cta: 'Empezar gratis', featured: false,
       footer: '21 días de prueba · cancelás cuando quieras',
       feats: [
@@ -580,7 +582,7 @@ function CroPricing({ prices }: { prices: Record<string, number> | null }) {
     {
       name: 'Profesional',
       desc: 'Para quien factura, cobra y presenta a obras sociales todos los meses.',
-      monthly: prices.profesional, annual: Math.round(prices.profesional * 11 / 12),
+      monthly: prices.profesional.mensual, annual: prices.profesional.anual,
       cta: 'Probar 21 días gratis', featured: true,
       footer: '21 días gratis sin tarjeta · cancelás cuando quieras',
       feats: [
@@ -596,7 +598,7 @@ function CroPricing({ prices }: { prices: Record<string, number> | null }) {
     {
       name: 'Premium',
       desc: 'La práctica completamente automatizada, de la reserva al informe.',
-      monthly: prices.premium, annual: Math.round(prices.premium * 11 / 12),
+      monthly: prices.premium.mensual, annual: prices.premium.anual,
       cta: 'Probar 21 días gratis', featured: false,
       footer: 'Onboarding incluido · soporte prioritario',
       feats: [
@@ -772,7 +774,7 @@ function useReveal() {
 }
 
 /* ---- Main page ---- */
-export default function PruebaGratisContent({ prices }: { prices: Record<string, number> | null }) {
+export default function PruebaGratisContent({ prices }: { prices: PlanPrices | null }) {
   useReveal()
   return (
     <div className="cro">

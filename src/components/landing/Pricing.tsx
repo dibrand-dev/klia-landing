@@ -11,6 +11,7 @@ export type PlanData = {
   nombre: string
   descripcion: string | null
   precio_mensual: number
+  precio_anual_mensual: number | null
   es_ilimitado: boolean
   modulos: ModuloItem[]
 }
