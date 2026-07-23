@@ -96,7 +96,7 @@ function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
 
       <ul className="plan-features">
         {plan.modulos
-          .filter(m => m.planes.includes(plan.id))
+          .filter(m => m.planes.includes(plan.slug!))
           .map(m => (
             <li key={m.modulo_id} className="plan-feature">
               <span className="plan-feature-ico"><Check /></span>
@@ -124,7 +124,7 @@ function buildComparativa(plans: PlanData[], todosModulos: ModuloItem[]) {
       modulo_id: modulo.modulo_id,
     }
     for (const plan of plans) {
-      row[plan.id] = modulo.planes.includes(plan.id)
+      row[plan.slug!] = modulo.planes.includes(plan.slug!)
     }
     return row
   })
@@ -200,7 +200,7 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
                       <td className="feature">{row.feature as string}</td>
                       {sorted.map((p, i) => (
                         <td key={p.id} data-label={p.nombre} className={i === featuredIndex ? 'is-featured' : ''}>
-                          {row[p.id] === true ? <TableCheck /> : <span style={{ color: 'var(--slate)' }}>—</span>}
+                          {row[p.slug!] === true ? <TableCheck /> : <span style={{ color: 'var(--slate)' }}>—</span>}
                         </td>
                       ))}
                     </tr>
