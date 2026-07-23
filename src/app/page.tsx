@@ -2,6 +2,7 @@ export const dynamic = 'force-dynamic'
 
 import type { Metadata } from 'next'
 import { getPlanes } from '@/lib/planes'
+import { getTestimonios } from '@/lib/testimonios'
 import Nav from '@/components/landing/Nav'
 import Hero from '@/components/landing/Hero'
 import Stats from '@/components/landing/Stats'
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 }
 
 export default async function HomePage() {
-  const planes = await getPlanes()
+  const [planes, testimonios] = await Promise.all([getPlanes(), getTestimonios()])
   const offers = planes
     ? planes.map(p => ({
         '@type': 'Offer',
@@ -49,7 +50,7 @@ export default async function HomePage() {
         <Products />
         <Benefits />
         <Cases />
-        <Testimonials />
+        <Testimonials items={testimonios} />
         <FAQ />
         <CTAFinal />
       </main>
