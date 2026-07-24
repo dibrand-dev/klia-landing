@@ -498,11 +498,11 @@
 .auth-split-quote {
   font-family: var(--font-geist), system-ui, sans-serif;
   font-weight: 500;
-  font-size: clamp(28px, 2.6vw, 40px);
-  line-height: 1.15;
+  font-size: clamp(18px, 1.6vw, 24px);
+  line-height: 1.2;
   letter-spacing: -0.02em;
-  margin: 28px 0 0;
-  max-width: 22ch;
+  margin: 20px 0 0;
+  max-width: 26ch;
 }
 
 .auth-split-quote .serif-it {
@@ -555,7 +555,7 @@
 
 .auth-split-stage-phone {
   position: relative;
-  transform: translateY(60px);
+  transform: translateY(20px);
   filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.4));
 }
 
