@@ -5,7 +5,7 @@ import Footer from '@/components/landing/Footer'
 import { getPlanes } from '@/lib/planes'
 import './pricing.css'
 
-export const revalidate = 3600
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: 'Precios — KLIA | Planes para profesionales de salud en Argentina',

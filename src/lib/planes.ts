@@ -42,7 +42,11 @@ export async function getPlanes(): Promise<PlanData[] | null> {
       console.error('[planes] modulos_config query failed:', modulosError)
     }
 
-    const todosModulos: ModuloItem[] = (modulos && modulos.length > 0) ? modulos : MODULOS_FALLBACK
+    const usandoFallback = !(modulos && modulos.length > 0)
+    const todosModulos: ModuloItem[] = usandoFallback ? MODULOS_FALLBACK : modulos!
+
+    console.log('[debug-planes] plan slugs:', planes.map(p => p.slug))
+    console.log('[debug-modulos] primer modulo planes:', modulos?.[0]?.planes, 'usó fallback:', usandoFallback)
 
     return planes.map((p) => ({
       id: p.id,
