@@ -45,9 +45,6 @@ export async function getPlanes(): Promise<PlanData[] | null> {
     const usandoFallback = !(modulos && modulos.length > 0)
     const todosModulos: ModuloItem[] = usandoFallback ? MODULOS_FALLBACK : modulos!
 
-    console.log('[debug-planes] plan slugs:', planes.map(p => p.slug))
-    console.log('[debug-modulos] primer modulo planes:', modulos?.[0]?.planes, 'usó fallback:', usandoFallback)
-
     return planes.map((p) => ({
       id: p.id,
       slug: p.slug as string | null,
