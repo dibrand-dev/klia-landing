@@ -401,7 +401,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: auto;
+  margin-bottom: 32px;
 }
 
 .auth-split-form-top--compact {
@@ -411,7 +411,7 @@
 .auth-split-form-body {
   width: 100%;
   max-width: 440px;
-  margin: 64px auto;
+  margin: 0 auto 32px;
   display: grid;
   gap: 28px;
 }
