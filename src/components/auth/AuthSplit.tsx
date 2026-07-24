@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
-import { ESPECIALIDADES } from '@/lib/especialidades'
 import { track } from '@/lib/analytics'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
@@ -20,9 +19,7 @@ type RegisterData = {
   nombre: string
   apellido: string
   email: string
-  especialidad: string
   password: string
-  matricula: string
   acceptTerms: boolean
 }
 
@@ -244,28 +241,6 @@ const RegisterForm = ({ loading, error, onSubmit, form, setForm, onGoogleClick }
       <EmailField id="reg-email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
     </div>
 
-    <div className="row-2">
-      <div className="field">
-        <label className="field-label" htmlFor="prof">
-          Profesión
-        </label>
-        <select id="prof" className="select" value={form.especialidad} onChange={(e) => setForm({ ...form, especialidad: e.target.value })} required>
-          <option value="">Selecciona una profesión</option>
-          {ESPECIALIDADES.map((esp) => (
-            <option key={esp} value={esp}>
-              {esp}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div className="field">
-        <label className="field-label" htmlFor="mat">
-          Matrícula (opcional)
-        </label>
-        <input id="mat" className="input" type="text" placeholder="MN 12.345" autoComplete="off" onChange={(e) => setForm({ ...form, matricula: e.target.value })} />
-      </div>
-    </div>
-
     <div className="field">
       <label className="field-label" htmlFor="reg-pass">
         Contraseña
@@ -421,9 +396,7 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
     nombre: '',
     apellido: '',
     email: '',
-    especialidad: '',
     password: '',
-    matricula: '',
     acceptTerms: false,
   })
 
@@ -544,8 +517,6 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
           password: registerForm.password,
           nombre: registerForm.nombre,
           apellido: registerForm.apellido,
-          especialidad: registerForm.especialidad || null,
-          matricula: registerForm.matricula || null,
         }),
       })
 
