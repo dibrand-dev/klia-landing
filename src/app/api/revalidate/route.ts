@@ -10,6 +10,8 @@ export async function POST(request: NextRequest) {
 
   revalidatePath('/precios')
   revalidatePath('/')
+  revalidatePath('/login')
+  revalidatePath('/registro')
 
-  return NextResponse.json({ revalidated: true, paths: ['/precios', '/'] })
+  return NextResponse.json({ revalidated: true, paths: ['/precios', '/', '/login', '/registro'] })
 }

@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/client'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { track } from '@/lib/analytics'
+import type { TestimonioLanding } from '@/lib/testimonios'
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? 'https://app.klia.com.ar'
 
@@ -381,7 +382,7 @@ const PhoneFrame = ({ children, scale = 1 }: { children: React.ReactNode; scale?
 )
 
 // Main Split Editorial component
-function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 'register' }) {
+function AuthSplitInner({ defaultMode = 'login', testimonio }: { defaultMode?: 'login' | 'register'; testimonio?: TestimonioLanding | null }) {
   const searchParams = useSearchParams()
   const urlError = searchParams.get('error')
 
@@ -651,19 +652,36 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
         <div className="auth-split-visual">
           <div className="auth-split-visual-grid" />
           <div className="auth-split-visual-inner">
-            <div className="auth-split-eyebrow">Testimonios</div>
+            {testimonio && (
+              <>
+                <div className="auth-split-eyebrow">Testimonios</div>
 
-            <blockquote className="auth-split-quote">
-              «Pasé de facturar a la madrugada a tener todo <span className="serif-it">listo en segundos</span> al cerrar la sesión.»
-            </blockquote>
+                <blockquote className="auth-split-quote">
+                  «{testimonio.quote}»
+                </blockquote>
 
-            <div className="auth-split-author">
-              <div className="auth-split-author-avatar">MR</div>
-              <div>
-                <div className="auth-split-author-name">Mariana Rey</div>
-                <div className="auth-split-author-role">Psicóloga clínica · MN 47.812</div>
-              </div>
-            </div>
+                <div className="auth-split-author">
+                  {testimonio.avatar_url ? (
+                    <img
+                      src={testimonio.avatar_url}
+                      alt={testimonio.nombre}
+                      style={{ width: 36, height: 36, borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }}
+                    />
+                  ) : (
+                    <div
+                      className="auth-split-author-avatar"
+                      style={testimonio.color_bg ? { background: testimonio.color_bg } : undefined}
+                    >
+                      {testimonio.iniciales}
+                    </div>
+                  )}
+                  <div>
+                    <div className="auth-split-author-name">{testimonio.nombre}</div>
+                    <div className="auth-split-author-role">{testimonio.rol}</div>
+                  </div>
+                </div>
+              </>
+            )}
 
             <div className="auth-split-stage">
               <div className="auth-split-callout auth-split-callout-1">
@@ -716,10 +734,10 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
   )
 }
 
-export default function AuthSplit({ defaultMode }: { defaultMode?: 'login' | 'register' }) {
+export default function AuthSplit({ defaultMode, testimonio }: { defaultMode?: 'login' | 'register'; testimonio?: TestimonioLanding | null }) {
   return (
     <Suspense fallback={null}>
-      <AuthSplitInner defaultMode={defaultMode} />
+      <AuthSplitInner defaultMode={defaultMode} testimonio={testimonio} />
     </Suspense>
   )
 }
