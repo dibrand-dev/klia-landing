@@ -549,13 +549,13 @@
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
   min-height: 380px;
 }
 
 .auth-split-stage-phone {
   position: relative;
-  transform: translateY(20px);
+  transform: translateY(-10px);
   filter: drop-shadow(0 40px 80px rgba(0, 0, 0, 0.4));
 }
 
