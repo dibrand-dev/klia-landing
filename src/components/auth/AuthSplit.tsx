@@ -553,7 +553,7 @@ function AuthSplitInner({ defaultMode = 'login', testimonio }: { defaultMode?: '
       <div className="auth-split">
         {/* LEFT — form */}
         <div className="auth-split-form">
-          <div className="auth-split-form-top">
+          <div className={`auth-split-form-top${success ? ' auth-split-form-top--compact' : ''}`}>
             <Link href="/" className="auth-logo" aria-label="Klia">
               <Image src="/klia-logo.png" alt="Klia" width={120} height={36} style={{ height: '56px', width: 'auto' }} />
             </Link>

@@ -404,6 +404,10 @@
   margin-bottom: auto;
 }
 
+.auth-split-form-top--compact {
+  margin-bottom: 24px;
+}
+
 .auth-split-form-body {
   width: 100%;
   max-width: 440px;
