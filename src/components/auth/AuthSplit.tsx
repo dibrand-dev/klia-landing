@@ -186,7 +186,7 @@ const LoginForm = ({ loading, error, showResendLink, onResend, onSubmit, form, s
       <PasswordField id="password" value={form.password} onChange={(e) => setForm({ ...form, password: e.target.value })} />
     </div>
 
-    <label className="checkbox" style={{ marginTop: 4 }}>
+    <label className="checkbox">
       <input type="checkbox" checked={form.rememberMe} onChange={(e) => setForm({ ...form, rememberMe: e.target.checked })} />
       <span>Mantenerme conectado en este dispositivo</span>
     </label>
@@ -252,7 +252,7 @@ const RegisterForm = ({ loading, error, onSubmit, form, setForm, onGoogleClick }
       </div>
     </div>
 
-    <label className="checkbox" style={{ marginTop: 4 }}>
+    <label className="checkbox">
       <input type="checkbox" checked={form.acceptTerms} onChange={(e) => setForm({ ...form, acceptTerms: e.target.checked })} required />
       <span>
         Acepto los <a href="/terminos">Términos</a> y la <a href="/privacidad">Política de privacidad</a>. Klia cumple con la Ley 25.326 de protección de datos.

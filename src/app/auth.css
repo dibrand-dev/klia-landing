@@ -41,7 +41,7 @@
 
 .auth-form {
   display: grid;
-  gap: 14px;
+  gap: 10px;
 }
 
 .field {
@@ -53,14 +53,14 @@
   font-size: 12px;
   color: var(--slate);
   font-weight: 500;
-  margin-bottom: 7px;
+  margin-bottom: 5px;
   letter-spacing: 0.01em;
 }
 
 .input,
 .select {
   width: 100%;
-  height: 52px;
+  height: 48px;
   padding: 0 16px;
   background: var(--bg);
   border: 1px solid var(--line);
@@ -214,7 +214,7 @@
 
 .btn-auth {
   width: 100%;
-  height: 54px;
+  height: 50px;
   border-radius: 12px;
   background: var(--ink);
   color: #fff;
@@ -251,7 +251,7 @@
 }
 
 .oauth-btn {
-  height: 48px;
+  height: 44px;
   border-radius: 12px;
   background: var(--bg);
   border: 1px solid var(--line);
@@ -277,7 +277,7 @@
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   gap: 14px;
-  margin: 6px 0;
+  margin: 4px 0;
 }
 
 .auth-divider::before,
@@ -337,7 +337,7 @@
   color: var(--slate);
   font-size: 15px;
   line-height: 1.55;
-  margin: 10px 0 0;
+  margin: 6px 0 0;
 }
 
 .auth-footer-text {
@@ -392,7 +392,7 @@
 .auth-split-form {
   display: flex;
   flex-direction: column;
-  padding: 36px 56px 36px;
+  padding: 24px 56px 24px;
   background: var(--bg);
   position: relative;
 }
@@ -401,19 +401,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .auth-split-form-top--compact {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .auth-split-form-body {
   width: 100%;
   max-width: 440px;
-  margin: 0 auto 32px;
+  margin: 0 auto 20px;
   display: grid;
-  gap: 28px;
+  gap: 20px;
 }
 
 .auth-split-form-foot {
