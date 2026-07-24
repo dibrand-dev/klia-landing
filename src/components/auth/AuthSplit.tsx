@@ -577,7 +577,7 @@ function AuthSplitInner({ defaultMode = 'login' }: { defaultMode?: 'login' | 're
               </div>
             )}
             {success ? (
-              <div style={{ textAlign: 'center', padding: '40px 0' }}>
+              <div style={{ textAlign: 'center', padding: '8px 0' }}>
                 <div style={{ width: 64, height: 64, borderRadius: '50%', background: '#D5EFDF', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 24px' }}>
                   <svg style={{ color: '#3D9C6B', width: 32, height: 32 }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
