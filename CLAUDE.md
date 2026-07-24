@@ -87,8 +87,13 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-07-22_
+_Actualizado el 2026-07-23_
 
 ```
+98cd249 chore: remover logs de debug en getPlanes tras confirmar fix de comparativa
+ca88c9c fix: forzar dynamic rendering en /precios para evitar Data Cache stale en getPlanes
+b7af4fb fix: corregir comparacion de planes por slug en vez de UUID en tabla comparativa
+30355b2 feat: testimonios dinámicos con avatar por imagen o color+iniciales
+2284459 docs: CLAUDE.md - commits del dia 2026-07-22
 6f12c3d fix: usar precio_anual_mensual real en vez de calculo x11/12 en prueba-gratis
 ```
