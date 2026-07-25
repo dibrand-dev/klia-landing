@@ -115,9 +115,15 @@ Production: https://www.klia.com.ar
 _Actualizado el 2026-07-24_
 
 ```
-98cd249 chore: remover logs de debug en getPlanes tras confirmar fix de comparativa
-ca88c9c fix: forzar dynamic rendering en /precios para evitar Data Cache stale en getPlanes
-b7af4fb fix: corregir comparacion de planes por slug en vez de UUID en tabla comparativa
-6f12c3d fix: usar precio_anual_mensual real en vez de calculo x11/12 en prueba-gratis
-30355b2 feat: testimonios dinámicos con avatar por imagen o color+iniciales
+321812f fix: reducir espaciados acumulados en formulario de auth para que el botón de Google sea visible sin scroll
+bc49017 fix: subir formulario de login/registro para que el botón de Google quede visible sin scroll
+62c9de3 fix: subir más el teléfono y reducir gap entre testimonio y stage visual
+fd5a0c5 fix: reducir tamaño de fuente del testimonio y subir imagen del teléfono en panel visual
+1864dfd fix: corregir causa real del espacio excesivo en pantalla de éxito — override de margin-bottom:auto heredado del flex container
+d78c430 feat: reemplazar testimonio hardcodeado por rotación real desde tabla testimonios
+529cc0c fix: reducir espaciado vertical excesivo en pantalla de confirmación de registro
+3849202 feat: achicar formulario de registro — Profesión y Matrícula se piden ahora en el onboarding de la app
+f2a6e15 fix: centrar botón de Google en /login y /registro
+b08535e docs: actualizar CLAUDE.md con fixes del 2026-07-24 y lección de Data Cache
+94b2a41 docs: CLAUDE.md - commits del dia 2026-07-23
 ```
