@@ -557,13 +557,17 @@ function AuthSplitInner({ defaultMode = 'login', testimonio }: { defaultMode?: '
             <Link href="/" className="auth-logo" aria-label="Klia">
               <Image src="/klia-logo.png" alt="Klia" width={120} height={36} style={{ height: '56px', width: 'auto' }} />
             </Link>
-            <Link href="/" className="auth-back">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="19" y1="12" x2="5" y2="12" />
-                <polyline points="12 19 5 12 12 5" />
-              </svg>
-              Inicio
-            </Link>
+            {success ? (
+              <Link href="/" className="auth-back">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="19" y1="12" x2="5" y2="12" />
+                  <polyline points="12 19 5 12 12 5" />
+                </svg>
+                Inicio
+              </Link>
+            ) : (
+              <AuthTabs mode={mode} setMode={setMode} />
+            )}
           </div>
 
           <div className="auth-split-form-body">
@@ -596,8 +600,7 @@ function AuthSplitInner({ defaultMode = 'login', testimonio }: { defaultMode?: '
             ) : (
               <>
                 <div>
-                  <AuthTabs mode={mode} setMode={setMode} />
-                  <h1 className="auth-heading" style={{ marginTop: '18px' }}>
+                  <h1 className="auth-heading">
                     {mode === 'login' ? (
                       <>
                         Volvé a tu<span style={{ color: 'var(--klia)', fontFamily: 'var(--font-instrument-serif), Georgia, serif', fontStyle: 'italic', fontWeight: 400 }}> consultorio</span>
