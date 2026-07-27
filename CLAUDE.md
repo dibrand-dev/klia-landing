@@ -112,18 +112,8 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-07-24_
+_Actualizado el 2026-07-26_
 
 ```
-321812f fix: reducir espaciados acumulados en formulario de auth para que el botón de Google sea visible sin scroll
-bc49017 fix: subir formulario de login/registro para que el botón de Google quede visible sin scroll
-62c9de3 fix: subir más el teléfono y reducir gap entre testimonio y stage visual
-fd5a0c5 fix: reducir tamaño de fuente del testimonio y subir imagen del teléfono en panel visual
-1864dfd fix: corregir causa real del espacio excesivo en pantalla de éxito — override de margin-bottom:auto heredado del flex container
-d78c430 feat: reemplazar testimonio hardcodeado por rotación real desde tabla testimonios
-529cc0c fix: reducir espaciado vertical excesivo en pantalla de confirmación de registro
-3849202 feat: achicar formulario de registro — Profesión y Matrícula se piden ahora en el onboarding de la app
-f2a6e15 fix: centrar botón de Google en /login y /registro
-b08535e docs: actualizar CLAUDE.md con fixes del 2026-07-24 y lección de Data Cache
-94b2a41 docs: CLAUDE.md - commits del dia 2026-07-23
+4dd66e9 fix: mover Ingresar/Crear cuenta a la fila superior, reemplazando el link redundante de Inicio
 ```
