@@ -112,8 +112,8 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-07-26_
+_Actualizado el 2026-07-27_
 
 ```
-4dd66e9 fix: mover Ingresar/Crear cuenta a la fila superior, reemplazando el link redundante de Inicio
+742b9c7 docs: CLAUDE.md - commits del dia 2026-07-26
 ```
