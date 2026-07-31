@@ -61,6 +61,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${geist.variable} ${geistMono.variable} ${inter.variable} ${instrumentSerif.variable}`}>
       <head>
+        <meta name="facebook-domain-verification" content="l0ovrhrfg02cqj3svtsy3kq06ka4a2" />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
