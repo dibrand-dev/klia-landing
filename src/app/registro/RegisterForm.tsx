@@ -74,10 +74,6 @@ export default function RegisterForm() {
       }
 
       track('sign_up', { form_source: 'register_form', reason: undefined })
-      // TODO: agregar event_id compartido con CAPI server-side para deduplicar con Meta
-      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'CompleteRegistration', { content_name: 'trial_signup' })
-      }
       setSuccess(true)
     } catch {
       track('sign_up_failed', { form_source: 'register_form', reason: 'unknown_error' })

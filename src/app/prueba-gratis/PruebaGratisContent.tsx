@@ -265,10 +265,6 @@ function RegistroForm() {
         return
       }
       track('sign_up', { form_source: 'prueba_gratis', reason: undefined })
-      // TODO: agregar event_id compartido con CAPI server-side para deduplicar con Meta
-      if (typeof window !== 'undefined' && window.fbq) {
-        window.fbq('track', 'CompleteRegistration', { content_name: 'trial_signup' })
-      }
       setSuccess(true)
     } catch {
       track('sign_up_failed', { form_source: 'prueba_gratis', reason: 'unknown_error' })
