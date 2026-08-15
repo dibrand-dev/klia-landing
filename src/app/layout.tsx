@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Inter, Instrument_Serif } from 'next/font/google'
 import Script from 'next/script'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { ClearInvalidSession } from '@/components/auth/ClearInvalidSession'
 import './globals.css'
 
@@ -95,6 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <ClearInvalidSession />
         {children}
+        <SpeedInsights />
         {/* Zoho SalesIQ */}
         <Script
           id="zoho-salesiq-init"
