@@ -66,7 +66,7 @@ const MODULES: Module[] = [
     desc:'Grabación directa desde la ficha del paciente. Transcripción automática con Whisper large-v3-turbo, el modelo más preciso en español. El texto queda listo para editar y guardar.' },
   { ico:'Wallet',   ai:false, badge:'prof',    extra:null,
     title:'Cobros y gestión de deuda',
-    desc:'Panel centralizado de deuda por paciente. Pagos por sesión, mes o a cuenta — distribución automática desde la sesión más antigua. Historial completo. Exportación a CSV.' },
+    desc:'Panel centralizado de deuda por paciente. Pagos por sesión, mes o a cuenta, distribución automática desde la sesión más antigua. Historial completo. Exportación a CSV.' },
   { ico:'Bell',     ai:false, badge:'prof',    extra:'unico',
     title:'Aviso automático de deuda',
     desc:'KLIA envía un email diario a los pacientes con saldo pendiente, listando exactamente qué deben y por cuánto. El profesional activa o desactiva desde Ajustes. Ningún otro software médico en Argentina tiene esta función.' },
@@ -81,7 +81,7 @@ const MODULES: Module[] = [
     desc:'URL única para que los pacientes reserven sin WhatsApp ni llamadas. Con pago integrado. Respeta horarios y agenda en tiempo real.' },
   { ico:'Folder',   ai:false, badge:'premium', extra:null,
     title:'Archivos del paciente',
-    desc:'Estudios, imágenes y documentos en la ficha del paciente. Almacenados en el Google Drive del profesional. Organizados en KLIA/Pacientes/[Nombre]/[Categoría].' },
+    desc:'Estudios, imágenes y documentos en la ficha del paciente. Almacenados en el Google Drive del profesional. Organizados en KLIA>Pacientes>Nombre.' },
   { ico:'Calendar', ai:false, badge:'todos',   extra:null,
     title:'Google Calendar sync',
     desc:'Sincronización bidireccional en tiempo real. Los turnos de KLIA aparecen en Google Calendar y viceversa. Sin doble carga de datos.' },
@@ -194,7 +194,7 @@ function Modules() {
             <em className="serif-it" style={{ color: 'var(--klia)' }}>real.</em>
           </h2>
           <p className="section-sub">
-            No es una lista de features — es el flujo completo de tu consultorio, digitalizado.
+            No es una lista de features, es el flujo completo de tu consultorio, digitalizado.
           </p>
         </div>
         <div className="modules-grid">
