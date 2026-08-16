@@ -112,8 +112,8 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-08-01_
+_Actualizado el 2026-08-15_
 
 ```
-d35466b docs: CLAUDE.md - commits del dia 2026-07-31
+5cd50db fix: ajustar puntuación y ruta de organización en sección Módulos de /producto
 ```
