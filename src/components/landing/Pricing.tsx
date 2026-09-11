@@ -101,7 +101,7 @@ function PlanCard({ plan, visuals }: { plan: PlanData; visuals: PlanVisuals }) {
           .map(m => (
             <li key={m.modulo_id} className="plan-feature">
               <span className="plan-feature-ico"><Check /></span>
-              <span>{m.nombre}</span>
+              <span>{m.limitePorPlan?.[plan.slug!] ?? m.nombre}</span>
             </li>
           ))
         }
