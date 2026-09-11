@@ -34,7 +34,7 @@ export async function getPlanes(): Promise<PlanData[] | null> {
 
     const { data: modulos, error: modulosError } = await supabase
       .from('modulos_config')
-      .select('modulo_id, nombre, descripcion, planes')
+      .select('modulo_id, nombre, descripcion, planes, limite_por_plan')
       .eq('activo', true)
       .order('modulo_id')
 
@@ -43,7 +43,15 @@ export async function getPlanes(): Promise<PlanData[] | null> {
     }
 
     const usandoFallback = !(modulos && modulos.length > 0)
-    const todosModulos: ModuloItem[] = usandoFallback ? MODULOS_FALLBACK : modulos!
+    const todosModulos: ModuloItem[] = usandoFallback
+      ? MODULOS_FALLBACK
+      : modulos!.map((m) => ({
+          modulo_id: m.modulo_id,
+          nombre: m.nombre,
+          descripcion: m.descripcion,
+          planes: m.planes,
+          ...(m.limite_por_plan ? { limitePorPlan: m.limite_por_plan as Record<string, string> } : {}),
+        }))
 
     return planes.map((p) => ({
       id: p.id,

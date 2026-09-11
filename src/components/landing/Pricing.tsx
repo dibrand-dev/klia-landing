@@ -3,6 +3,7 @@ export type ModuloItem = {
   nombre: string
   descripcion: string
   planes: string[]
+  limitePorPlan?: Record<string, string>
 }
 
 export type PlanData = {
@@ -124,7 +125,11 @@ function buildComparativa(plans: PlanData[], todosModulos: ModuloItem[]) {
       modulo_id: modulo.modulo_id,
     }
     for (const plan of plans) {
-      row[plan.slug!] = modulo.planes.includes(plan.slug!)
+      if (modulo.limitePorPlan) {
+        row[plan.slug!] = modulo.limitePorPlan[plan.slug!] ?? null
+      } else {
+        row[plan.slug!] = modulo.planes.includes(plan.slug!)
+      }
     }
     return row
   })
@@ -200,7 +205,11 @@ export default function Pricing({ plans }: { plans: PlanData[] }) {
                       <td className="feature">{row.feature as string}</td>
                       {sorted.map((p, i) => (
                         <td key={p.id} data-label={p.nombre} className={i === featuredIndex ? 'is-featured' : ''}>
-                          {row[p.slug!] === true ? <TableCheck /> : <span style={{ color: 'var(--slate)' }}>—</span>}
+                          {typeof row[p.slug!] === 'string'
+                            ? <span className="compare-limit">{row[p.slug!] as string}</span>
+                            : row[p.slug!] === true
+                              ? <TableCheck />
+                              : <span style={{ color: 'var(--slate)' }}>—</span>}
                         </td>
                       ))}
                     </tr>
