@@ -112,9 +112,8 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-09-11_
+_Actualizado el 2026-09-12_
 
 ```
-d5a889d feat(pricing): mostrar valor de limitePorPlan en checklist de cada plan card
-c1b8c11 feat: mostrar limite_por_plan en tabla comparativa de /precios y /prueba-gratis
+e613dda docs: CLAUDE.md - commits del dia 2026-09-11
 ```
