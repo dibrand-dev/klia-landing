@@ -6,12 +6,12 @@ import './casos.css'
 
 export const metadata: Metadata = {
   title: 'Casos de uso · KLIA — Software para psicólogos, kinesiólogos, médicos y más',
-  description: 'Descubrí cómo KLIA se adapta a tu especialidad. Casos reales de psicólogos, kinesiólogos, médicos clínicos, nutricionistas, odontólogos y terapistas ocupacionales en Argentina.',
+  description: 'Descubrí cómo KLIA se adapta a tu especialidad. Casos reales de psicólogos, kinesiólogos, médicos clínicos, nutricionistas, odontólogos, oftalmólogos y terapistas ocupacionales en Argentina.',
   alternates: { canonical: 'https://www.klia.com.ar/casos' },
   openGraph: {
     url: 'https://www.klia.com.ar/casos',
     title: 'Casos de uso · KLIA — Software para psicólogos, kinesiólogos, médicos y más',
-    description: 'Descubrí cómo KLIA se adapta a tu especialidad. Casos reales de psicólogos, kinesiólogos, médicos clínicos, nutricionistas, odontólogos y terapistas ocupacionales en Argentina.',
+    description: 'Descubrí cómo KLIA se adapta a tu especialidad. Casos reales de psicólogos, kinesiólogos, médicos clínicos, nutricionistas, odontólogos, oftalmólogos y terapistas ocupacionales en Argentina.',
   },
 }
 
@@ -34,6 +34,9 @@ const IconSmile = ({ size = 22 }: { size?: number }) => (
 )
 const IconPuzzle = ({ size = 22 }: { size?: number }) => (
   <Ico size={size}><path d="M4 4h6v1.5a2 2 0 0 0 4 0V4h6v6h-1.5a2 2 0 0 0 0 4H20v6h-6v-1.5a2 2 0 0 0-4 0V20H4v-6h1.5a2 2 0 0 0 0-4H4z"/></Ico>
+)
+const IconEye = ({ size = 22 }: { size?: number }) => (
+  <Ico size={size}><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></Ico>
 )
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -200,6 +203,30 @@ const CASOS_DATA: CasoData[] = [
     planLabel: 'Plan Profesional',
     terminologia: '"Sesión" — configurado automáticamente para terapia ocupacional',
   },
+  {
+    id: 'oftalmologia',
+    numero: '07',
+    specialty: 'Oftalmólogos',
+    icon: <IconEye size={22} />,
+    altBg: false,
+    profile: 'Andrés — oftalmólogo, 45 consultas semanales en consultorio propio en Palermo. Atiende OSDE, Swiss Medical y particulares. Cada consulta incluye refracción, tonometría y, muchas veces, dilatación o estudios con imágenes.',
+    sinKlia: [
+      'Refracción anotada en la ficha de papel; para comparar con la receta anterior hay que buscar hoja por hoja',
+      'La PIO corregida por paquimetría la calcula aparte, con una app o a mano',
+      'Retinografías y OCT llegan por WhatsApp o pendrive y quedan dispersas',
+      'Sin forma de saber en qué paso está cada paciente: esperando, dilatando o listo para entrar',
+    ],
+    conKlia: [
+      'Grilla de refracción OD/OI con esfera, cilindro, eje, adición y agudeza visual, con historial de recetas para comparar la evolución',
+      'PIO corregida por espesor corneal calculada automáticamente al cargar tonometría y paquimetría, con clasificación orientativa',
+      'Imágenes de estudios en la ficha del paciente, guardadas en su Google Drive, con visor a pantalla completa y zoom',
+      'Sala de espera con estados: en espera, en preparación (dilatación, estudios previos) y en consultorio, actualizados en vivo',
+      'Resumen clínico pre-consulta con IA y recordatorios automáticos 24 hs antes',
+    ],
+    plan: 'prof',
+    planLabel: 'Plan Profesional',
+    terminologia: '"Consulta" — configurado automáticamente para oftalmología',
+  },
 ]
 
 const PILLS = [
@@ -209,6 +236,7 @@ const PILLS = [
   { label: 'Nutrición',           anchor: '#nutricion' },
   { label: 'Odontología',         anchor: '#odontologia' },
   { label: 'Terapia Ocupacional', anchor: '#terapia-ocupacional' },
+  { label: 'Oftalmología',        anchor: '#oftalmologia' },
 ]
 
 // ─── Components ───────────────────────────────────────────────────────────────
@@ -226,9 +254,10 @@ function Hero() {
             <em className="serif-it" style={{ color: 'var(--klia)' }}>no al revés.</em>
           </h1>
           <p className="casos-lead">
-            Psicólogos, kinesiólogos, médicos, nutricionistas, odontólogos y terapistas
-            ocupacionales ya usan KLIA para gestionar su consultorio. Cada especialidad
-            tiene su propio flujo, su propia terminología y sus propios módulos activos.
+            Psicólogos, kinesiólogos, médicos, nutricionistas, odontólogos, oftalmólogos
+            y terapistas ocupacionales ya usan KLIA para gestionar su consultorio. Cada
+            especialidad tiene su propio flujo, su propia terminología y sus propios
+            módulos activos.
           </p>
         </div>
 
