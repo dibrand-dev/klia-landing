@@ -36,3 +36,4 @@ export const Quote      = (p: IconProps) => (
 export const Sparkle    = (p: IconProps) => <Icon {...p}><path d="M12 4l1.6 4.4L18 10l-4.4 1.6L12 16l-1.6-4.4L6 10l4.4-1.6z"/></Icon>
 export const Chat       = (p: IconProps) => <Icon {...p}><path d="M21 12a8 8 0 0 1-12.5 6.6L4 20l1.4-4.5A8 8 0 1 1 21 12z"/></Icon>
 export const Globe      = (p: IconProps) => <Icon {...p}><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.7 3 4 6 4 9s-1.3 6-4 9c-2.7-3-4-6-4-9s1.3-6 4-9z"/></Icon>
+export const Apple      = (p: IconProps) => <Icon {...p}><path d="M12 20.5C8.1 20.5 5 17.4 5 13.4c0-3.9 3.1-7 7-7s7 3.1 7 7c0 4-3.1 7.1-7 7.1z"/><path d="M12 6.4c0-2.4 1.6-4 3.8-4.4"/></Icon>

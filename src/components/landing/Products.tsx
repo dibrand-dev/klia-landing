@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Wallet, Brain, Calendar, Check } from '@/components/ui/Icons'
+import { Wallet, Brain, Calendar, Check, Apple } from '@/components/ui/Icons'
 
 type Bullet = string | { title: string; desc: string }
 
@@ -53,6 +53,15 @@ const TABS: {
     body: 'Visualizá tu semana de un vistazo, evitá conflictos automáticamente y sincronizá con Google Calendar. Todo en un solo lugar.',
     bullets: ['Vistas día, semana y mes', 'Sincronización Google Calendar', 'Videollamadas con Meet automático', 'Turnos recurrentes y entrevistas'],
     accentColor: '#3D9C6B',
+  },
+  {
+    id: 'nutricion',
+    label: 'Plan Alimentario',
+    Icon: Apple,
+    title: 'Tu vademécum y tus planes, en un solo lugar.',
+    body: 'Buscá el alimento, cargá la cantidad, y el cálculo de macros aparece solo. Compartilo con un link que se actualiza si lo editás.',
+    bullets: ['Vademécum con más de 7.300 alimentos', 'Cálculo automático de energía, proteínas, grasas y carbohidratos', 'Link público del plan, sin login para el paciente', 'Historial completo de planes por paciente'],
+    accentColor: '#C98A2C',
   },
 ]
 

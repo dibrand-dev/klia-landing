@@ -175,6 +175,14 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
         q: '¿KLIA maneja feriados nacionales y provinciales?',
         a: 'Sí. Hay integración con la API oficial de feriados de Argentina. Podés activar o desactivar feriados nacionales y provinciales por separado. Los días feriados no aparecen disponibles en el link público de reservas.',
       },
+      {
+        q: '¿KLIA tiene una base de alimentos para armar planes nutricionales?',
+        a: 'Sí. KLIA incluye un vademécum propio con más de 7.300 alimentos —genéricos y productos de marca argentinos— con cálculo automático de energía, proteínas, grasas y carbohidratos por porción. No hace falta buscar los valores en otro lado ni calcular nada a mano.',
+      },
+      {
+        q: '¿Cómo le comparto el plan alimentario al paciente?',
+        a: 'Con un link público: el paciente lo abre desde el celular sin necesitar cuenta ni instalar nada. Si el profesional edita el plan después de compartirlo, el paciente ve la versión actualizada automáticamente. El link se puede revocar o poner con vencimiento en cualquier momento.',
+      },
     ],
   },
 ]
