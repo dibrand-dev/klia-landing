@@ -115,5 +115,6 @@ Production: https://www.klia.com.ar
 _Actualizado el 2026-09-29_
 
 ```
-d0033e1 feat: actualizar sección Nutrición con vademécum y planes alimentarios (#4)
+18ced3b feat: agregar caso de uso de oftalmología en landing
+df1a2ff docs: CLAUDE.md - commits del dia 2026-09-29
 ```
