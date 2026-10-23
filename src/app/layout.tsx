@@ -3,7 +3,7 @@ import localFont from 'next/font/local'
 import { Inter, Instrument_Serif } from 'next/font/google'
 // import Script from 'next/script' // usado solo por Zoho SalesIQ, deshabilitado más abajo
 import { ClearInvalidSession } from '@/components/auth/ClearInvalidSession'
-import WhatsAppButton from '@/components/landing/WhatsAppButton'
+// import WhatsAppButton from '@/components/landing/WhatsAppButton' // oculto, ver más abajo
 import './globals.css'
 
 const geist = localFont({
@@ -96,7 +96,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </noscript>
         <ClearInvalidSession />
         {children}
-        <WhatsAppButton />
+        {/* <WhatsAppButton /> */}
         {/* Zoho SalesIQ — deshabilitado para no convivir con el botón flotante de WhatsApp
         <Script
           id="zoho-salesiq-init"
