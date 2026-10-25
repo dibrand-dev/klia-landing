@@ -1,4 +1,4 @@
-import { Clock, Shield, Bolt, Brain, Phone, Lock } from '@/components/ui/Icons'
+import { Clock, Shield, Bolt, Brain, Phone, Lock, Chat, Sparkle, Globe } from '@/components/ui/Icons'
 
 const BENEFITS = [
   { Icon: Clock,  title: 'Recuperá horas cada semana',
@@ -13,6 +13,12 @@ const BENEFITS = [
     body: 'Pensado mobile-first. Andá del consultorio al kiosko sin perder un cobro ni un turno.' },
   { Icon: Lock,   title: 'Tus datos, tu control',
     body: 'Cifrado en reposo y en tránsito. Cumplimos con la Ley 25.326 de Protección de Datos Personales.' },
+  { Icon: Chat,   title: 'Agenda protegida',
+    body: 'Cada inasistencia es una hora clínica sin facturar. Los recordatorios automáticos reducen ese ausentismo y liberan con anticipación los horarios que el paciente no va a utilizar.' },
+  { Icon: Sparkle, title: 'Notas de voz con IA',
+    body: 'Dictá la nota clínica y KLIA la transcribe a la historia clínica en segundos. Más contacto visual con el paciente y menos tiempo frente a la pantalla. Incluidas en los planes Profesional y Premium.' },
+  { Icon: Globe,  title: 'Reserva online con pago',
+    body: 'Cada profesional dispone de un enlace propio para que sus pacientes reserven y abonen con Mercado Pago. El turno queda confirmado una vez acreditado el pago y respeta tus horarios, feriados y eventos de Google Calendar. Disponible en el plan Premium.' },
 ]
 
 export default function Benefits() {

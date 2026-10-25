@@ -14,7 +14,7 @@ const ITEMS = [
   },
   {
     q: '¿Cómo funciona el cobro con Mercado Pago?',
-    a: 'Generás un QR dinámico o un link de pago en un toque. El paciente paga desde su celular y vos ves la acreditación al instante. Tenemos tasa preferencial Klia: la más baja del mercado para profesionales independientes.',
+    a: 'Generás un QR dinámico o un link de pago de forma inmediata. El paciente paga desde su celular y vos ves la acreditación al instante. Tenemos tasa preferencial Klia: la más baja del mercado para profesionales independientes.',
   },
   {
     q: '¿Los informes con IA están aprobados para uso clínico?',

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Wallet, Brain, Calendar, Check, Apple } from '@/components/ui/Icons'
+import { Wallet, Brain, Calendar, Check, Apple, Chat } from '@/components/ui/Icons'
 
 type Bullet = string | { title: string; desc: string }
 
@@ -13,6 +13,8 @@ const TABS: {
   body: string
   bullets: Bullet[]
   accentColor: string
+  footer?: string
+  href?: string
 }[] = [
   {
     id: 'atenciones',
@@ -42,7 +44,7 @@ const TABS: {
     Icon: Brain,
     title: 'Tu sesión, transcrita y resumida.',
     body: 'Grabá la sesión y Klia genera el informe siguiendo el formato de tu colegio profesional. Editable, exportable y siempre bajo tu firma.',
-    bullets: ['Transcripción en español', 'Plantillas por especialidad', 'Edición asistida', 'Cumplimiento Ley 25.326'],
+    bullets: ['Transcripción en español', 'Plantillas por especialidad', 'Edición asistida', 'Cumplimiento Ley 25.326', 'Notas de voz dictadas directo en la historia clínica'],
     accentColor: '#8C6ED8',
   },
   {
@@ -62,6 +64,22 @@ const TABS: {
     body: 'Buscá el alimento, cargá la cantidad, y el cálculo de macros aparece solo. Compartilo con un link que se actualiza si lo editás.',
     bullets: ['Vademécum con más de 7.300 alimentos', 'Cálculo automático de energía, proteínas, grasas y carbohidratos', 'Link público del plan, sin login para el paciente', 'Historial completo de planes por paciente'],
     accentColor: '#C98A2C',
+  },
+  {
+    id: 'recordatorios',
+    label: 'Recordatorios',
+    Icon: Chat,
+    title: 'Reducí las inasistencias hasta en un 25 %.',
+    body: 'La evidencia clínica muestra que un recordatorio por WhatsApp previo al turno reduce entre un 20 % y un 25 % las inasistencias, y permite que el paciente cancele con tiempo para que puedas reasignar el horario.',
+    bullets: [
+      'Recordatorio automático 24 hs antes por WhatsApp y correo',
+      'Confirmación o cancelación por parte del paciente',
+      'Envío solo a pacientes con consentimiento',
+      'Número verificado de KLIA, sin configuración',
+    ],
+    accentColor: '#25A969',
+    footer: 'Fuentes: Estudio en el sistema público de salud de Buenos Aires (preprint, 2026); Am J Med, 2010.',
+    href: '/recordatorios',
   },
 ]
 
@@ -146,6 +164,16 @@ export default function Products() {
                 )
               )}
             </ul>
+
+            {current.footer && (
+              <p className="text-xs text-ink-2" style={{ opacity: 0.7 }}>{current.footer}</p>
+            )}
+
+            {current.href && (
+              <a href={current.href} className="text-sm font-medium inline-flex mt-3" style={{ color: current.accentColor }}>
+                Conocé más sobre este módulo →
+              </a>
+            )}
 
           </div>
 

@@ -48,8 +48,8 @@ export default function Hero() {
             </h1>
 
             <p className="lead mb-9">
-              Agenda sincronizada, atenciones del día con IA, cobros por Mercado Pago e informes automáticos.
-              Todo desde tu teléfono.
+              Agenda sincronizada, cobros con Mercado Pago, recordatorios de turnos por WhatsApp,
+              informes con IA y notas de voz transcritas con IA. Todo en una sola plataforma.
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">

@@ -39,6 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
+      url: 'https://www.klia.com.ar/recordatorios',
+      lastModified: new Date('2026-10-25'),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://www.klia.com.ar/sobre-klia',
       lastModified: new Date('2026-06-21'),
       changeFrequency: 'monthly',

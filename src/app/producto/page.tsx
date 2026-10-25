@@ -298,6 +298,12 @@ function CTAFinal() {
               Hablar con ventas
             </a>
           </div>
+          <p style={{ marginTop: 24, fontSize: 13.5, color: 'rgba(255,255,255,.6)' }}>
+            ¿Querés reducir las inasistencias? Conocé el{' '}
+            <a href="/recordatorios" style={{ color: '#fff', textDecoration: 'underline' }}>
+              módulo de Recordatorios por WhatsApp
+            </a>.
+          </p>
         </div>
       </div>
     </section>

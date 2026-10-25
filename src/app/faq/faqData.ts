@@ -183,6 +183,22 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
         q: '¿Cómo le comparto el plan alimentario al paciente?',
         a: 'Con un link público: el paciente lo abre desde el celular sin necesitar cuenta ni instalar nada. Si el profesional edita el plan después de compartirlo, el paciente ve la versión actualizada automáticamente. El link se puede revocar o poner con vencimiento en cualquier momento.',
       },
+      {
+        q: '¿Los recordatorios por WhatsApp reducen las inasistencias a turnos médicos?',
+        a: 'Sí. La evidencia clínica muestra que los recordatorios por WhatsApp reducen entre un 20 % y un 25 % las inasistencias. Un estudio en el sistema público de salud de Buenos Aires (2026, sobre 475.214 primeros turnos) registró una reducción relativa de aproximadamente 24 % con un recordatorio 24 horas antes, y un ensayo aleatorizado publicado en Am J Med (2010) encontró una reducción de 23,1 % a 17,3 % con un recordatorio automático.',
+      },
+      {
+        q: '¿Cómo funcionan los recordatorios de turnos en KLIA?',
+        a: 'KLIA envía un recordatorio automático 24 horas antes de cada turno por WhatsApp y correo, desde un número verificado de KLIA, sin que el profesional tenga que configurar nada. El paciente puede confirmar o cancelar directamente desde el mensaje, lo que le da tiempo al profesional para reasignar el horario.',
+      },
+      {
+        q: '¿Cuántos recordatorios incluye cada plan?',
+        a: 'El plan Esencial incluye 30 recordatorios mensuales, el Profesional 100 y el Premium 150. El período de prueba gratuita de 21 días incluye 30 mensajes para evaluar el módulo con pacientes reales.',
+      },
+      {
+        q: '¿El paciente debe dar su consentimiento para recibir mensajes por WhatsApp?',
+        a: 'Sí. KLIA solo envía recordatorios por WhatsApp a pacientes que dieron su consentimiento explícito. Si no hay consentimiento registrado, el recordatorio se envía únicamente por correo electrónico.',
+      },
     ],
   },
 ]

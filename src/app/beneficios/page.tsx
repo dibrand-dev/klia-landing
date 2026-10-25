@@ -152,7 +152,7 @@ const BENEFITS: Benefit[] = [
     headingItalic: 'inesperadas.',
     desc: [
       'El turno sin confirmar es el turno que no se presenta. La confirmación manual por WhatsApp consume tiempo, se olvida y genera roces innecesarios con el paciente.',
-      'KLIA envía un recordatorio automático por email 24 horas antes de cada turno, con los datos de la sesión y el link de Google Meet si es videollamada. Sin intervención del profesional. Funciona para pacientes particulares y para los que asisten por obra social — cualquiera con email cargado en su ficha.',
+      'KLIA envía un recordatorio automático por WhatsApp y correo 24 horas antes de cada turno, con los datos de la sesión y el link de Google Meet si es videollamada. Sin intervención del profesional. Funciona para pacientes particulares y para los que asisten por obra social — cualquiera con contacto cargado en su ficha. El envío por WhatsApp requiere consentimiento previo del paciente.',
     ],
     badge: 'todos',
     badgeLabel: 'Todos los planes',

@@ -20,7 +20,15 @@ export default async function PreciosPage() {
       <Nav />
       <main>
         {plans ? (
-          <Pricing plans={plans} />
+          <>
+            <Pricing plans={plans} />
+            <p style={{ textAlign: 'center', fontSize: 14, color: 'var(--slate)', padding: '0 24px 56px' }}>
+              Todos los planes incluyen recordatorios de turnos por WhatsApp y correo.{' '}
+              <a href="/recordatorios" style={{ color: 'var(--klia)', textDecoration: 'underline' }}>
+                Conocé cómo funcionan
+              </a>.
+            </p>
+          </>
         ) : (
           <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '60px 24px' }}>
             <div>

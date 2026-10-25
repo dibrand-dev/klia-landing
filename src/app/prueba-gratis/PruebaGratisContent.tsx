@@ -487,8 +487,8 @@ function CroFeatures() {
       n: '03',
       media: <PhoneFrame scale={0.92}><PhoneHome /></PhoneFrame>,
       title: 'Agenda coordinada y Consultorio Autónomo',
-      body: 'Sincronización bidireccional inteligente con Google Calendar y recordatorios automáticos de turnos por email 24 hs antes de forma automatizada. Tus pacientes particulares pueden reservar turnos de forma independiente mediante tu URL pública única con cobro previo integrado a través de Mercado Pago.',
-      list: ['Sincronización bidireccional con Google Calendar', 'Recordatorios automáticos por email 24 hs antes', 'Reservas en tu URL pública única con cobro previo por Mercado Pago'],
+      body: 'Sincronización bidireccional inteligente con Google Calendar y recordatorios automáticos de turnos por WhatsApp y correo 24 hs antes de forma automatizada. Tus pacientes particulares pueden reservar turnos de forma independiente mediante tu URL pública única con cobro previo integrado a través de Mercado Pago.',
+      list: ['Sincronización bidireccional con Google Calendar', 'Recordatorios automáticos por WhatsApp y correo 24 hs antes', 'Reservas en tu URL pública única con cobro previo por Mercado Pago'],
       tags: ['Google Calendar 2-way', 'Recordatorios automáticos', 'Reservas + Mercado Pago'],
     },
     {

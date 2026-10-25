@@ -210,6 +210,9 @@ export default function TerminosPage() {
                 <p>
                   Klia puede agregar, modificar o discontinuar funcionalidades para mejorar el servicio, comunicándolo con razonable anticipación a través de la plataforma o por correo electrónico.
                 </p>
+                <p>
+                  <strong>Recordatorios por WhatsApp y correo electrónico.</strong> El Servicio incluye un cupo mensual de recordatorios por WhatsApp según el plan contratado (Esencial: 30; Profesional: 100; Premium: 150) y de 30 durante el período de prueba. Los recordatorios por WhatsApp se envían únicamente a pacientes cuyo consentimiento haya sido registrado por el profesional o aceptado por el propio paciente al reservar un turno; el profesional es responsable de contar con dicho consentimiento. Los recordatorios por correo electrónico no se descuentan de ese cupo y están sujetos a un uso razonable. Los porcentajes de reducción de inasistencias mencionados en el sitio provienen de estudios de terceros, son referenciales y Klia no garantiza resultados equivalentes. Klia podrá ajustar los cupos con previo aviso.
+                </p>
               </Section>
 
               <Section id="pagos" num="03" title="Suscripciones, pagos y bloqueos">

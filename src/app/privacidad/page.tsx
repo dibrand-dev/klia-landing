@@ -315,6 +315,7 @@ export default function PrivacidadPage() {
                   <li><strong>Brevo SAS</strong> (Francia / Unión Europea) — envío de emails transaccionales. Política: <a href="https://www.brevo.com/legal/privacypolicy" target="_blank" rel="noopener noreferrer">brevo.com/legal/privacypolicy</a></li>
                   <li><strong>Google LLC</strong> (Estados Unidos) — autenticación OAuth y sincronización de calendario. Política: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a></li>
                   <li><strong>Mercado Pago S.A.</strong> (Argentina / Brasil) — procesamiento de pagos. Política: <a href="https://www.mercadopago.com.ar/privacidad" target="_blank" rel="noopener noreferrer">mercadopago.com.ar/privacidad</a></li>
+                  <li><strong>Meta Platforms, Inc.</strong> (Estados Unidos) — envío de recordatorios de turnos vía WhatsApp Business. Política: <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">whatsapp.com/legal/privacy-policy</a></li>
                 </ul>
                 <p>
                   Estas transferencias se realizan conforme al artículo 12 de la Ley 25.326, hacia países u organismos con niveles de protección adecuados.
