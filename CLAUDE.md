@@ -112,8 +112,8 @@ Production: https://www.klia.com.ar
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
 ## Ultimos cambios
-_Actualizado el 2026-10-24_
+_Actualizado el 2026-10-25_
 
 ```
-46f16ba docs: CLAUDE.md - commits del dia 2026-10-23
+bc7d88f feat: comunicación del módulo de recordatorios WhatsApp, página /recordatorios y mejoras SEO/GEO
 ```
