@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { Globe, Shield } from '@/components/ui/Icons'
 
 const COLS = [
@@ -18,7 +19,7 @@ const COLS = [
   },
   {
     title: 'Empresa',
-    links: ['Sobre Klia', 'Prensa', 'Privacidad', 'Términos'],
+    links: ['Sobre Klia', 'Prensa', 'Privacidad', 'Términos', 'Webinars'],
   },
 ]
 
@@ -30,6 +31,8 @@ function getLinkHref(link: string): string {
       return '/privacidad'
     case 'Términos':
       return '/terminos'
+    case 'Webinars':
+      return '/webinar'
     default:
       return '#'
   }
@@ -70,15 +73,25 @@ export default function Footer() {
                 >
                   {col.title}
                 </div>
-                {col.links.map((link) => (
-                  <a
-                    key={link}
-                    href={getLinkHref(link)}
-                    className="footer-link block py-1.5 text-sm transition-all hover:translate-x-1"
-                  >
-                    {link}
-                  </a>
-                ))}
+                {col.links.map((link) =>
+                  link === 'Webinars' ? (
+                    <Link
+                      key={link}
+                      href={getLinkHref(link)}
+                      className="footer-link block py-1.5 text-sm transition-all hover:translate-x-1"
+                    >
+                      {link}
+                    </Link>
+                  ) : (
+                    <a
+                      key={link}
+                      href={getLinkHref(link)}
+                      className="footer-link block py-1.5 text-sm transition-all hover:translate-x-1"
+                    >
+                      {link}
+                    </a>
+                  )
+                )}
               </div>
             ))}
           </div>
