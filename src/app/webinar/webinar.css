@@ -75,7 +75,7 @@
 .wb-back:hover { color: var(--klia); }
 .wb-dgrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 600px); gap: 64px; align-items: start; }
 .wb-info { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 22px; }
-.wb-info .wb-img { aspect-ratio: 16/10; border-radius: 22px; }
+.wb-info .wb-img { aspect-ratio: 16/9; border-radius: 22px; }
 .wb-badges { display: flex; flex-wrap: wrap; gap: 8px; }
 .wb-h2 { font: 600 clamp(30px, 3cqi, 44px)/1.06 var(--wb-font-display); letter-spacing: -.025em; margin: 0; text-wrap: balance; height: auto; }
 .wb-meta { display: grid; gap: 14px; padding: 20px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 0; list-style: none; }
