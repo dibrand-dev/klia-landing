@@ -84,7 +84,7 @@
 .wb-meta b { display: block; font-weight: 600; font-size: 15.5px; color: var(--ink); }
 .wb-meta small { display: block; font-size: 13.5px; color: var(--slate); }
 .wb-desc { display: flex; flex-direction: column; gap: 12px; font-size: 16px; line-height: 1.65; color: var(--slate); }
-.wb-desc p { margin: 0; text-wrap: pretty; }
+.wb-desc p { margin: 0; text-wrap: pretty; white-space: pre-line; }
 
 /* form card */
 .wb-fcard { background: var(--bg); border: 1px solid var(--line); border-radius: 28px; padding: 40px; box-shadow: var(--wb-shadow-md); }
