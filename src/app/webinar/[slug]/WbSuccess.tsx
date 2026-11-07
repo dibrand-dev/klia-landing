@@ -49,7 +49,7 @@ export default function WbSuccess({ webinar, meetUrl, email, already }: {
           </button>
         </div>
         <span className="wb-sr" aria-live="polite">{copied ? 'Link copiado al portapapeles' : ''}</span>
-        <a className="btn btn-ghost" href={meetUrl} target="_blank" rel="noopener">Ir a la reunión <WbIco n="ext" s={16} /></a>
+        <a className="btn btn-accent" href={meetUrl} target="_blank" rel="noopener">Ir a la reunión <WbIco n="ext" s={16} /></a>
       </div>
     </div>
   )

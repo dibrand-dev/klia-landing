@@ -120,6 +120,7 @@ Production: https://www.klia.com.ar
 - Inscripción: POST a `${NEXT_PUBLIC_APP_URL}/api/webinars/{slug}/inscribir` (APP real, no Supabase). Maneja 400 (errores por campo), 410 (pasa a panel cerrado/finalizado), 429 (mensaje "demasiados intentos"), 500/red (mensaje genérico) — todos reusan el mismo .wb-alert
 - Especialidades del combobox: src/lib/webinars/especialidades.ts — lista propia y distinta de src/lib/especialidades.ts, no son intercambiables
 - sitemap.ts es async: agrega /webinar + un entry por cada webinar publicado no finalizado
+- El link a /webinar vive SOLO en el Footer (columna "Empresa"), por decisión de producto — NO va en el menú superior (Nav.tsx)
 - /api/revalidate también revalida /webinar y /webinar/[slug]
 
 ## Ultimos cambios
