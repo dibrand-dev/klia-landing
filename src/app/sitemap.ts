@@ -1,6 +1,15 @@
 import { MetadataRoute } from 'next'
+import { getWebinarsPublicados } from '@/lib/webinars/queries'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const webinars = await getWebinarsPublicados()
+  const webinarEntries: MetadataRoute.Sitemap = webinars.map((w) => ({
+    url: `https://www.klia.com.ar/webinar/${w.slug}`,
+    lastModified: new Date(w.fecha_inicio),
+    changeFrequency: 'weekly',
+    priority: 0.6,
+  }))
+
   return [
     {
       url: 'https://www.klia.com.ar',
@@ -62,5 +71,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly',
       priority: 0.3,
     },
+    {
+      url: 'https://www.klia.com.ar/webinar',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    ...webinarEntries,
   ]
 }

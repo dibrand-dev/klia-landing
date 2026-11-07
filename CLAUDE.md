@@ -111,6 +111,17 @@ Production: https://www.klia.com.ar
 - Meta Pixel: inline in <head> via dangerouslySetInnerHTML, ID 1330774269119331
 - Zoho SalesIQ: init inline + script src before </body>, widget wc=siq195479a499f719dd02043e3c9eb1e5e6
 
+## Webinars (as of 2026-11-07)
+- Rutas: /webinar (listado, revalidate=60) y /webinar/[slug] (detalle + formulario de inscripción, revalidate=60)
+- Archivos: src/app/webinar/page.tsx, src/app/webinar/[slug]/page.tsx, src/app/webinar/webinar.css (estilos scopeados en .wb), src/app/webinar/wb-icons.tsx, src/app/webinar/wb-pieces.tsx (WbChip/WbImg/WbStatePanel), src/app/webinar/WbForm.tsx (formulario, client), src/app/webinar/[slug]/WebinarDetailClient.tsx (recalcula estado al montar), src/app/webinar/[slug]/WbSuccess.tsx (éxito: Google Calendar + .ics + copiar link), src/app/webinar/[slug]/not-found.tsx (404 propio del módulo)
+- Datos: src/lib/webinars/queries.ts usa un cliente Supabase SIN cookies (createClient de @supabase/supabase-js) para permitir ISR — nunca usar src/lib/supabase/server.ts acá (fuerza render dinámico). Lee de la tabla `webinars`: id, slug, titulo, bajada, institucion, imagen_url, fecha_inicio, duracion_min, cierre_inscripcion, estado. `url_videoconferencia` NO es legible por anon — nunca se pide a Supabase, solo llega en la respuesta del POST de inscripción
+- getWebinarsPublicados() excluye los que ya finalizaron (ahora ≥ fecha_inicio + duracion_min) y ordena por fecha_inicio asc; getWebinarBySlug() permite acceso directo a webinars finalizados/cerrados por URL (muestran el panel correspondiente)
+- Estado runtime (open/closed/ended) se calcula en src/lib/webinars/utils.ts (computeWebinarStatus), en servidor para el HTML inicial y se recalcula en el cliente al montar (WebinarDetailClient) por el cache de ISR de 60s
+- Inscripción: POST a `${NEXT_PUBLIC_APP_URL}/api/webinars/{slug}/inscribir` (APP real, no Supabase). Maneja 400 (errores por campo), 410 (pasa a panel cerrado/finalizado), 429 (mensaje "demasiados intentos"), 500/red (mensaje genérico) — todos reusan el mismo .wb-alert
+- Especialidades del combobox: src/lib/webinars/especialidades.ts — lista propia y distinta de src/lib/especialidades.ts, no son intercambiables
+- sitemap.ts es async: agrega /webinar + un entry por cada webinar publicado no finalizado
+- /api/revalidate también revalida /webinar y /webinar/[slug]
+
 ## Ultimos cambios
 _Actualizado el 2026-10-25_
 

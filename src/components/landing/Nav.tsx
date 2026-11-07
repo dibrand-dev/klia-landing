@@ -11,6 +11,7 @@ const links = [
   { href: '/casos',      label: 'Casos de uso' },
   { href: '/precios',    label: 'Precios' },
   { href: '/faq',        label: 'Preguntas frecuentes' },
+  { href: '/webinar',    label: 'Webinars' },
 ]
 
 export default function Nav() {
