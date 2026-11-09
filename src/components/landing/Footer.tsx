@@ -33,6 +33,8 @@ function getLinkHref(link: string): string {
       return '/terminos'
     case 'Webinars':
       return '/webinar'
+    case 'Para nutricionistas':
+      return '/nutricionistas'
     default:
       return '#'
   }
@@ -74,7 +76,7 @@ export default function Footer() {
                   {col.title}
                 </div>
                 {col.links.map((link) =>
-                  link === 'Webinars' ? (
+                  link === 'Webinars' || link === 'Para nutricionistas' ? (
                     <Link
                       key={link}
                       href={getLinkHref(link)}
