@@ -9,15 +9,31 @@ import {
 } from './nutri-icons'
 import './nutricionistas.css'
 
+const TITLE = 'Klia para nutricionistas: planes alimentarios, antropometría y agenda'
+const DESCRIPTION = 'Armá planes alimentarios por comidas, seguí la antropometría de tus pacientes y gestioná turnos, cobros y obras sociales en un solo lugar, con 21 días gratis.'
+const OG_IMAGE = {
+  url: 'https://www.klia.com.ar/nutricionistas/opengraph-image',
+  width: 1200,
+  height: 630,
+  alt: 'Klia para nutricionistas — Planes alimentarios, antropometría y agenda',
+}
+
 export const metadata: Metadata = {
-  title: 'Klia para nutricionistas: planes alimentarios, antropometría y agenda',
-  description: 'Armá planes alimentarios por comidas, seguí la antropometría de tus pacientes y gestioná turnos, cobros y obras sociales en un solo lugar, con 21 días gratis.',
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: 'https://www.klia.com.ar/nutricionistas' },
   openGraph: {
     url: 'https://www.klia.com.ar/nutricionistas',
-    title: 'Klia para nutricionistas: planes alimentarios, antropometría y agenda',
-    description: 'Armá planes alimentarios por comidas, seguí la antropometría de tus pacientes y gestioná turnos, cobros y obras sociales en un solo lugar, con 21 días gratis.',
+    title: TITLE,
+    description: DESCRIPTION,
     type: 'website',
+    images: [OG_IMAGE],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [OG_IMAGE],
   },
 }
 
