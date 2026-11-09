@@ -1,0 +1,133 @@
+/* Container — consistent with /casos, /faq, /producto */
+.nutri-page .container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+@media (max-width: 768px) {
+  .nutri-page .container { padding: 0 20px; }
+}
+
+/* ── Sections / rows ── */
+.nutri-section { padding: 112px 0; }
+.nutri-hero { padding: 148px 0 80px; }
+
+.nutri-row { display: flex; flex-wrap: wrap; gap: 64px; align-items: center; }
+.nutri-row.reverse { flex-direction: row-reverse; }
+.nutri-col { flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.nutri-visual { flex: 1 1 420px; min-width: 0; display: flex; justify-content: center; }
+
+.nutri-head { display: flex; flex-direction: column; gap: 16px; max-width: 760px; margin-bottom: 56px; }
+.nutri-head.tight { margin-bottom: 48px; }
+
+.nutri-cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.nutri-fineprint { font-family: var(--font-inter), system-ui, sans-serif; font-size: 14px; color: var(--slate); }
+
+.nutri-eyebrow-purple { color: #8C6ED8; }
+.nutri-eyebrow-purple::before { background: #8C6ED8; }
+
+/* ── Lists with check bullets ── */
+.nutri-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.nutri-list li { display: flex; gap: 12px; align-items: flex-start; font-family: var(--font-inter), system-ui, sans-serif; font-size: 16px; line-height: 1.5; color: var(--ink); }
+.nutri-list-ico { flex: none; width: 22px; height: 22px; border-radius: 999px; background: var(--klia-50); color: var(--klia); display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+
+/* ── Grid cards (módulos / gestión) ── */
+.nutri-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+.nutri-card { flex: 1 1 320px; min-width: 0; box-sizing: border-box; padding: 32px; display: flex; flex-direction: column; gap: 16px; }
+.nutri-card-ico { width: 52px; height: 52px; border-radius: 16px; display: flex; align-items: center; justify-content: center; }
+.nutri-card h3 { margin: 0; font-family: var(--font-geist), system-ui, sans-serif; font-size: 22px; line-height: 1.2; font-weight: 600; letter-spacing: -0.015em; color: var(--ink); height: auto; }
+.nutri-card p { margin: 0; font-family: var(--font-inter), system-ui, sans-serif; font-size: 15px; line-height: 1.55; color: var(--slate); }
+
+/* ── Sample-data badge (mockups) ── */
+.nutri-sample-tag {
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 12px; font-weight: 500;
+  padding: 5px 10px; border-radius: 999px;
+  background: var(--klia-50); color: var(--klia-700);
+  white-space: nowrap;
+}
+
+/* ── Mockup shell ── */
+.nutri-mock {
+  --nutri-mock-shadow: 0 50px 100px -20px rgba(14, 20, 48, .25), 0 20px 40px -15px rgba(14, 20, 48, .12);
+  box-sizing: border-box; width: 100%; max-width: 520px;
+  background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: 28px;
+  box-shadow: var(--nutri-mock-shadow);
+}
+.nutri-mock.secondary { --nutri-mock-shadow: var(--shadow-lg); }
+.nutri-mock-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+.nutri-mock.secondary .nutri-mock-head { margin-bottom: 16px; }
+.nutri-mock-eyebrow { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; letter-spacing: .12em; color: var(--klia); }
+.nutri-mock-title { font-family: var(--font-geist), system-ui, sans-serif; font-size: 20px; font-weight: 600; color: var(--ink); margin-top: 6px; letter-spacing: -.01em; }
+
+/* ── Mockup 1: plan semanal (macros + comidas) ── */
+.nutri-macro-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 8px; }
+.nutri-macro { flex: 1 1 90px; }
+.nutri-macro-label { display: flex; justify-content: space-between; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; color: var(--slate); }
+.nutri-macro-bar { height: 8px; border-radius: 999px; background: var(--bg-alt); margin-top: 8px; overflow: hidden; }
+.nutri-macro-fill { height: 100%; border-radius: 999px; }
+.nutri-meal { display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.nutri-meal-name { font-family: var(--font-geist), system-ui, sans-serif; font-size: 15px; font-weight: 600; color: var(--ink); }
+.nutri-meal-detail { font-family: var(--font-inter), system-ui, sans-serif; font-size: 13px; line-height: 1.45; color: var(--slate); margin-top: 4px; }
+.nutri-meal-kcal { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 13px; font-weight: 500; color: var(--klia-700); white-space: nowrap; }
+.nutri-total-row { display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--font-geist), system-ui, sans-serif; font-size: 15px; font-weight: 600; color: var(--ink); }
+.nutri-total-row span:last-child { color: var(--klia-700); }
+
+/* ── Mockup 2: agregar alimento ── */
+.nutri-food-search { display: flex; align-items: center; gap: 10px; padding: 0 16px; height: 48px; box-sizing: border-box; border: 1px solid var(--line); border-radius: 14px; font-family: var(--font-inter), system-ui, sans-serif; font-size: 15px; color: var(--slate); margin-bottom: 6px; }
+.nutri-food-row { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.nutri-food-name { font-family: var(--font-geist), system-ui, sans-serif; font-size: 15px; font-weight: 600; color: var(--ink); }
+.nutri-food-macros { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; color: var(--slate); margin-top: 4px; }
+.nutri-food-qty { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 12px; color: var(--slate); white-space: nowrap; }
+.nutri-food-kcal { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 13px; font-weight: 500; color: var(--klia-700); white-space: nowrap; min-width: 64px; text-align: right; }
+.nutri-food-add { flex: none; width: 32px; height: 32px; border-radius: 999px; background: var(--klia); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 18px; line-height: 1; }
+.nutri-food-foot { padding-top: 14px; border-top: 1px solid var(--line); font-family: var(--font-inter), system-ui, sans-serif; font-size: 13px; color: var(--slate); }
+
+/* ── Mockup 3: composición corporal ── */
+.nutri-stat-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
+.nutri-stat-tile { flex: 1 1 110px; padding: 16px; border-radius: 14px; background: var(--bg-alt); }
+.nutri-stat-label { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; letter-spacing: .08em; color: var(--slate); text-transform: uppercase; }
+.nutri-stat-value { font-family: var(--font-geist), system-ui, sans-serif; font-size: 26px; font-weight: 600; color: var(--ink); margin-top: 8px; letter-spacing: -.02em; }
+.nutri-stat-unit { font-size: 14px; color: var(--slate); font-weight: 500; }
+.nutri-chart-labels { display: flex; justify-content: space-between; font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; color: var(--slate); margin-top: 6px; }
+
+/* ── Mockup 4: portal del paciente (celular) ── */
+.nutri-phone { box-sizing: border-box; width: 290px; max-width: 100%; background: var(--ink); border-radius: 36px; padding: 14px; box-shadow: 0 50px 100px -20px rgba(14, 20, 48, .4), 0 20px 40px -15px rgba(14, 20, 48, .2); }
+.nutri-phone-inner { border-radius: 26px; background: #1a2257; padding: 22px 16px 20px; }
+.nutri-phone-eyebrow { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 11px; letter-spacing: .12em; color: rgba(255, 255, 255, .7); }
+.nutri-phone-title { font-family: var(--font-geist), system-ui, sans-serif; font-size: 22px; font-weight: 600; color: #fff; margin-top: 6px; letter-spacing: -.01em; }
+.nutri-meal-row { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 14px; background: #fff; margin-top: 10px; }
+.nutri-meal-row.pending { background: rgba(255, 255, 255, .08); }
+.nutri-meal-icon { width: 36px; height: 36px; border-radius: 12px; background: var(--klia-50); color: var(--klia); display: flex; align-items: center; justify-content: center; }
+.nutri-meal-row.pending .nutri-meal-icon { background: rgba(255, 255, 255, .12); color: #fff; }
+.nutri-meal-row-name { font-family: var(--font-geist), system-ui, sans-serif; font-size: 14px; font-weight: 600; color: var(--ink); }
+.nutri-meal-row.pending .nutri-meal-row-name { color: #fff; }
+.nutri-meal-row-status { font-family: var(--font-inter), system-ui, sans-serif; font-size: 12px; color: var(--slate); }
+.nutri-meal-row.pending .nutri-meal-row-status { color: rgba(255, 255, 255, .7); }
+.nutri-comment-box { margin-top: 14px; padding: 12px; border-radius: 14px; background: rgba(255, 122, 102, .16); font-family: var(--font-inter), system-ui, sans-serif; font-size: 12px; line-height: 1.45; color: #fff; }
+
+/* ── Cómo empezar (pasos) ── */
+.nutri-steps { display: flex; flex-wrap: wrap; gap: 40px; }
+.nutri-step { flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px; }
+.nutri-step-num { font-family: var(--font-geist-mono), ui-monospace, monospace; font-size: 13px; font-weight: 500; color: var(--klia); }
+.nutri-step h3 { margin: 0; font-family: var(--font-geist), system-ui, sans-serif; font-size: 22px; font-weight: 600; letter-spacing: -.015em; color: var(--ink); height: auto; }
+.nutri-step p { margin: 0; font-family: var(--font-inter), system-ui, sans-serif; font-size: 15px; line-height: 1.55; color: var(--slate); }
+
+/* ── CTA final ── */
+.nutri-cta { padding: 96px 0; }
+.nutri-cta-inner {
+  box-sizing: border-box; border-radius: 32px; padding: 72px 40px; text-align: center;
+  background: linear-gradient(135deg, #1A2257, #2F3F82, #3F519E);
+  display: flex; flex-direction: column; align-items: center; gap: 24px;
+}
+.nutri-cta-title { margin: 0; font-family: var(--font-geist), system-ui, sans-serif; font-size: clamp(32px, 4.4vw, 56px); line-height: 1.05; font-weight: 600; letter-spacing: -.025em; color: #fff; max-width: 760px; height: auto; }
+.nutri-cta-lead { margin: 0; font-family: var(--font-inter), system-ui, sans-serif; font-size: 18px; line-height: 1.5; color: rgba(255, 255, 255, .75); max-width: 560px; }
+
+/* ── Responsive ── */
+@media (max-width: 760px) {
+  .nutri-hero { padding-top: 120px; }
+  .nutri-section { padding: 72px 0; }
+  .nutri-cta { padding: 64px 0; }
+  .nutri-cta-inner { padding: 48px 24px; }
+}

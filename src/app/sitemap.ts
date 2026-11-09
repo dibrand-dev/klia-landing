@@ -54,6 +54,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.8,
     },
     {
+      url: 'https://www.klia.com.ar/nutricionistas',
+      lastModified: new Date('2026-11-09'),
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
       url: 'https://www.klia.com.ar/sobre-klia',
       lastModified: new Date('2026-06-21'),
       changeFrequency: 'monthly',
