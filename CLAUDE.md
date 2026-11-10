@@ -124,12 +124,10 @@ Production: https://www.klia.com.ar
 - /api/revalidate también revalida /webinar y /webinar/[slug]
 
 ## Ultimos cambios
-_Actualizado el 2026-11-08_
+_Actualizado el 2026-11-10_
 
 ```
-c11e4a1 fix: placa del detalle de webinar en 16:9 sin recorte
-84ac079 fix: respetar saltos de línea en la bajada del detalle de webinar
-c79a0c0 fix: botón principal del éxito de webinar y nota del footer en CLAUDE.md
-8d8b937 fix: mover link de Webinars del Nav al Footer (columna Empresa)
-7cb9e7b feat: landing de webinars (listado, detalle e inscripción)
+da78cdc fix: imagen Open Graph de /nutricionistas
+6d31fc6 feat: link Para nutricionistas del footer a /nutricionistas
+68ee1ed feat: landing /nutricionistas
 ```
