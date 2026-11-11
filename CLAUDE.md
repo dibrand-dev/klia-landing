@@ -124,10 +124,8 @@ Production: https://www.klia.com.ar
 - /api/revalidate también revalida /webinar y /webinar/[slug]
 
 ## Ultimos cambios
-_Actualizado el 2026-11-10_
+_Actualizado el 2026-11-11_
 
 ```
-da78cdc fix: imagen Open Graph de /nutricionistas
-6d31fc6 feat: link Para nutricionistas del footer a /nutricionistas
-68ee1ed feat: landing /nutricionistas
+d0abd22 docs: CLAUDE.md - commits del dia 2026-11-10
 ```
