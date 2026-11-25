@@ -7,6 +7,7 @@ import '@/app/terminos.css'
 const PRIVACY_SECTIONS = [
   { id: 'responsable', num: '01', title: 'Responsable del tratamiento' },
   { id: 'datos', num: '02', title: 'Información que recopilamos' },
+  { id: 'refeps', num: '02b', title: 'Verificación de matrícula profesional (REFEPS)' },
   { id: 'google', num: '03', title: 'Uso de datos y Google API' },
   { id: 'seguridad', num: '04', title: 'Seguridad y almacenamiento' },
   { id: 'subprocesadores', num: '04b', title: 'Subprocesadores y transferencias' },
@@ -96,8 +97,8 @@ export default function PrivacidadPage() {
               Cómo cuidamos los datos clínicos de tus pacientes y los tuyos. Sin trucos, sin venta a terceros, con cifrado a nivel base de datos.
             </p>
             <div className="terms-hero-meta">
-              <span>Versión<strong>v2.0</strong></span>
-              <span>Vigente desde<strong>1 de mayo 2026</strong></span>
+              <span>Versión<strong>v2.1</strong></span>
+              <span>Vigente desde<strong>25 de noviembre 2026</strong></span>
               <span>Ley aplicable<strong>25.326 · Argentina</strong></span>
             </div>
           </div>
@@ -260,6 +261,37 @@ export default function PrivacidadPage() {
                 </div>
               </Section>
 
+              <Section id="refeps" num="02b" title="Verificación de matrícula profesional (REFEPS)">
+                <p>
+                  Si sos profesional de la salud y elegís verificar tu matrícula, KLIA consulta la Red Federal de Registros de Profesionales de la Salud (REFEPS) del Ministerio de Salud de la Nación, a través de su Plataforma de Interoperabilidad. Para hacerlo usamos tu DNI y tu número de matrícula, y la consulta se realiza únicamente con tu consentimiento expreso.
+                </p>
+
+                <h3>Qué datos guardamos</h3>
+                <p>
+                  La respuesta completa del REFEPS, que puede incluir tu nombre y apellido, DNI, CUIL, sexo, fecha de nacimiento y los datos de tus matrículas (número, jurisdicción, profesión, especialidades, entidad emisora, fechas y estado de habilitación), junto con la fecha de cada verificación.
+                </p>
+
+                <h3>Para qué los usamos</h3>
+                <p>
+                  Verificar que tu matrícula esté habilitada, completar tu perfil y habilitar funciones que requieren un profesional verificado, como la prescripción electrónica de recetas.
+                </p>
+
+                <h3>Con quién los compartimos</h3>
+                <p>
+                  No cedemos estos datos a terceros, salvo los datos de identificación y de matrícula necesarios para emitir recetas electrónicas a través del proveedor de recetas electrónicas, cuando vos usás esa función.
+                </p>
+
+                <h3>Cuánto tiempo los conservamos</h3>
+                <p>
+                  Mientras tu cuenta esté activa y hasta 2 años después de su baja, igual que los demás datos de tu cuenta.
+                </p>
+
+                <h3>Tus derechos</h3>
+                <p>
+                  Verificar tu matrícula es optativo. Podés acceder, rectificar o solicitar la supresión de estos datos, y retirar tu consentimiento, escribiendo a hola@klia.com.ar. Si no verificás tu matrícula, podés cargarla manualmente y usar KLIA, aunque algunas funciones, como la prescripción electrónica, pueden requerir una matrícula verificada.
+                </p>
+              </Section>
+
               <Section id="google" num="03" title="Uso de los datos y Google API Limited Use">
                 <p>
                   Klia cumple estrictamente con la <strong>Política de Datos de Usuario de los Servicios de API de Google</strong>, incluidos los requisitos específicos de <strong>Uso Limitado</strong>.
@@ -383,7 +415,7 @@ export default function PrivacidadPage() {
               </Section>
 
               <div className="terms-doc-foot">
-                <div>Versión 2.0 · Vigente desde 01/05/2026</div>
+                <div>Versión 2.1 · Vigente desde 25/11/2026</div>
                 <div>¿Dudas? Escribinos a <a href="mailto:legal@klia.com.ar">legal@klia.com.ar</a></div>
               </div>
             </article>
