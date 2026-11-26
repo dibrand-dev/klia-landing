@@ -225,7 +225,7 @@ function SobreEquipo() {
             <p className="sobre-team-desc">
               Desarrollador de software con más de 9 años liderando Dibrand LLC. Construyó
               KLIA desde la convicción de que la tecnología para profesionales de salud
-              independientes en Argentina estaba atrasada — y que tenía las herramientas para
+              independientes en Argentina estaba atrasada y que tenía las herramientas para
               cambiar eso.
             </p>
           </div>
