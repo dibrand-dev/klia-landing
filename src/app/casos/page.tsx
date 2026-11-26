@@ -5,13 +5,13 @@ import { Icons } from '@/components/Icons'
 import './casos.css'
 
 export const metadata: Metadata = {
-  title: 'Casos de uso · KLIA — Software para psicólogos, kinesiólogos, médicos y más',
-  description: 'Descubrí cómo KLIA se adapta a tu especialidad. Casos reales de psicólogos, kinesiólogos, médicos clínicos, nutricionistas, odontólogos, oftalmólogos y terapistas ocupacionales en Argentina.',
+  title: 'Casos de uso · Klia — Software para psicólogos, kinesiólogos, médicos y más',
+  description: 'Descubrí cómo Klia se adapta a tu especialidad. Casos reales de psicólogos, kinesiólogos, médicos clínicos, nutricionistas, odontólogos, oftalmólogos y terapistas ocupacionales en Argentina.',
   alternates: { canonical: 'https://www.klia.com.ar/casos' },
   openGraph: {
     url: 'https://www.klia.com.ar/casos',
-    title: 'Casos de uso · KLIA — Software para psicólogos, kinesiólogos, médicos y más',
-    description: 'Descubrí cómo KLIA se adapta a tu especialidad. Casos reales de psicólogos, kinesiólogos, médicos clínicos, nutricionistas, odontólogos, oftalmólogos y terapistas ocupacionales en Argentina.',
+    title: 'Casos de uso · Klia — Software para psicólogos, kinesiólogos, médicos y más',
+    description: 'Descubrí cómo Klia se adapta a tu especialidad. Casos reales de psicólogos, kinesiólogos, médicos clínicos, nutricionistas, odontólogos, oftalmólogos y terapistas ocupacionales en Argentina.',
   },
 }
 
@@ -247,15 +247,15 @@ function Hero() {
       <div className="container">
         <div className="casos-hero-inner">
           <span className="casos-eyebrow-wrap">
-            <span className="eyebrow">CASOS DE USO · KLIA.COM.AR</span>
+            <span className="eyebrow">CASOS DE USO · Klia.COM.AR</span>
           </span>
           <h1 className="h-display casos-h1">
-            KLIA se adapta a tu especialidad,{' '}
+            Klia se adapta a tu especialidad,{' '}
             <em className="serif-it" style={{ color: 'var(--klia)' }}>no al revés.</em>
           </h1>
           <p className="casos-lead">
             Psicólogos, kinesiólogos, médicos, nutricionistas, odontólogos, oftalmólogos
-            y terapistas ocupacionales ya usan KLIA para gestionar su consultorio. Cada
+            y terapistas ocupacionales ya usan Klia para gestionar su consultorio. Cada
             especialidad tiene su propio flujo, su propia terminología y sus propios
             módulos activos.
           </p>
@@ -293,7 +293,7 @@ function CasoCard({ caso }: { caso: CasoData }) {
           <div className="caso-col caso-col-sin">
             <div className="caso-col-header">
               <Icons.X size={14} />
-              <span className="caso-col-label">Sin KLIA</span>
+              <span className="caso-col-label">Sin Klia</span>
             </div>
             <ul className="caso-list">
               {caso.sinKlia.map((item, i) => <li key={i}>{item}</li>)}
@@ -303,7 +303,7 @@ function CasoCard({ caso }: { caso: CasoData }) {
           <div className="caso-col caso-col-con">
             <div className="caso-col-header">
               <Icons.Check size={14} />
-              <span className="caso-col-label">Con KLIA</span>
+              <span className="caso-col-label">Con Klia</span>
             </div>
             <ul className="caso-list">
               {caso.conKlia.map((item, i) => <li key={i}>{item}</li>)}
@@ -326,7 +326,7 @@ function CasosCTA() {
       <div className="container">
         <div className="casos-cta-inner">
           <h2 className="h-2 casos-cta-title">
-            Tu especialidad ya tiene un lugar en KLIA.
+            Tu especialidad ya tiene un lugar en Klia.
           </h2>
           <p className="casos-cta-lead">
             21 días gratis para probarlo con tus pacientes reales.<br />

@@ -16,19 +16,19 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
     altBg: false,
     questions: [
       {
-        q: '¿Necesito instalar algo para usar KLIA?',
-        a: 'No. KLIA es una aplicación web — entrás desde cualquier navegador en tu celular, tablet o computadora. Sin descargas, sin actualizaciones manuales, sin instaladores. Si podés abrir una página web, podés usar KLIA.',
+        q: '¿Necesito instalar algo para usar Klia?',
+        a: 'No. Klia es una aplicación web — entrás desde cualquier navegador en tu celular, tablet o computadora. Sin descargas, sin actualizaciones manuales, sin instaladores. Si podés abrir una página web, podés usar Klia.',
       },
       {
         q: '¿Cuánto tiempo lleva empezar a usarlo?',
         a: 'La mayoría de los profesionales tienen la agenda funcionando en menos de una hora. Cargás tus horarios de atención, agregás tus primeros pacientes y ya podés crear turnos. No hay capacitación previa requerida.',
       },
       {
-        q: '¿Puedo probar KLIA antes de pagar?',
+        q: '¿Puedo probar Klia antes de pagar?',
         a: 'Sí. Todos los registros nuevos acceden a 21 días completos con el plan Premium activo — sin tarjeta de crédito y sin compromiso. Podés cargar tus pacientes reales, crear turnos, probar la IA y generar planillas de obras sociales durante ese período. Si no te convence, no pagás nada.',
       },
       {
-        q: '¿KLIA funciona desde el celular?',
+        q: '¿Klia funciona desde el celular?',
         a: 'Sí. La plataforma está diseñada mobile-first. Podés consultar la agenda, registrar un cobro o dictar una nota de voz directamente desde el teléfono entre sesión y sesión.',
       },
       {
@@ -36,8 +36,8 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
         a: 'Si tenés tus pacientes en Excel, CSV o Google Sheets, el equipo de soporte se encarga de la importación sin costo adicional. Para iniciar el proceso abrí un ticket en soporte@klia.com.ar.',
       },
       {
-        q: '¿KLIA funciona si no tengo conexión a internet?',
-        a: 'No. KLIA requiere conexión para funcionar — es una aplicación en la nube. Está optimizada para funcionar bien con conexiones móviles lentas, pero sin internet no hay acceso.',
+        q: '¿Klia funciona si no tengo conexión a internet?',
+        a: 'No. Klia requiere conexión para funcionar — es una aplicación en la nube. Está optimizada para funcionar bien con conexiones móviles lentas, pero sin internet no hay acceso.',
       },
     ],
   },
@@ -48,7 +48,7 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
     altBg: true,
     questions: [
       {
-        q: '¿Cuánto cuesta KLIA?',
+        q: '¿Cuánto cuesta Klia?',
         a: 'Hay tres planes: Esencial a $15.000 ARS/mes, Profesional a $28.000 ARS/mes y Premium a $48.000 ARS/mes. Los precios se ajustan por inflación. Si pagás anual, pagás 10 meses y usás 12.',
       },
       {
@@ -84,8 +84,8 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
     altBg: false,
     questions: [
       {
-        q: '¿KLIA funciona con mi obra social?',
-        a: 'KLIA tiene generadores específicos para Hospital Italiano e IOMA, y un motor genérico que funciona con cualquier obra social: OSDE, Swiss Medical, PAMI, Galeno, Medifé, APROSS, OSPEDYC y el resto. Si tu obra social no está en la lista, el motor genérico se configura con los datos que necesitás.',
+        q: '¿Klia funciona con mi obra social?',
+        a: 'Klia tiene generadores específicos para Hospital Italiano e IOMA, y un motor genérico que funciona con cualquier obra social: OSDE, Swiss Medical, PAMI, Galeno, Medifé, APROSS, OSPEDYC y el resto. Si tu obra social no está en la lista, el motor genérico se configura con los datos que necesitás.',
       },
       {
         q: '¿Cómo se genera una planilla de obra social?',
@@ -93,15 +93,15 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
       },
       {
         q: '¿Puedo tener pacientes particulares y de obra social al mismo tiempo?',
-        a: 'Sí. KLIA separa los cobros particulares de los de obra social. Cada uno tiene su propio historial y sus propios reportes — no se mezclan.',
+        a: 'Sí. Klia separa los cobros particulares de los de obra social. Cada uno tiene su propio historial y sus propios reportes — no se mezclan.',
       },
       {
-        q: '¿KLIA emite facturas electrónicas AFIP?',
-        a: 'Todavía no. La facturación electrónica ARCA/AFIP está en el roadmap para el segundo semestre de 2026. Por ahora KLIA gestiona la liquidación a obras sociales y los cobros, pero la factura electrónica la seguís haciendo desde el portal de AFIP.',
+        q: '¿Klia emite facturas electrónicas AFIP?',
+        a: 'Todavía no. La facturación electrónica ARCA/AFIP está en el roadmap para el segundo semestre de 2026. Por ahora Klia gestiona la liquidación a obras sociales y los cobros, pero la factura electrónica la seguís haciendo desde el portal de AFIP.',
       },
       {
         q: '¿Puedo cobrar en dólares o en otras monedas?',
-        a: 'Sí. KLIA soporta ARS, USD y EUR. La moneda se configura por paciente — podés tener algunos en pesos y otros en dólares dentro de la misma agenda, con reportes separados por moneda.',
+        a: 'Sí. Klia soporta ARS, USD y EUR. La moneda se configura por paciente — podés tener algunos en pesos y otros en dólares dentro de la misma agenda, con reportes separados por moneda.',
       },
       {
         q: '¿El aviso de deuda llega a los pacientes de obra social también?',
@@ -117,15 +117,15 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
     questions: [
       {
         q: '¿Dónde se guardan mis datos?',
-        a: 'En servidores de Supabase con infraestructura en la región de América. KLIA cumple con la Ley 25.326 de Protección de Datos Personales y está registrado ante la AAIP con el expediente EX-2026-51700917. Toda la comunicación va encriptada por HTTPS.',
+        a: 'En servidores de Supabase con infraestructura en la región de América. Klia cumple con la Ley 25.326 de Protección de Datos Personales y está registrado ante la AAIP con el expediente EX-2026-51700917. Toda la comunicación va encriptada por HTTPS.',
       },
       {
         q: '¿Los datos de mis pacientes son confidenciales?',
-        a: 'Sí. Cada profesional ve únicamente sus propios pacientes — ningún otro usuario de KLIA tiene acceso a tu información. La base de datos usa Row Level Security: a nivel técnico es imposible que un usuario acceda a los datos de otro.',
+        a: 'Sí. Cada profesional ve únicamente sus propios pacientes — ningún otro usuario de Klia tiene acceso a tu información. La base de datos usa Row Level Security: a nivel técnico es imposible que un usuario acceda a los datos de otro.',
       },
       {
-        q: '¿KLIA puede ver mis historias clínicas?',
-        a: 'No. El equipo de KLIA no accede al contenido clínico de tus pacientes. El acceso está restringido a nivel de base de datos.',
+        q: '¿Klia puede ver mis historias clínicas?',
+        a: 'No. El equipo de Klia no accede al contenido clínico de tus pacientes. El acceso está restringido a nivel de base de datos.',
       },
       {
         q: '¿Qué pasa con mis datos si cancelo?',
@@ -133,7 +133,7 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
       },
       {
         q: '¿Los archivos de mis pacientes en Google Drive son seguros?',
-        a: 'Los archivos se guardan en tu propio Google Drive — no en los servidores de KLIA. KLIA solo guarda el ID del archivo para mostrártelo dentro de la plataforma. Si desconectás Google Drive, los archivos siguen siendo tuyos en tu cuenta de Google.',
+        a: 'Los archivos se guardan en tu propio Google Drive — no en los servidores de Klia. Klia solo guarda el ID del archivo para mostrártelo dentro de la plataforma. Si desconectás Google Drive, los archivos siguen siendo tuyos en tu cuenta de Google.',
       },
     ],
   },
@@ -145,11 +145,11 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
     questions: [
       {
         q: '¿Cómo funciona la sincronización con Google Calendar?',
-        a: 'Es bidireccional. Los turnos que creás en KLIA aparecen en tu Google Calendar, y los eventos que tengas en Google Calendar se tienen en cuenta para no mostrar horarios ocupados en tu link público de reservas. La sincronización es automática — no tenés que hacer nada manualmente.',
+        a: 'Es bidireccional. Los turnos que creás en Klia aparecen en tu Google Calendar, y los eventos que tengas en Google Calendar se tienen en cuenta para no mostrar horarios ocupados en tu link público de reservas. La sincronización es automática — no tenés que hacer nada manualmente.',
       },
       {
         q: '¿Las videollamadas funcionan sin Zoom ni Meet por separado?',
-        a: 'KLIA genera automáticamente un link de Google Meet para cada turno que marcás como videollamada. El link va en el recordatorio al paciente 24 horas antes. No necesitás crear el meet manualmente ni copiar links.',
+        a: 'Klia genera automáticamente un link de Google Meet para cada turno que marcás como videollamada. El link va en el recordatorio al paciente 24 horas antes. No necesitás crear el meet manualmente ni copiar links.',
       },
       {
         q: '¿Cómo funciona el link público de reservas?',
@@ -157,27 +157,27 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
       },
       {
         q: '¿La IA accede a información sensible de mis pacientes?',
-        a: 'El resumen clínico que genera Gemini usa únicamente las notas que vos cargaste en KLIA. No accede a información externa ni a datos de otros pacientes. El procesamiento sigue las políticas de privacidad de Google Gemini.',
+        a: 'El resumen clínico que genera Gemini usa únicamente las notas que vos cargaste en Klia. No accede a información externa ni a datos de otros pacientes. El procesamiento sigue las políticas de privacidad de Google Gemini.',
       },
       {
         q: '¿La transcripción de voz funciona en español rioplatense?',
         a: 'Sí. Whisper large-v3-turbo tiene soporte completo para español y funciona bien con el acento argentino, términos clínicos locales y vocabulario técnico de salud mental, kinesiología y medicina clínica.',
       },
       {
-        q: '¿KLIA funciona con obras sociales que tienen su propio sistema de autorización?',
-        a: 'KLIA gestiona la liquidación y generación de planillas, pero no se conecta en tiempo real con los sistemas de autorización de las obras sociales. Las autorizaciones las seguís gestionando directamente con cada OS como siempre.',
+        q: '¿Klia funciona con obras sociales que tienen su propio sistema de autorización?',
+        a: 'Klia gestiona la liquidación y generación de planillas, pero no se conecta en tiempo real con los sistemas de autorización de las obras sociales. Las autorizaciones las seguís gestionando directamente con cada OS como siempre.',
       },
       {
         q: '¿Puedo configurar horarios distintos para cada día de la semana?',
         a: 'Sí. Desde Ajustes configurás los horarios de atención por día — por ejemplo lunes y miércoles de 9 a 13, martes y jueves de 15 a 19. El link público y la agenda respetan esos horarios automáticamente.',
       },
       {
-        q: '¿KLIA maneja feriados nacionales y provinciales?',
+        q: '¿Klia maneja feriados nacionales y provinciales?',
         a: 'Sí. Hay integración con la API oficial de feriados de Argentina. Podés activar o desactivar feriados nacionales y provinciales por separado. Los días feriados no aparecen disponibles en el link público de reservas.',
       },
       {
-        q: '¿KLIA tiene una base de alimentos para armar planes nutricionales?',
-        a: 'Sí. KLIA incluye un vademécum propio con más de 7.300 alimentos —genéricos y productos de marca argentinos— con cálculo automático de energía, proteínas, grasas y carbohidratos por porción. No hace falta buscar los valores en otro lado ni calcular nada a mano.',
+        q: '¿Klia tiene una base de alimentos para armar planes nutricionales?',
+        a: 'Sí. Klia incluye un vademécum propio con más de 7.300 alimentos —genéricos y productos de marca argentinos— con cálculo automático de energía, proteínas, grasas y carbohidratos por porción. No hace falta buscar los valores en otro lado ni calcular nada a mano.',
       },
       {
         q: '¿Cómo le comparto el plan alimentario al paciente?',
@@ -188,8 +188,8 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
         a: 'Sí. La evidencia clínica muestra que los recordatorios por WhatsApp reducen entre un 20 % y un 25 % las inasistencias. Un estudio en el sistema público de salud de Buenos Aires (2026, sobre 475.214 primeros turnos) registró una reducción relativa de aproximadamente 24 % con un recordatorio 24 horas antes, y un ensayo aleatorizado publicado en Am J Med (2010) encontró una reducción de 23,1 % a 17,3 % con un recordatorio automático.',
       },
       {
-        q: '¿Cómo funcionan los recordatorios de turnos en KLIA?',
-        a: 'KLIA envía un recordatorio automático 24 horas antes de cada turno por WhatsApp y correo, desde un número verificado de KLIA, sin que el profesional tenga que configurar nada. El paciente puede confirmar o cancelar directamente desde el mensaje, lo que le da tiempo al profesional para reasignar el horario.',
+        q: '¿Cómo funcionan los recordatorios de turnos en Klia?',
+        a: 'Klia envía un recordatorio automático 24 horas antes de cada turno por WhatsApp y correo, desde un número verificado de Klia, sin que el profesional tenga que configurar nada. El paciente puede confirmar o cancelar directamente desde el mensaje, lo que le da tiempo al profesional para reasignar el horario.',
       },
       {
         q: '¿Cuántos recordatorios incluye cada plan?',
@@ -197,7 +197,7 @@ export const FAQ_BLOCKS: FaqBlockData[] = [
       },
       {
         q: '¿El paciente debe dar su consentimiento para recibir mensajes por WhatsApp?',
-        a: 'Sí. KLIA solo envía recordatorios por WhatsApp a pacientes que dieron su consentimiento explícito. Si no hay consentimiento registrado, el recordatorio se envía únicamente por correo electrónico.',
+        a: 'Sí. Klia solo envía recordatorios por WhatsApp a pacientes que dieron su consentimiento explícito. Si no hay consentimiento registrado, el recordatorio se envía únicamente por correo electrónico.',
       },
     ],
   },

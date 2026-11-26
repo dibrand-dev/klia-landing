@@ -75,7 +75,7 @@ const TABS: {
       'Recordatorio automático 24 hs antes por WhatsApp y correo',
       'Confirmación o cancelación por parte del paciente',
       'Envío solo a pacientes con consentimiento',
-      'Número verificado de KLIA, sin configuración',
+      'Número verificado de Klia, sin configuración',
     ],
     accentColor: '#25A969',
     footer: 'Fuentes: Estudio en el sistema público de salud de Buenos Aires (preprint, 2026); Am J Med, 2010.',

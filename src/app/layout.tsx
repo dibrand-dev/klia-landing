@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     title: 'Klia — Menos papeleo, más atención',
     description: 'La gestión de tu consultorio, simplificada.',
     url: 'https://www.klia.com.ar',
-    siteName: 'KLIA',
+    siteName: 'Klia',
     locale: 'es_AR',
     type: 'website',
   },

@@ -6,13 +6,13 @@ import { Icons, type IconName } from '@/components/Icons';
 import './beneficios.css';
 
 export const metadata: Metadata = {
-  title: 'Beneficios · KLIA — Menos administración, más tiempo con tus pacientes',
-  description: 'Cada función de KLIA elimina una tarea que hoy hacés a mano: cobros, facturación a obras sociales, IA clínica, notas de voz, agenda y archivos. Tiempo devuelto a tu práctica.',
+  title: 'Beneficios · Klia — Menos administración, más tiempo con tus pacientes',
+  description: 'Cada función de Klia elimina una tarea que hoy hacés a mano: cobros, facturación a obras sociales, IA clínica, notas de voz, agenda y archivos. Tiempo devuelto a tu práctica.',
   alternates: { canonical: 'https://www.klia.com.ar/beneficios' },
   openGraph: {
     url: 'https://www.klia.com.ar/beneficios',
-    title: 'Beneficios · KLIA — Menos administración, más tiempo con tus pacientes',
-    description: 'Cada función de KLIA elimina una tarea que hoy hacés a mano. No es un software más — es tiempo devuelto a tu práctica.',
+    title: 'Beneficios · Klia — Menos administración, más tiempo con tus pacientes',
+    description: 'Cada función de Klia elimina una tarea que hoy hacés a mano. No es un software más — es tiempo devuelto a tu práctica.',
   },
 };
 
@@ -52,7 +52,7 @@ const BENEFITS: Benefit[] = [
     headingItalic: 'incómodas.',
     desc: [
       'Preguntarle a un paciente si pagó es una de las situaciones más difíciles del consultorio. La mayoría de los profesionales evitan el tema y acumulan deuda sin darse cuenta.',
-      'KLIA registra cada sesión y envía un email diario al paciente con el detalle exacto de lo que debe. Vos no intervenís — el sistema gestiona el cobro por vos. Funciona tanto para pacientes particulares como para los que tienen cobertura de obra social: IOMA, OSDE, Swiss Medical, Medifé, Galeno, PAMI y cualquier otra.',
+      'Klia registra cada sesión y envía un email diario al paciente con el detalle exacto de lo que debe. Vos no intervenís — el sistema gestiona el cobro por vos. Funciona tanto para pacientes particulares como para los que tienen cobertura de obra social: IOMA, OSDE, Swiss Medical, Medifé, Galeno, PAMI y cualquier otra.',
     ],
     badge: 'prof',
     badgeLabel: 'Plan Profesional',
@@ -77,7 +77,7 @@ const BENEFITS: Benefit[] = [
     headingItalic: '15 minutos.',
     desc: [
       'Cerrar el mes con IOMA, OSDE, Swiss Medical, PAMI, Galeno, Medifé, APROSS o cualquier otra obra social significa buscar sesiones, construir planillas en Word o Excel y correr contra el vencimiento. Un proceso tedioso que se repite cada 30 días.',
-      'KLIA toma todas las sesiones del mes, las organiza por obra social y genera el PDF con tu firma y sello incluidos. Tiene generadores específicos para Hospital Italiano e IOMA, y un motor genérico para el resto. Para los profesionales que atienden solo de forma particular, el módulo de cobros tiene su propio historial y exportación a CSV.',
+      'Klia toma todas las sesiones del mes, las organiza por obra social y genera el PDF con tu firma y sello incluidos. Tiene generadores específicos para Hospital Italiano e IOMA, y un motor genérico para el resto. Para los profesionales que atienden solo de forma particular, el módulo de cobros tiene su propio historial y exportación a CSV.',
     ],
     badge: 'prof',
     badgeLabel: 'Plan Profesional',
@@ -152,7 +152,7 @@ const BENEFITS: Benefit[] = [
     headingItalic: 'inesperadas.',
     desc: [
       'El turno sin confirmar es el turno que no se presenta. La confirmación manual por WhatsApp consume tiempo, se olvida y genera roces innecesarios con el paciente.',
-      'KLIA envía un recordatorio automático por WhatsApp y correo 24 horas antes de cada turno, con los datos de la sesión y el link de Google Meet si es videollamada. Sin intervención del profesional. Funciona para pacientes particulares y para los que asisten por obra social — cualquiera con contacto cargado en su ficha. El envío por WhatsApp requiere consentimiento previo del paciente.',
+      'Klia envía un recordatorio automático por WhatsApp y correo 24 horas antes de cada turno, con los datos de la sesión y el link de Google Meet si es videollamada. Sin intervención del profesional. Funciona para pacientes particulares y para los que asisten por obra social — cualquiera con contacto cargado en su ficha. El envío por WhatsApp requiere consentimiento previo del paciente.',
     ],
     badge: 'todos',
     badgeLabel: 'Todos los planes',
@@ -177,7 +177,7 @@ const BENEFITS: Benefit[] = [
     headingItalic: 'intermediarios.',
     desc: [
       'Muchos sistemas de cobro online retienen el dinero o cobran comisiones adicionales por transferirlo. El profesional no sabe cuándo va a cobrar ni cuánto le van a descontar.',
-      'KLIA conecta Mercado Pago directamente a tu cuenta via OAuth. El paciente paga, el dinero va a vos — KLIA no retiene nada ni cobra comisión adicional. Cada sesión tiene un link único de pago. El sistema confirma el cobro automáticamente. Es el canal principal de cobro online para pacientes particulares.',
+      'Klia conecta Mercado Pago directamente a tu cuenta via OAuth. El paciente paga, el dinero va a vos — Klia no retiene nada ni cobra comisión adicional. Cada sesión tiene un link único de pago. El sistema confirma el cobro automáticamente. Es el canal principal de cobro online para pacientes particulares.',
     ],
     badge: 'prof',
     badgeLabel: 'Plan Profesional',
@@ -190,7 +190,7 @@ const BENEFITS: Benefit[] = [
       strike: null,
       num: '0%',
       numColor: 'var(--green)',
-      label: 'comisión adicional de KLIA',
+      label: 'comisión adicional de Klia',
       subtext: 'el dinero va directo a tu cuenta',
     },
   },
@@ -202,7 +202,7 @@ const BENEFITS: Benefit[] = [
     headingItalic: 'siempre a mano.',
     desc: [
       'Los estudios llegan por WhatsApp, email o en papel. No hay un lugar centralizado donde guardarlos asociados a la ficha de cada paciente, y encontrarlos antes de una consulta lleva minutos que no tenés.',
-      'El módulo de Archivos sube los estudios al Google Drive del profesional, organizados automáticamente en KLIA/Pacientes/[Nombre]/[Categoría] — Laboratorio, Imágenes, Documentos. Están dentro de la misma plataforma, a un click desde la ficha. Aplica a todos los pacientes, con o sin obra social.',
+      'El módulo de Archivos sube los estudios al Google Drive del profesional, organizados automáticamente en Klia/Pacientes/[Nombre]/[Categoría] — Laboratorio, Imágenes, Documentos. Están dentro de la misma plataforma, a un click desde la ficha. Aplica a todos los pacientes, con o sin obra social.',
     ],
     badge: 'premium',
     badgeLabel: 'Plan Premium',
@@ -248,7 +248,7 @@ function Hero() {
           </h1>
 
           <p className="benef-lead">
-            Cada función de KLIA está diseñada para eliminar una tarea que hoy hacés a mano.
+            Cada función de Klia está diseñada para eliminar una tarea que hoy hacés a mano.
             No es un software más — es tiempo devuelto a tu práctica.
           </p>
         </div>

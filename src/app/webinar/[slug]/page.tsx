@@ -16,11 +16,11 @@ type Props = { params: { slug: string } }
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const webinar = await getWebinarBySlug(params.slug)
   if (!webinar) {
-    return { title: 'Webinar no encontrado · KLIA' }
+    return { title: 'Webinar no encontrado · Klia' }
   }
   const url = `https://www.klia.com.ar/webinar/${webinar.slug}`
   return {
-    title: `${webinar.titulo} · Webinars KLIA`,
+    title: `${webinar.titulo} · Webinars Klia`,
     description: webinar.bajada,
     alternates: { canonical: url },
     openGraph: {

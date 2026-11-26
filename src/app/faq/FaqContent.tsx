@@ -110,7 +110,7 @@ function FaqHero() {
       <div className="container">
         <div className="faq-hero-inner">
           <span className="faq-eyebrow-wrap">
-            <span className="eyebrow">PREGUNTAS FRECUENTES · KLIA.COM.AR</span>
+            <span className="eyebrow">PREGUNTAS FRECUENTES · Klia.COM.AR</span>
           </span>
           <h1 className="h-display faq-h1">
             Todo lo que querés saber{' '}
@@ -118,7 +118,7 @@ function FaqHero() {
           </h1>
           <p className="faq-lead">
             Reunimos las dudas más comunes de profesionales de la salud que están
-            evaluando KLIA. Si tu pregunta no está acá, escribinos a{' '}
+            evaluando Klia. Si tu pregunta no está acá, escribinos a{' '}
             <a href="mailto:hola@klia.com.ar" className="faq-inline-link">hola@klia.com.ar</a>
           </p>
         </div>

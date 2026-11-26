@@ -323,7 +323,7 @@ export default function WbForm({ uid = 'f', slug, onDone, onClosedOrEnded }: {
           <label className="wb-consent">
             <input id={`${uid}-consent`} type="checkbox" checked={v.consent} disabled={sending} onChange={(e) => setV((p) => ({ ...p, consent: e.target.checked }))} aria-required="true"
               aria-invalid={err.consent ? true : undefined} aria-describedby={err.consent ? `${uid}-consent-err` : undefined} />
-            <span>Acepto la <a href="/privacidad" target="_blank" rel="noopener">Política de Privacidad</a> y recibir comunicaciones de KLIA sobre este webinar</span>
+            <span>Acepto la <a href="/privacidad" target="_blank" rel="noopener">Política de Privacidad</a> y recibir comunicaciones de Klia sobre este webinar</span>
           </label>
           <div style={{ marginTop: 8 }}><WbErr id={`${uid}-consent-err`} msg={err.consent} /></div>
         </div>

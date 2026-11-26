@@ -6,13 +6,13 @@ import { FAQ_BLOCKS } from './faqData'
 import './faq.css'
 
 export const metadata: Metadata = {
-  title: 'Preguntas frecuentes · KLIA — Todo lo que necesitás saber antes de empezar',
-  description: 'Resolvé tus dudas sobre KLIA: planes, obras sociales, privacidad, integraciones y más. Software de gestión para profesionales de la salud en Argentina.',
+  title: 'Preguntas frecuentes · Klia — Todo lo que necesitás saber antes de empezar',
+  description: 'Resolvé tus dudas sobre Klia: planes, obras sociales, privacidad, integraciones y más. Software de gestión para profesionales de la salud en Argentina.',
   alternates: { canonical: 'https://www.klia.com.ar/faq' },
   openGraph: {
     url: 'https://www.klia.com.ar/faq',
-    title: 'Preguntas frecuentes · KLIA — Todo lo que necesitás saber antes de empezar',
-    description: 'Resolvé tus dudas sobre KLIA: planes, obras sociales, privacidad, integraciones y más. Software de gestión para profesionales de la salud en Argentina.',
+    title: 'Preguntas frecuentes · Klia — Todo lo que necesitás saber antes de empezar',
+    description: 'Resolvé tus dudas sobre Klia: planes, obras sociales, privacidad, integraciones y más. Software de gestión para profesionales de la salud en Argentina.',
   },
 }
 

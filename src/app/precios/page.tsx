@@ -8,7 +8,7 @@ import './pricing.css'
 export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
-  title: 'Precios — KLIA | Planes para profesionales de salud en Argentina',
+  title: 'Precios — Klia | Planes para profesionales de salud en Argentina',
   description: 'Planes desde $15.000/mes. Esencial, Profesional y Premium para psicólogos, médicos y kinesiólogos. 21 días gratis, sin tarjeta de crédito.',
   alternates: { canonical: 'https://www.klia.com.ar/precios' },
 }

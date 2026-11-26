@@ -55,7 +55,7 @@ export function buildGoogleCalendarUrl(w: WebinarCalendarInfo, meetUrl: string):
     action: 'TEMPLATE',
     text: w.titulo,
     dates: `${toUtcStamp(inicio)}/${toUtcStamp(fin)}`,
-    details: `Webinar gratuito de KLIA.\nLink: ${meetUrl}`,
+    details: `Webinar gratuito de Klia.\nLink: ${meetUrl}`,
     location: meetUrl,
     ctz: TZ,
   })

@@ -263,7 +263,7 @@ export default function PrivacidadPage() {
 
               <Section id="refeps" num="02b" title="Verificación de matrícula profesional (REFEPS)">
                 <p>
-                  Si sos profesional de la salud y elegís verificar tu matrícula, KLIA consulta la Red Federal de Registros de Profesionales de la Salud (REFEPS) del Ministerio de Salud de la Nación, a través de su Plataforma de Interoperabilidad. Para hacerlo usamos tu DNI y tu número de matrícula, y la consulta se realiza únicamente con tu consentimiento expreso.
+                  Si sos profesional de la salud y elegís verificar tu matrícula, Klia consulta la Red Federal de Registros de Profesionales de la Salud (REFEPS) del Ministerio de Salud de la Nación, a través de su Plataforma de Interoperabilidad. Para hacerlo usamos tu DNI y tu número de matrícula, y la consulta se realiza únicamente con tu consentimiento expreso.
                 </p>
 
                 <h3>Qué datos guardamos</h3>
@@ -288,7 +288,7 @@ export default function PrivacidadPage() {
 
                 <h3>Tus derechos</h3>
                 <p>
-                  Verificar tu matrícula es optativo. Podés acceder, rectificar o solicitar la supresión de estos datos, y retirar tu consentimiento, escribiendo a hola@klia.com.ar. Si no verificás tu matrícula, podés cargarla manualmente y usar KLIA, aunque algunas funciones, como la prescripción electrónica, pueden requerir una matrícula verificada.
+                  Verificar tu matrícula es optativo. Podés acceder, rectificar o solicitar la supresión de estos datos, y retirar tu consentimiento, escribiendo a hola@klia.com.ar. Si no verificás tu matrícula, podés cargarla manualmente y usar Klia, aunque algunas funciones, como la prescripción electrónica, pueden requerir una matrícula verificada.
                 </p>
               </Section>
 

@@ -34,13 +34,13 @@ function SobreHero() {
       <div className="sobre-blob sobre-blob-2" aria-hidden />
       <div className="container">
         <div className="sobre-hero-inner sobre-reveal">
-          <span className="eyebrow sobre-eyebrow">SOBRE KLIA · KLIA.COM.AR</span>
+          <span className="eyebrow sobre-eyebrow">SOBRE Klia · Klia.COM.AR</span>
           <h1 className="h-display sobre-h1">
             Una plataforma construida por quienes{' '}
             <span className="serif-it">escucharon el problema.</span>
           </h1>
           <p className="sobre-lead">
-            KLIA no nació en una sala de reuniones. Nació en una charla de familia.
+            Klia no nació en una sala de reuniones. Nació en una charla de familia.
           </p>
         </div>
       </div>
@@ -86,7 +86,7 @@ function SobreOrigen() {
             <div className="sobre-quote-mark"><Icons.Quote size={36} /></div>
             <p className="sobre-quote-text">&ldquo;Así es, no hay otra.&rdquo;</p>
             <p className="sobre-quote-cap">
-              Lo que escuchamos en cada consultorio antes de crear KLIA.
+              Lo que escuchamos en cada consultorio antes de crear Klia.
             </p>
           </div>
         </div>
@@ -132,7 +132,7 @@ function SobreEncuesta() {
                 trabaja solo, alquila un consultorio y atiende entre 15 y 40 pacientes por
                 semana no tiene un sistema diseñado para él.
               </p>
-              <p>Eso era KLIA.</p>
+              <p>Eso era Klia.</p>
             </div>
           </div>
 
@@ -162,19 +162,19 @@ function SobreHoy() {
     <section className="sobre-sec" id="hoy">
       <div className="container">
         <div className="sobre-centered sobre-reveal">
-          <span className="eyebrow sobre-eyebrow">KLIA HOY</span>
+          <span className="eyebrow sobre-eyebrow">Klia HOY</span>
           <h2 className="sobre-h2">
             Construida con los que{' '}
             <span className="serif-it">la usan.</span>
           </h2>
           <div className="sobre-centered-body">
             <p>
-              KLIA se lanzó el 25 de mayo de 2026. Desde el primer día, el desarrollo
+              Klia se lanzó el 25 de mayo de 2026. Desde el primer día, el desarrollo
               estuvo guiado por el feedback de profesionales reales — no por suposiciones
               de producto.
             </p>
             <p>
-              Hoy KLIA cuenta con psicólogos, terapistas ocupacionales, nutricionistas,
+              Hoy Klia cuenta con psicólogos, terapistas ocupacionales, nutricionistas,
               odontólogos y médicos clínicos que usan la plataforma a diario y aportan su
               experiencia para mejorarla. Cada nueva función, cada ajuste de flujo, cada
               término que aparece en la interfaz pasó por la mirada de alguien que trabaja
@@ -182,7 +182,7 @@ function SobreHoy() {
             </p>
             <p>
               Eso generó algo que no estaba planificado pero que se convirtió en uno de los
-              activos más valiosos de KLIA: una comunidad de profesionales con un objetivo
+              activos más valiosos de Klia: una comunidad de profesionales con un objetivo
               en común — dedicar más tiempo a sus pacientes y menos al papeleo.
             </p>
           </div>
@@ -211,7 +211,7 @@ function SobreEquipo() {
           <span className="eyebrow sobre-eyebrow">EL EQUIPO</span>
           <h2 className="sobre-h2" style={{ maxWidth: '18ch', margin: '0 auto 28px' }}>
             Las personas detrás{' '}
-            <span className="serif-it">de KLIA.</span>
+            <span className="serif-it">de Klia.</span>
           </h2>
         </div>
 
@@ -224,7 +224,7 @@ function SobreEquipo() {
             <p className="sobre-team-role">Fundador y CEO</p>
             <p className="sobre-team-desc">
               Desarrollador de software con más de 9 años liderando Dibrand LLC. Construyó
-              KLIA desde la convicción de que la tecnología para profesionales de salud
+              Klia desde la convicción de que la tecnología para profesionales de salud
               independientes en Argentina estaba atrasada y que tenía las herramientas para
               cambiar eso.
             </p>
@@ -237,7 +237,7 @@ function SobreEquipo() {
             <p className="sobre-team-name">Dibrand LLC</p>
             <p className="sobre-team-role">Empresa desarrolladora</p>
             <p className="sobre-team-desc">
-              La empresa detrás de KLIA. Con experiencia en productos digitales para distintos
+              La empresa detrás de Klia. Con experiencia en productos digitales para distintos
               sectores, Dibrand aportó la arquitectura técnica, el equipo de desarrollo y la
               metodología para construir un producto que escala sin perder la simplicidad que
               los profesionales de salud necesitan.
@@ -262,7 +262,7 @@ function SobreVision() {
           </h2>
           <div className="sobre-centered-body">
             <p>
-              KLIA está en sus primeros meses de vida y ya tiene claro hacia dónde va: más
+              Klia está en sus primeros meses de vida y ya tiene claro hacia dónde va: más
               automatización, menos papeleo, y eventualmente acompañar a los profesionales
               argentinos que quieren expandir su práctica más allá de las fronteras del país.
             </p>

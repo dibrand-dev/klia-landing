@@ -6,13 +6,13 @@ import { Icons, type IconName } from '@/components/Icons';
 import './producto.css';
 
 export const metadata: Metadata = {
-  title: 'Producto · KLIA — Software de gestión para profesionales de salud en Argentina',
-  description: 'KLIA integra agenda, historia clínica, cobros, IA y facturación a obras sociales en una sola plataforma. 20+ módulos. 42 especialidades. 21 días gratis.',
+  title: 'Producto · Klia — Software de gestión para profesionales de salud en Argentina',
+  description: 'Klia integra agenda, historia clínica, cobros, IA y facturación a obras sociales en una sola plataforma. 20+ módulos. 42 especialidades. 21 días gratis.',
   alternates: { canonical: 'https://www.klia.com.ar/producto' },
   openGraph: {
     url: 'https://www.klia.com.ar/producto',
-    title: 'Producto · KLIA — Software de gestión para profesionales de salud en Argentina',
-    description: 'KLIA integra agenda, historia clínica, cobros, IA y facturación a obras sociales en una sola plataforma.',
+    title: 'Producto · Klia — Software de gestión para profesionales de salud en Argentina',
+    description: 'Klia integra agenda, historia clínica, cobros, IA y facturación a obras sociales en una sola plataforma.',
   },
 };
 
@@ -69,22 +69,22 @@ const MODULES: Module[] = [
     desc:'Panel centralizado de deuda por paciente. Pagos por sesión, mes o a cuenta, distribución automática desde la sesión más antigua. Historial completo. Exportación a CSV.' },
   { ico:'Bell',     ai:false, badge:'prof',    extra:'unico',
     title:'Aviso automático de deuda',
-    desc:'KLIA envía un email diario a los pacientes con saldo pendiente, listando exactamente qué deben y por cuánto. El profesional activa o desactiva desde Ajustes. Ningún otro software médico en Argentina tiene esta función.' },
+    desc:'Klia envía un email diario a los pacientes con saldo pendiente, listando exactamente qué deben y por cuánto. El profesional activa o desactiva desde Ajustes. Ningún otro software médico en Argentina tiene esta función.' },
   { ico:'Receipt',  ai:false, badge:'prof',    extra:null,
     title:'Facturación a obras sociales',
     desc:'Planillas PDF para Hospital Italiano, IOMA y motor genérico para cualquier obra social. Firma y sello incluidos. El proceso que llevaba 3 horas en Word tarda 15 minutos.' },
   { ico:'Card',     ai:false, badge:'prof',    extra:null,
     title:'Mercado Pago integrado',
-    desc:'OAuth propio por profesional — el dinero va directo a tu cuenta, KLIA no intermedia. Link único de pago por sesión. Confirmación automática por webhook.' },
+    desc:'OAuth propio por profesional — el dinero va directo a tu cuenta, Klia no intermedia. Link único de pago por sesión. Confirmación automática por webhook.' },
   { ico:'Link',     ai:false, badge:'premium', extra:null,
     title:'Link público de reservas',
     desc:'URL única para que los pacientes reserven sin WhatsApp ni llamadas. Con pago integrado. Respeta horarios y agenda en tiempo real.' },
   { ico:'Folder',   ai:false, badge:'premium', extra:null,
     title:'Archivos del paciente',
-    desc:'Estudios, imágenes y documentos en la ficha del paciente. Almacenados en el Google Drive del profesional. Organizados en KLIA>Pacientes>Nombre.' },
+    desc:'Estudios, imágenes y documentos en la ficha del paciente. Almacenados en el Google Drive del profesional. Organizados en Klia>Pacientes>Nombre.' },
   { ico:'Calendar', ai:false, badge:'todos',   extra:null,
     title:'Google Calendar sync',
-    desc:'Sincronización bidireccional en tiempo real. Los turnos de KLIA aparecen en Google Calendar y viceversa. Sin doble carga de datos.' },
+    desc:'Sincronización bidireccional en tiempo real. Los turnos de Klia aparecen en Google Calendar y viceversa. Sin doble carga de datos.' },
   { ico:'Coins',    ai:false, badge:'todos',   extra:null,
     title:'Multi-moneda',
     desc:'ARS, USD y EUR configurables por paciente. Reportes separados por moneda. Para profesionales que cobran en dólares a algunos pacientes y en pesos a otros.' },
@@ -94,11 +94,11 @@ const DIFFS: Diff[] = [
   { title:'Aviso automático de deuda',
     desc:'Ningún competidor argentino lo tiene. El sistema gestiona el cobro por vos, sin conversaciones incómodas con el paciente.' },
   { title:'IA clínica en el flujo de trabajo',
-    desc:'No es un link a ChatGPT. El resumen clínico aparece dentro de KLIA, antes de que entre el paciente, listo para usar.' },
+    desc:'No es un link a ChatGPT. El resumen clínico aparece dentro de Klia, antes de que entre el paciente, listo para usar.' },
   { title:'Terminología adaptada por especialidad',
     desc:'"Sesión" para psicólogos, "Consulta" para médicos. 42 especialidades configuradas. Se asigna automáticamente al registrarte.' },
   { title:'Mercado Pago OAuth directo',
-    desc:'Tu cuenta, tu dinero. KLIA no intermedia pagos. La conexión toma un click.' },
+    desc:'Tu cuenta, tu dinero. Klia no intermedia pagos. La conexión toma un click.' },
 ];
 
 const CHIPS: Chip[] = [
@@ -132,7 +132,7 @@ function Hero() {
           </h1>
 
           <p className="prod-lead">
-            KLIA integra agenda, historia clínica, cobros, facturación a obras sociales
+            Klia integra agenda, historia clínica, cobros, facturación a obras sociales
             e inteligencia artificial. Sin cambiar de pestaña. Sin duplicar datos.
             Sin aprender varios sistemas.
           </p>
@@ -211,10 +211,10 @@ function Differentiators() {
       <div className="container">
         <div className="diff-inner">
           <div className="diff-header">
-            <span className="eyebrow">Lo que solo KLIA tiene</span>
+            <span className="eyebrow">Lo que solo Klia tiene</span>
             <h2 className="h-2" style={{ marginTop: 14 }}>
               La competencia cubre agenda e historia clínica.<br />
-              KLIA va más{' '}
+              Klia va más{' '}
               <em className="serif-it" style={{ color: 'var(--klia)' }}>lejos.</em>
             </h2>
           </div>

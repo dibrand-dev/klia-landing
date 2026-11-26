@@ -10,13 +10,13 @@ import './webinar.css'
 export const revalidate = 60
 
 export const metadata: Metadata = {
-  title: 'Webinars · KLIA',
-  description: 'Webinars gratuitos de KLIA para profesionales de la salud en Argentina.',
+  title: 'Webinars · Klia',
+  description: 'Webinars gratuitos de Klia para profesionales de la salud en Argentina.',
   alternates: { canonical: 'https://www.klia.com.ar/webinar' },
   openGraph: {
     url: 'https://www.klia.com.ar/webinar',
-    title: 'Webinars · KLIA',
-    description: 'Webinars gratuitos de KLIA para profesionales de la salud en Argentina.',
+    title: 'Webinars · Klia',
+    description: 'Webinars gratuitos de Klia para profesionales de la salud en Argentina.',
   },
 }
 

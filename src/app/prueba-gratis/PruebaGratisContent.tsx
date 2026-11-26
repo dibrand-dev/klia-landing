@@ -356,8 +356,8 @@ function CroNav() {
   return (
     <header className={`cro-nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="container cro-nav-inner">
-        <div className="cro-nav-logo" aria-label="KLIA">
-          <Image src="/klia-logo.png" alt="KLIA" width={235} height={80} style={{ height: 40, width: 'auto' }} priority />
+        <div className="cro-nav-logo" aria-label="Klia">
+          <Image src="/klia-logo.png" alt="Klia" width={235} height={80} style={{ height: 40, width: 'auto' }} priority />
         </div>
         <div className="cro-nav-right">
           <a href="https://app.klia.com.ar/login" className="cro-login">Iniciar sesión</a>
@@ -381,7 +381,7 @@ function CroHero() {
             Generá las planillas de tus Obras Sociales <span className="hl">en segundos</span> y sin errores de tipeo.
           </h1>
           <p className="cro-hero-sub cro-reveal">
-            KLIA es la plataforma integral para profesionales de la salud en
+            Klia es la plataforma integral para profesionales de la salud en
             Argentina. Automatizá tu agenda, gestioná historias clínicas y exportá liquidaciones
             listas para presentar.
           </p>
@@ -446,7 +446,7 @@ function CroProblem() {
         <div className="cro-section-head">
           <span className="cro-eyebrow cro-reveal">El día a día en el consultorio</span>
           <h2 className="cro-h2 cro-reveal">Gestionar un consultorio en Argentina no debería costarte el doble de trabajo.</h2>
-          <p className="cro-section-lead cro-reveal">Estos son los tres focos de desgaste que más plata y energía te consumen — y que KLIA resuelve de raíz.</p>
+          <p className="cro-section-lead cro-reveal">Estos son los tres focos de desgaste que más plata y energía te consumen — y que Klia resuelve de raíz.</p>
         </div>
         <div className="cro-problem-grid">
           {cards.map((c, i) => (
@@ -470,7 +470,7 @@ function CroFeatures() {
       n: '01',
       media: <PhoneFrame scale={0.92}><PhonePay /></PhoneFrame>,
       title: 'Liquidación y planillas de asistencia automatizadas',
-      body: 'KLIA cuenta con un motor genérico y plantillas preconfiguradas con los formatos oficiales exigidos en Argentina (Plan de Salud del Hospital Italiano, IOMA, Swiss Medical). Exportá en un clic el PDF o Excel mensual cruzando números de autorización con las firmas digitalizadas del profesional y del paciente cargadas en el sistema.',
+      body: 'Klia cuenta con un motor genérico y plantillas preconfiguradas con los formatos oficiales exigidos en Argentina (Plan de Salud del Hospital Italiano, IOMA, Swiss Medical). Exportá en un clic el PDF o Excel mensual cruzando números de autorización con las firmas digitalizadas del profesional y del paciente cargadas en el sistema.',
       list: ['Plantillas oficiales: Hospital Italiano, IOMA, Swiss Medical', 'Firmas digitalizadas del profesional y del paciente', 'PDF + Excel oficial'],
       tags: ['Motor de planillas', 'Firmas digitalizadas', 'PDF + Excel'],
     },
@@ -479,7 +479,7 @@ function CroFeatures() {
       reverse: true,
       media: <PhoneFrame scale={0.92}><PhoneAI /></PhoneFrame>,
       title: 'Historias clínicas con Inteligencia Artificial',
-      body: 'Editor de texto enriquecido potenciado con notas de voz grabadas directamente desde KLIA. El sistema transcribe automáticamente el audio a texto en español usando inteligencia artificial de transcripción de alta precisión. Adjuntá estudios y órdenes médicas que se almacenan de forma segura y privada.',
+      body: 'Editor de texto enriquecido potenciado con notas de voz grabadas directamente desde Klia. El sistema transcribe automáticamente el audio a texto en español usando inteligencia artificial de transcripción de alta precisión. Adjuntá estudios y órdenes médicas que se almacenan de forma segura y privada.',
       list: ['Notas de voz transcriptas a texto con IA de alta precisión', 'Editor de texto enriquecido inteligente', 'Estudios y órdenes guardados de forma segura y privada'],
       tags: ['Transcripción IA', 'Editor enriquecido', 'Almacenamiento seguro'],
     },
@@ -496,7 +496,7 @@ function CroFeatures() {
       reverse: true,
       media: <LocalizationMock />,
       title: 'Especialización y Localización Absoluta',
-      body: 'Olvidate de sistemas genéricos. KLIA detecta tu especialidad (soporta 42 ramas de la medicina y rehabilitación) y adapta la terminología de toda la interfaz: muestra «Sesión» para psicólogos o terapeutas y «Consulta» para médicos. Cuenta con soporte multi-moneda (ARS, USD, EUR) y bloquea automáticamente los días feriados nacionales y provinciales de Argentina para que nadie reserve un día no laborable por error.',
+      body: 'Olvidate de sistemas genéricos. Klia detecta tu especialidad (soporta 42 ramas de la medicina y rehabilitación) y adapta la terminología de toda la interfaz: muestra «Sesión» para psicólogos o terapeutas y «Consulta» para médicos. Cuenta con soporte multi-moneda (ARS, USD, EUR) y bloquea automáticamente los días feriados nacionales y provinciales de Argentina para que nadie reserve un día no laborable por error.',
       list: ['42 ramas de la medicina y rehabilitación soportadas', 'Terminología adaptativa: «Sesión» vs «Consulta»', 'Multi-moneda (ARS, USD, EUR) y feriados AR automáticos'],
       tags: ['42 especialidades', 'Multi-moneda', 'Feriados AR automáticos'],
     },
@@ -674,15 +674,15 @@ function CroPricing({ prices }: { prices: PlanPrices | null }) {
 const FAQ_ITEMS = [
   {
     q: '¿Cómo funciona el motor de planillas para Obras Sociales?',
-    a: <>KLIA procesa los turnos marcados como <strong>«Atendidos»</strong> durante el mes. El sistema toma los datos de cobertura del paciente, el número de afiliado, el código de práctica y el número de autorización médica. Luego genera automáticamente el archivo Excel o PDF con el formato exacto requerido por obras sociales como el <strong>Hospital Italiano</strong> o <strong>IOMA</strong>, incluyendo la firma del profesional y la imagen de firma escaneada del paciente o tutor para evitar rechazos administrativos.</>,
+    a: <>Klia procesa los turnos marcados como <strong>«Atendidos»</strong> durante el mes. El sistema toma los datos de cobertura del paciente, el número de afiliado, el código de práctica y el número de autorización médica. Luego genera automáticamente el archivo Excel o PDF con el formato exacto requerido por obras sociales como el <strong>Hospital Italiano</strong> o <strong>IOMA</strong>, incluyendo la firma del profesional y la imagen de firma escaneada del paciente o tutor para evitar rechazos administrativos.</>,
   },
   {
     q: '¿Mis datos clínicos están protegidos por ley en Argentina?',
-    a: <>Totalmente. KLIA opera con <strong>Row Level Security (RLS)</strong> en Supabase (PostgreSQL), lo que garantiza de forma estricta por código que ningún otro usuario o administrador pueda leer las notas clínicas de tus pacientes. Además, la plataforma cumple con la <strong>Ley 25.326 de Protección de Datos Personales</strong> en Argentina y sus bases de datos están registradas ante la <strong>AAIP</strong> bajo el expediente <strong>EX-2026-51700917--APN-DNPDP#AAIP</strong>.</>,
+    a: <>Totalmente. Klia opera con <strong>Row Level Security (RLS)</strong> en Supabase (PostgreSQL), lo que garantiza de forma estricta por código que ningún otro usuario o administrador pueda leer las notas clínicas de tus pacientes. Además, la plataforma cumple con la <strong>Ley 25.326 de Protección de Datos Personales</strong> en Argentina y sus bases de datos están registradas ante la <strong>AAIP</strong> bajo el expediente <strong>EX-2026-51700917--APN-DNPDP#AAIP</strong>.</>,
   },
   {
-    q: '¿Cómo se maneja el cobro de planes de KLIA y el dinero de mis pacientes?',
-    a: <>El cobro mensual de tu suscripción a KLIA es automático a través de <strong>Mercado Pago Suscripciones</strong>. Por otro lado, para cobrar las sesiones a tus pacientes particulares, integrás tu propia cuenta de Mercado Pago vía <strong>OAuth</strong> desde el panel de Ajustes. El dinero va directamente desde el paciente hacia tu cuenta: <strong>KLIA no retiene ni intermedia tus fondos</strong> en ningún momento.</>,
+    q: '¿Cómo se maneja el cobro de planes de Klia y el dinero de mis pacientes?',
+    a: <>El cobro mensual de tu suscripción a Klia es automático a través de <strong>Mercado Pago Suscripciones</strong>. Por otro lado, para cobrar las sesiones a tus pacientes particulares, integrás tu propia cuenta de Mercado Pago vía <strong>OAuth</strong> desde el panel de Ajustes. El dinero va directamente desde el paciente hacia tu cuenta: <strong>Klia no retiene ni intermedia tus fondos</strong> en ningún momento.</>,
   },
 ]
 
@@ -743,13 +743,13 @@ function CroFooter() {
     <footer className="cro-footer">
       <div className="container cro-footer-inner">
         <div className="cro-footer-logo">
-          <Image src="/klia-logo.png" alt="KLIA" width={100} height={34} style={{ height: 28, width: 'auto', opacity: 0.6 }} />
+          <Image src="/klia-logo.png" alt="Klia" width={100} height={34} style={{ height: 28, width: 'auto', opacity: 0.6 }} />
         </div>
         <a href="https://app.klia.com.ar/login" className="cro-footer-login">
           Ya tengo cuenta — Iniciar sesión
         </a>
         <div className="cro-footer-copy">
-          © 2026 KLIA Health Tech · Ley 25.326 · AAIP EX-2026-51700917
+          © 2026 Klia Health Tech · Ley 25.326 · AAIP EX-2026-51700917
         </div>
       </div>
     </footer>
