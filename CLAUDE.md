@@ -124,8 +124,8 @@ Production: https://www.klia.com.ar
 - /api/revalidate también revalida /webinar y /webinar/[slug]
 
 ## Ultimos cambios
-_Actualizado el 2026-11-11_
+_Actualizado el 2026-11-26_
 
 ```
-d0abd22 docs: CLAUDE.md - commits del dia 2026-11-10
+3413b80 docs: sección de verificación de matrícula REFEPS en política de privacidad
 ```
