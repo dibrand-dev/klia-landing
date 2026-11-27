@@ -124,8 +124,10 @@ Production: https://www.klia.com.ar
 - /api/revalidate también revalida /webinar y /webinar/[slug]
 
 ## Ultimos cambios
-_Actualizado el 2026-11-26_
+_Actualizado el 2026-11-27_
 
 ```
-3413b80 docs: sección de verificación de matrícula REFEPS en política de privacidad
+29c5ed9 fix: normalizar KLIA a Klia en todo el copy de la landing
+eea3449 fix: quitar guion largo en bio de Norberto en /sobre-klia
+da68b3d docs: CLAUDE.md - commits del dia 2026-11-26
 ```
