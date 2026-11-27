@@ -31,6 +31,8 @@ function getLinkHref(link: string): string {
       return '/privacidad'
     case 'Términos':
       return '/terminos'
+    case 'Centro de ayuda':
+      return '/faq'
     case 'Webinars':
       return '/webinar'
     case 'Para nutricionistas':
@@ -76,7 +78,7 @@ export default function Footer() {
                   {col.title}
                 </div>
                 {col.links.map((link) =>
-                  link === 'Webinars' || link === 'Para nutricionistas' ? (
+                  link === 'Webinars' || link === 'Para nutricionistas' || link === 'Centro de ayuda' ? (
                     <Link
                       key={link}
                       href={getLinkHref(link)}
