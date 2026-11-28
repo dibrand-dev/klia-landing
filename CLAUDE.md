@@ -124,10 +124,9 @@ Production: https://www.klia.com.ar
 - /api/revalidate también revalida /webinar y /webinar/[slug]
 
 ## Ultimos cambios
-_Actualizado el 2026-11-27_
+_Actualizado el 2026-11-28_
 
 ```
-29c5ed9 fix: normalizar KLIA a Klia en todo el copy de la landing
-eea3449 fix: quitar guion largo en bio de Norberto en /sobre-klia
-da68b3d docs: CLAUDE.md - commits del dia 2026-11-26
+5e3dabb feat: link Centro de ayuda del footer a /faq
+97d28fd docs: CLAUDE.md - commits del dia 2026-11-27
 ```
